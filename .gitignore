@@ -1,0 +1,16 @@
+**/__pycache__/
+.env*
+venv/
+*.ckpt
+*.pt
+
+# Jupyter & temp output
+.ipynb_checkpoints/
+*.log
+*.tmp
+
+# Misc
+.DS_Store
+*.pem
+*.html
+*.png
