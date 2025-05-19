@@ -32,7 +32,3 @@ app.include_router(player_data_router)
 def read_root():
     """Health check endpoint for backend"""
     return {"message": "Backend is up and running!"}
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
