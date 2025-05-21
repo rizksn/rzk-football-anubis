@@ -1,131 +1,74 @@
 from playwright.async_api import async_playwright
 import json
+import asyncio
 
-async def fetch_nfl_stats(stat_type: str = "rushing", year: int = 2024):
-    url = f"https://www.nfl.com/stats/player-stats/category/{stat_type}/{year}/POST/all/{stat_type}yards/desc"
+async def fetch_all_nfl_stats(stat_type: str = "rushing", year: int = 2024, output_path: str = "backend/anubis/data/player_data_test.json"):
+    print("🏁 Starting stat scrape...")
+
+    url = f"https://www.nfl.com/stats/player-stats/category/{stat_type}/{year}/REG/all/{stat_type}yards/desc"
+    all_players = []
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=False, slow_mo=250)
         page = await browser.new_page()
-
-        # Intercept API responses
-        async def handle_response(response):
-            if "api/v1/stats/player" in response.url and response.status == 200:
-                json_data = await response.json()
-                print("📦 Intercepted API data!")
-                with open("nfl_stats_api.json", "w") as f:
-                    json.dump(json_data, f, indent=2)
-
-        page.on("response", handle_response)
-
         await page.goto(url)
-        await page.wait_for_timeout(8000)  # Give time for network/XHR to fire
+        print(f"🌐 Loaded: {url}")
+
+        # Accept cookies if needed
+        try:
+            await page.click("button:has-text('Accept All Cookies')")
+            print("🍪 Accepted cookies")
+        except:
+            pass
+
+        current_page = 1
+        while True:
+            print(f"📄 Scraping page {current_page}...")
+
+            await page.wait_for_selector("table")  # Wait until table is ready
+            rows = await page.query_selector_all("table tbody tr")
+
+            for row in rows:
+                cells = await row.query_selector_all("td")
+                text_values = [await cell.inner_text() for cell in cells]
+                if len(text_values) < 10:
+                    continue
+                player_data = {
+                    "name": text_values[0],
+                    "rush_yds": text_values[1],
+                    "att": text_values[2],
+                    "td": text_values[3],
+                    "20+": text_values[4],
+                    "40+": text_values[5],
+                    "long": text_values[6],
+                    "rush_1st": text_values[7],
+                    "rush_1st%": text_values[8],
+                    "rush_fum": text_values[9]
+                }
+                all_players.append(player_data)
+
+            # Try to click "Next Page" using the correct selector
+            next_button = await page.query_selector('a.nfl-o-table-pagination__next')
+            if not next_button:
+                print("❌ 'Next Page' anchor not found — exiting.")
+                break
+
+            aria_disabled = await next_button.get_attribute("aria-disabled")
+            if aria_disabled == "true":
+                print("⛔ Reached last page.")
+                break
+
+            await next_button.click()
+            current_page += 1
+            await page.wait_for_timeout(1500)
+
+        print(f"✅ Scraped {len(all_players)} players total.")
+        with open(output_path, "w") as f:
+            json.dump(all_players, f, indent=2)
+            print(f"💾 Data saved to {output_path}")
 
         await browser.close()
+        print("🚪 Browser closed.")
 
-
-
-    # async with async_playwright() as p:
-    #     browser = await p.chromium.launch(headless=False)
-    #     page = await browser.new_page()
-    #     await page.goto(url)
-
-    #     try:
-    #         cookie_btn = await page.query_selector("button:has-text('Accept Cookies')")
-    #         if cookie_btn:
-    #             await cookie_btn.click()
-    #             await page.wait_for_timeout(1000)
-    #     except Exception:
-    #         pass
-
-    #     await page.wait_for_function(
-    #         """() => document.querySelectorAll("table.d3-o-table--detailed tbody tr").length > 10"""
-    #     )
-    #     await page.wait_for_timeout(1500)
-
-    #     page_num = 1
-    #     while True:
-    #         print(f"📄 Scraping page {page_num}")
-    #         rows = await page.query_selector_all("table.d3-o-table--detailed tbody tr")
-
-    #         # Grab first player's name to detect pagination change
-    #         first_player_name = ""
-    #         if rows:
-    #             first_row_cells = await rows[0].query_selector_all("td")
-    #             if first_row_cells:
-    #                 first_player_name = await first_row_cells[0].inner_text()
-
-    #         if not rows:
-    #             html = await page.content()
-    #             with open("debug.html", "w", encoding="utf-8") as f:
-    #                 f.write(html)
-    #             await page.screenshot(path=f"screenshot_page_{page_num}.png", full_page=True)
-    #             print("🧪 No rows found — HTML dumped and screenshot saved")
-
-    #         print(f"🧪 Found {len(rows)} rows on page {page_num}")
-
-    #         for row in rows:
-    #             cells = await row.query_selector_all("td")
-    #             if not cells or len(cells) < 10:
-    #                 continue
-
-    #             values = [await c.inner_text() for c in cells]
-
-    #             data.append({
-    #                 "name": values[0].strip(),
-    #                 "rushing_yards": values[1],
-    #                 "attempts": values[2],
-    #                 "touchdowns": values[3],
-    #                 "runs_20_plus": values[4],
-    #                 "runs_40_plus": values[5],
-    #                 "longest_run": values[6],
-    #                 "rush_1st_downs": values[7],
-    #                 "rush_1st_down_pct": values[8],
-    #                 "fumbles": values[9],
-    #             })
-
-    #             print(f"✅ Parsed {values[0]} → Yards: {values[1]}, TDs: {values[3]}")
-
-    #         # Handle pagination
-    #         # Handle pagination
-    #         next_btn = await page.query_selector("a[data-tracking-label='nfl-c-next-page']")
-
-    #         if next_btn:
-    #             # Confirm it is clickable
-    #             is_disabled = await next_btn.get_attribute("aria-disabled")
-    #             if is_disabled == "true":
-    #                 break
-
-    #             # Save current first player's name to detect page change
-    #             old_first = await page.eval_on_selector(
-    #                 "table.d3-o-table--detailed tbody tr:first-child td:first-child",
-    #                 "el => el.textContent.trim()"
-    #             )
-
-    #             print(f"🔁 Clicking next page (current top row: {old_first})")
-
-    #             # Force JS-level click
-    #             await page.evaluate("(el) => el.click()", next_btn)
-
-    #             # ✅ Wait until first row changes
-    #             await page.wait_for_function(
-    #                 f"""
-    #                 () => {{
-    #                     const rows = document.querySelectorAll("table.d3-o-table--detailed tbody tr");
-    #                     if (!rows.length) return false;
-    #                     const firstCell = rows[0].querySelector("td");
-    #                     if (!firstCell) return false;
-    #                     return firstCell.textContent.trim() !== "{old_first}";
-    #                 }}
-    #                 """
-    #             )
-
-    #             await page.wait_for_timeout(1500)
-    #             page_num += 1
-    #             continue
-    #         else:
-    #             break
-
-    #     await browser.close()
-
-    # return data
+if __name__ == "__main__":
+    asyncio.run(fetch_all_nfl_stats())
