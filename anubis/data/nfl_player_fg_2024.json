@@ -1,0 +1,452 @@
+[
+  {
+    "name": "Chris Boswell",
+    "fgm": "41",
+    "fga": "44",
+    "fg%": "93.2",
+    "fg_long": "0/0",
+    "xpm": "9/9",
+    "xpa": "12/12",
+    "xp%": "7/8"
+  },
+  {
+    "name": "Brandon Aubrey",
+    "fgm": "40",
+    "fga": "47",
+    "fg%": "85.1",
+    "fg_long": "0/0",
+    "xpm": "4/4",
+    "xpa": "8/10",
+    "xp%": "14/16"
+  },
+  {
+    "name": "Cameron Dicker",
+    "fgm": "39",
+    "fga": "42",
+    "fg%": "92.9",
+    "fg_long": "1/1",
+    "xpm": "9/9",
+    "xpa": "9/9",
+    "xp%": "11/12"
+  },
+  {
+    "name": "Jason Sanders",
+    "fgm": "37",
+    "fga": "41",
+    "fg%": "90.2",
+    "fg_long": "0/0",
+    "xpm": "7/7",
+    "xpa": "13/13",
+    "xp%": "5/7"
+  },
+  {
+    "name": "Ka'imi Fairbairn",
+    "fgm": "36",
+    "fga": "42",
+    "fg%": "85.7",
+    "fg_long": "0/0",
+    "xpm": "8/10",
+    "xpa": "11/11",
+    "xp%": "4/5"
+  },
+  {
+    "name": "Daniel Carlson",
+    "fgm": "34",
+    "fga": "40",
+    "fg%": "85",
+    "fg_long": "0/0",
+    "xpm": "10/10",
+    "xpa": "11/11",
+    "xp%": "6/8"
+  },
+  {
+    "name": "Matt Gay",
+    "fgm": "31",
+    "fga": "37",
+    "fg%": "83.8",
+    "fg_long": "0/0",
+    "xpm": "9/9",
+    "xpa": "12/12",
+    "xp%": "7/7"
+  },
+  {
+    "name": "Wil Lutz",
+    "fgm": "31",
+    "fga": "34",
+    "fg%": "91.2",
+    "fg_long": "0/0",
+    "xpm": "2/2",
+    "xpa": "13/14",
+    "xp%": "11/11"
+  },
+  {
+    "name": "Chase McLaughlin",
+    "fgm": "30",
+    "fga": "32",
+    "fg%": "93.8",
+    "fg_long": "0/0",
+    "xpm": "11/11",
+    "xpa": "7/7",
+    "xp%": "4/4"
+  },
+  {
+    "name": "Joshua Karty",
+    "fgm": "29",
+    "fga": "34",
+    "fg%": "85.3",
+    "fg_long": "0/0",
+    "xpm": "10/11",
+    "xpa": "9/10",
+    "xp%": "4/6"
+  },
+  {
+    "name": "Jake Elliott",
+    "fgm": "28",
+    "fga": "36",
+    "fg%": "77.8",
+    "fg_long": "0/0",
+    "xpm": "9/9",
+    "xpa": "10/11",
+    "xp%": "8/9"
+  },
+  {
+    "name": "Chad Ryland",
+    "fgm": "28",
+    "fga": "32",
+    "fg%": "87.5",
+    "fg_long": "0/0",
+    "xpm": "6/6",
+    "xpa": "11/11",
+    "xp%": "7/11"
+  },
+  {
+    "name": "Blake Grupe",
+    "fgm": "27",
+    "fga": "31",
+    "fg%": "87.1",
+    "fg_long": "0/0",
+    "xpm": "4/4",
+    "xpa": "10/11",
+    "xp%": "7/8"
+  },
+  {
+    "name": "Cam Little",
+    "fgm": "27",
+    "fga": "29",
+    "fg%": "93.1",
+    "fg_long": "0/0",
+    "xpm": "8/8",
+    "xpa": "6/6",
+    "xp%": "8/9"
+  },
+  {
+    "name": "Austin Seibert",
+    "fgm": "27",
+    "fga": "30",
+    "fg%": "90",
+    "fg_long": "0/0",
+    "xpm": "10/10",
+    "xpa": "7/7",
+    "xp%": "8/8"
+  },
+  {
+    "name": "Jake Bates",
+    "fgm": "26",
+    "fga": "29",
+    "fg%": "89.7",
+    "fg_long": "0/0",
+    "xpm": "3/3",
+    "xpa": "10/10",
+    "xp%": "7/8"
+  },
+  {
+    "name": "Jason Myers",
+    "fgm": "26",
+    "fga": "30",
+    "fg%": "86.7",
+    "fg_long": "0/0",
+    "xpm": "4/4",
+    "xpa": "6/6",
+    "xp%": "7/8"
+  },
+  {
+    "name": "Joey Slye",
+    "fgm": "26",
+    "fga": "33",
+    "fg%": "78.8",
+    "fg_long": "0/0",
+    "xpm": "5/6",
+    "xpa": "10/11",
+    "xp%": "5/7"
+  },
+  {
+    "name": "Younghoe Koo",
+    "fgm": "25",
+    "fga": "34",
+    "fg%": "73.5",
+    "fg_long": "0/0",
+    "xpm": "7/7",
+    "xpa": "5/7",
+    "xp%": "7/11"
+  },
+  {
+    "name": "Tyler Bass",
+    "fgm": "24",
+    "fga": "29",
+    "fg%": "82.8",
+    "fg_long": "0/0",
+    "xpm": "6/7",
+    "xpa": "7/7",
+    "xp%": "7/11"
+  },
+  {
+    "name": "Jake Moody",
+    "fgm": "24",
+    "fga": "34",
+    "fg%": "70.6",
+    "fg_long": "0/0",
+    "xpm": "9/9",
+    "xpa": "5/5",
+    "xp%": "6/11"
+  },
+  {
+    "name": "Will Reichard",
+    "fgm": "24",
+    "fga": "30",
+    "fg%": "80",
+    "fg_long": "0/0",
+    "xpm": "5/5",
+    "xpa": "6/7",
+    "xp%": "5/7"
+  },
+  {
+    "name": "Eddy Pineiro",
+    "fgm": "22",
+    "fga": "26",
+    "fg%": "84.6",
+    "fg_long": "0/0",
+    "xpm": "7/7",
+    "xpa": "8/9",
+    "xp%": "6/8"
+  },
+  {
+    "name": "Justin Tucker",
+    "fgm": "22",
+    "fga": "30",
+    "fg%": "73.3",
+    "fg_long": "0/0",
+    "xpm": "4/4",
+    "xpa": "7/7",
+    "xp%": "5/8"
+  },
+  {
+    "name": "Harrison Butker",
+    "fgm": "21",
+    "fga": "25",
+    "fg%": "84",
+    "fg_long": "1/1",
+    "xpm": "7/8",
+    "xpa": "7/7",
+    "xp%": "4/4"
+  },
+  {
+    "name": "Nick Folk",
+    "fgm": "21",
+    "fga": "22",
+    "fg%": "95.4",
+    "fg_long": "0/0",
+    "xpm": "5/5",
+    "xpa": "2/2",
+    "xp%": "8/9"
+  },
+  {
+    "name": "Cairo Santos",
+    "fgm": "21",
+    "fga": "25",
+    "fg%": "84",
+    "fg_long": "0/0",
+    "xpm": "4/4",
+    "xpa": "4/4",
+    "xp%": "5/8"
+  },
+  {
+    "name": "Brandon McManus",
+    "fgm": "20",
+    "fga": "21",
+    "fg%": "95.2",
+    "fg_long": "0/0",
+    "xpm": "5/5",
+    "xpa": "9/9",
+    "xp%": "3/4"
+  },
+  {
+    "name": "Dustin Hopkins",
+    "fgm": "18",
+    "fga": "27",
+    "fg%": "66.7",
+    "fg_long": "0/0",
+    "xpm": "3/4",
+    "xpa": "6/7",
+    "xp%": "5/8"
+  },
+  {
+    "name": "Greg Joseph",
+    "fgm": "16",
+    "fga": "20",
+    "fg%": "80",
+    "fg_long": "0/0",
+    "xpm": "5/5",
+    "xpa": "5/5",
+    "xp%": "5/8"
+  },
+  {
+    "name": "Evan McPherson",
+    "fgm": "16",
+    "fga": "22",
+    "fg%": "72.7",
+    "fg_long": "0/0",
+    "xpm": "6/6",
+    "xpa": "4/4",
+    "xp%": "3/5"
+  },
+  {
+    "name": "Matthew Wright",
+    "fgm": "15",
+    "fga": "16",
+    "fg%": "93.8",
+    "fg_long": "0/0",
+    "xpm": "3/3",
+    "xpa": "8/8",
+    "xp%": "3/3"
+  },
+  {
+    "name": "Anders Carlson",
+    "fgm": "13",
+    "fga": "15",
+    "fg%": "86.7",
+    "fg_long": "0/0",
+    "xpm": "3/3",
+    "xpa": "2/2",
+    "xp%": "5/7"
+  },
+  {
+    "name": "Brayden Narveson",
+    "fgm": "12",
+    "fga": "18",
+    "fg%": "66.7",
+    "fg_long": "0/0",
+    "xpm": "4/4",
+    "xpa": "3/4",
+    "xp%": "5/9"
+  },
+  {
+    "name": "John Parker Romo",
+    "fgm": "11",
+    "fga": "12",
+    "fg%": "91.7",
+    "fg_long": "0/0",
+    "xpm": "3/3",
+    "xpa": "3/3",
+    "xp%": "4/5"
+  },
+  {
+    "name": "Graham Gano",
+    "fgm": "9",
+    "fga": "11",
+    "fg%": "81.8",
+    "fg_long": "0/0",
+    "xpm": "2/2",
+    "xpa": "1/2",
+    "xp%": "4/5"
+  },
+  {
+    "name": "Cade York",
+    "fgm": "9",
+    "fga": "13",
+    "fg%": "69.2",
+    "fg_long": "0/0",
+    "xpm": "5/5",
+    "xpa": "2/3",
+    "xp%": "1/3"
+  },
+  {
+    "name": "Greg Zuerlein",
+    "fgm": "9",
+    "fga": "15",
+    "fg%": "60",
+    "fg_long": "0/0",
+    "xpm": "4/4",
+    "xpa": "4/6",
+    "xp%": "1/4"
+  },
+  {
+    "name": "Matt Prater",
+    "fgm": "6",
+    "fga": "6",
+    "fg%": "100",
+    "fg_long": "0/0",
+    "xpm": "1/1",
+    "xpa": "1/1",
+    "xp%": "3/3"
+  },
+  {
+    "name": "Zane Gonzalez",
+    "fgm": "5",
+    "fga": "7",
+    "fg%": "71.4",
+    "fg_long": "0/0",
+    "xpm": "0/0",
+    "xpa": "1/1",
+    "xp%": "4/5"
+  },
+  {
+    "name": "Spencer Shrader",
+    "fgm": "5",
+    "fga": "5",
+    "fg%": "100",
+    "fg_long": "0/0",
+    "xpm": "2/2",
+    "xpa": "1/1",
+    "xp%": "2/2"
+  },
+  {
+    "name": "Riley Patterson",
+    "fgm": "4",
+    "fga": "7",
+    "fg%": "57.1",
+    "fg_long": "0/0",
+    "xpm": "0/0",
+    "xpa": "3/3",
+    "xp%": "0/1"
+  },
+  {
+    "name": "Jude McAtamney",
+    "fgm": "1",
+    "fga": "1",
+    "fg%": "100",
+    "fg_long": "0/0",
+    "xpm": "0/0",
+    "xpa": "1/1",
+    "xp%": "0/0"
+  },
+  {
+    "name": "Mitch Wishnowsky",
+    "fgm": "1",
+    "fga": "1",
+    "fg%": "100",
+    "fg_long": "0/0",
+    "xpm": "1/1",
+    "xpa": "0/0",
+    "xp%": "0/0"
+  },
+  {
+    "name": "Jamie Gillan",
+    "fgm": "0",
+    "fga": "0",
+    "fg%": "0",
+    "fg_long": "0/0",
+    "xpm": "0/0",
+    "xpa": "0/0",
+    "xp%": "0/0"
+  }
+]

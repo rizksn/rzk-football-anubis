@@ -2,73 +2,95 @@ from playwright.async_api import async_playwright
 import json
 import asyncio
 
-async def fetch_all_nfl_stats(stat_type: str = "rushing", year: int = 2024, output_path: str = "backend/anubis/data/player_data_test.json"):
-    print("🏁 Starting stat scrape...")
+async def fetch_all_nfl_stats(stat_type: str = "rushing", year: int = 2024, output_path: str = None):
+    from playwright.async_api import async_playwright
+    import json
+    import asyncio
+    import os
 
-    url = f"https://www.nfl.com/stats/player-stats/category/{stat_type}/{year}/REG/all/{stat_type}yards/desc"
-    all_players = []
+    STAT_TYPE_MAPPINGS = {
+        "rushing": ["name", "rush_yds", "att", "td", "20+", "40+", "long", "rush_1st", "rush_1st%", "rush_fum"],
+        "passing": ["name", "pass_yds", "yds_att", "att", "cmp", "cmp%", "td", "int", "rate", "1st", "1st%", "20+", "40+", "long", "sck", "scky"],
+        "receiving": ["name", "rec", "yds", "td", "20+", "40+", "lng", "rec_1st", "1st%", "rec_fum", "rec_yac/r", "tgts"],
+        "field-goals": ["name", "fgm", "fga", "fg%", "fg_long", "xpm", "xpa", "xp%"]
+    }
+
+    POSITION_ABBREV = {
+    "rushing": "rb",
+    "passing": "qb",
+    "receiving": "wr",
+    "field-goals": "fg"
+    }
+
+    abbrev = POSITION_ABBREV[stat_type]
+
+    if stat_type not in STAT_TYPE_MAPPINGS:
+        raise ValueError(f"Unsupported stat_type: {stat_type}")
+
+    # 👉 If no path provided, default to a clean output filename
+    if not output_path:
+        base_dir = os.path.dirname(__file__)
+        output_path = os.path.join(base_dir, "..", "data", f"nfl_player_{abbrev}_{year}.json")
+        output_path = os.path.abspath(output_path)
+
+    STAT_SORT_KEYS = {
+    "rushing": "rushingyards",
+    "passing": "passingyards",
+    "receiving": "receivingyards",
+    "field-goals": "kickingfgmade"
+    }
+    sort_key = STAT_SORT_KEYS[stat_type]
+    url = f"https://www.nfl.com/stats/player-stats/category/{stat_type}/{year}/REG/all/{sort_key}/desc"
+    print(f"🌐 Scraping {stat_type} stats from: {url}")
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=False, slow_mo=250)
         page = await browser.new_page()
         await page.goto(url)
-        print(f"🌐 Loaded: {url}")
-
-        # Accept cookies if needed
+        await page.wait_for_selector("table tbody tr", timeout=15000)
         try:
             await page.click("button:has-text('Accept All Cookies')")
-            print("🍪 Accepted cookies")
         except:
             pass
 
+        all_players = []
         current_page = 1
+
         while True:
-            print(f"📄 Scraping page {current_page}...")
-
-            await page.wait_for_selector("table")  # Wait until table is ready
+            print(f"📄 Page {current_page}")
             rows = await page.query_selector_all("table tbody tr")
-
+            if not rows:
+                print(f"⚠️ Table loaded but no rows found for {stat_type}. Skipping.")
+                await browser.close()
+                return
+            
             for row in rows:
                 cells = await row.query_selector_all("td")
-                text_values = [await cell.inner_text() for cell in cells]
-                if len(text_values) < 10:
+                values = [await cell.inner_text() for cell in cells]
+                if len(values) < len(STAT_TYPE_MAPPINGS[stat_type]):
                     continue
-                player_data = {
-                    "name": text_values[0],
-                    "rush_yds": text_values[1],
-                    "att": text_values[2],
-                    "td": text_values[3],
-                    "20+": text_values[4],
-                    "40+": text_values[5],
-                    "long": text_values[6],
-                    "rush_1st": text_values[7],
-                    "rush_1st%": text_values[8],
-                    "rush_fum": text_values[9]
-                }
+                player_data = dict(zip(STAT_TYPE_MAPPINGS[stat_type], values))
                 all_players.append(player_data)
 
-            # Try to click "Next Page" using the correct selector
             next_button = await page.query_selector('a.nfl-o-table-pagination__next')
-            if not next_button:
-                print("❌ 'Next Page' anchor not found — exiting.")
+            if not next_button or await next_button.get_attribute("aria-disabled") == "true":
                 break
-
-            aria_disabled = await next_button.get_attribute("aria-disabled")
-            if aria_disabled == "true":
-                print("⛔ Reached last page.")
-                break
-
             await next_button.click()
             current_page += 1
             await page.wait_for_timeout(1500)
 
-        print(f"✅ Scraped {len(all_players)} players total.")
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
         with open(output_path, "w") as f:
             json.dump(all_players, f, indent=2)
-            print(f"💾 Data saved to {output_path}")
+            print(f"✅ {stat_type.upper()} stats saved to {output_path}")
 
         await browser.close()
-        print("🚪 Browser closed.")
+
+
+async def fetch_all_positions(year: int = 2024):
+    for stat_type in ["rushing", "passing", "receiving", "field-goals"]:
+        await fetch_all_nfl_stats(stat_type=stat_type, year=year)
 
 if __name__ == "__main__":
-    asyncio.run(fetch_all_nfl_stats())
+    asyncio.run(fetch_all_positions())
