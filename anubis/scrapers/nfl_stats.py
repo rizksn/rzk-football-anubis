@@ -9,15 +9,15 @@ async def fetch_all_nfl_stats(stat_type: str = "rushing", year: int = 2024, outp
     import os
 
     STAT_TYPE_MAPPINGS = {
-        "rushing": ["name", "rush_yds", "att", "td", "20+", "40+", "long", "rush_1st", "rush_1st%", "rush_fum"],
         "passing": ["name", "pass_yds", "yds_att", "att", "cmp", "cmp%", "td", "int", "rate", "1st", "1st%", "20+", "40+", "long", "sck", "scky"],
+        "rushing": ["name", "rush_yds", "att", "td", "20+", "40+", "long", "rush_1st", "rush_1st%", "rush_fum"],
         "receiving": ["name", "rec", "yds", "td", "20+", "40+", "lng", "rec_1st", "1st%", "rec_fum", "rec_yac/r", "tgts"],
         "field-goals": ["name", "fgm", "fga", "fg%", "fg_long", "xpm", "xpa", "xp%"]
     }
 
     POSITION_ABBREV = {
-    "rushing": "rb",
     "passing": "qb",
+    "rushing": "rb",
     "receiving": "wr",
     "field-goals": "fg"
     }
@@ -30,13 +30,13 @@ async def fetch_all_nfl_stats(stat_type: str = "rushing", year: int = 2024, outp
     # 👉 If no path provided, default to a clean output filename
     if not output_path:
         base_dir = os.path.dirname(__file__)
-        output_path = os.path.join(base_dir, "..", "data", f"nfl_player_{abbrev}_{year}.json")
+        output_path = os.path.join(base_dir, "..", "data", "raw", f"nfl_player_{abbrev}_{year}.json")
         output_path = os.path.abspath(output_path)
 
     STAT_SORT_KEYS = {
-    "rushing": "rushingyards",
     "passing": "passingyards",
-    "receiving": "receivingyards",
+    "rushing": "rushingyards",
+    "receiving": "receivingreceptions",
     "field-goals": "kickingfgmade"
     }
     sort_key = STAT_SORT_KEYS[stat_type]
@@ -60,9 +60,13 @@ async def fetch_all_nfl_stats(stat_type: str = "rushing", year: int = 2024, outp
             print(f"📄 Page {current_page}")
             rows = await page.query_selector_all("table tbody tr")
             if not rows:
-                print(f"⚠️ Table loaded but no rows found for {stat_type}. Skipping.")
-                await browser.close()
-                return
+                if current_page == 1:
+                    print(f"⚠️ Table loaded but no rows found for {stat_type} on page 1. Skipping.")
+                    await browser.close()
+                    return
+                else:
+                    print(f"⚠️ No rows found on page {current_page}, assuming end of data.")
+                    break
             
             for row in rows:
                 cells = await row.query_selector_all("td")
@@ -89,7 +93,7 @@ async def fetch_all_nfl_stats(stat_type: str = "rushing", year: int = 2024, outp
 
 
 async def fetch_all_positions(year: int = 2024):
-    for stat_type in ["rushing", "passing", "receiving", "field-goals"]:
+    for stat_type in ["passing", "rushing", "receiving", "field-goals"]:
         await fetch_all_nfl_stats(stat_type=stat_type, year=year)
 
 if __name__ == "__main__":
