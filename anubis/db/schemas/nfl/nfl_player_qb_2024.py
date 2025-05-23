@@ -1,5 +1,5 @@
 from sqlalchemy import Table, Column, Integer, String, Float
-from anubis.db.schemas.base import metadata
+from anubis.db.base import metadata
 
 nfl_player_qb_2024 = Table(
     "nfl_player_qb_2024",

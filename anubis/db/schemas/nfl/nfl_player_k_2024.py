@@ -1,5 +1,5 @@
 from sqlalchemy import Table, Column, Integer, String, Float
-from anubis.db.schemas.base import metadata
+from anubis.db.base import metadata
 
 nfl_player_k_2024 = Table(
     "nfl_player_k_2024",
@@ -8,9 +8,13 @@ nfl_player_k_2024 = Table(
     Column("name", String, nullable=False),
     Column("fgm", Integer),
     Column("fga", Integer),
-    Column("fg_percent", Float, key="fg%"),
+    Column("fg_percent", Float),
+    Column("fg_1_19", String),
+    Column("fg_20_29", String),
+    Column("fg_30_39", String),
+    Column("fg_40_49", String),
+    Column("fg_50_59", String),
+    Column("fg_60_plus", String),
     Column("fg_long", Integer),
-    Column("xpm", Integer),
-    Column("xpa", Integer),
-    Column("xp_percent", Float, key="xp%"),
+    Column("fg_blocked", Integer),
 )
