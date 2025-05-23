@@ -12,6 +12,7 @@ async def init():
     engine = create_async_engine(DATABASE_URL, echo=True)
     async with engine.begin() as conn:
         await conn.execute(text("CREATE SCHEMA IF NOT EXISTS nfl"))
+        await conn.execute(text("CREATE SCHEMA IF NOT EXISTS adp"))
         await conn.run_sync(metadata.create_all)
     await engine.dispose()
 
