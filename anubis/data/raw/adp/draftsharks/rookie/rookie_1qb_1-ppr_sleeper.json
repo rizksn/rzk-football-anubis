@@ -1,0 +1,627 @@
+{
+  "data": [
+    {
+      "id": "ashton-jeanty-lvr-rb",
+      "name": "Ashton Jeanty",
+      "position": "RB",
+      "team": "LVR",
+      "adp": "1.1"
+    },
+    {
+      "id": "omarion-hampton-lac-rb",
+      "name": "Omarion Hampton",
+      "position": "RB",
+      "team": "LAC",
+      "adp": "1.2"
+    },
+    {
+      "id": "travis-hunter-jac-wr",
+      "name": "Travis Hunter",
+      "position": "WR",
+      "team": "JAC",
+      "adp": "1.3"
+    },
+    {
+      "id": "tetairoa-mcmillan-car-wr",
+      "name": "Tetairoa McMillan",
+      "position": "WR",
+      "team": "CAR",
+      "adp": "1.4"
+    },
+    {
+      "id": "treveyon-henderson-ne-rb",
+      "name": "TreVeyon Henderson",
+      "position": "RB",
+      "team": "NE",
+      "adp": "1.5"
+    },
+    {
+      "id": "quinshon-judkins-cle-rb",
+      "name": "Quinshon Judkins",
+      "position": "RB",
+      "team": "CLE",
+      "adp": "1.6"
+    },
+    {
+      "id": "kaleb-johnson-pit-rb",
+      "name": "Kaleb Johnson",
+      "position": "RB",
+      "team": "PIT",
+      "adp": "1.7"
+    },
+    {
+      "id": "emeka-egbuka-tb-wr",
+      "name": "Emeka Egbuka",
+      "position": "WR",
+      "team": "TB",
+      "adp": "1.8"
+    },
+    {
+      "id": "rj-harvey-den-rb",
+      "name": "RJ Harvey",
+      "position": "RB",
+      "team": "DEN",
+      "adp": "1.9"
+    },
+    {
+      "id": "tyler-warren-ind-te",
+      "name": "Tyler Warren",
+      "position": "TE",
+      "team": "IND",
+      "adp": "1.10"
+    },
+    {
+      "id": "colston-loveland-chi-te",
+      "name": "Colston Loveland",
+      "position": "TE",
+      "team": "CHI",
+      "adp": "1.11"
+    },
+    {
+      "id": "matthew-golden-gb-wr",
+      "name": "Matthew Golden",
+      "position": "WR",
+      "team": "GB",
+      "adp": "1.12"
+    },
+    {
+      "id": "luther-burden-iii-chi-wr",
+      "name": "Luther Burden III",
+      "position": "WR",
+      "team": "CHI",
+      "adp": "2.1"
+    },
+    {
+      "id": "cameron-ward-ten-qb",
+      "name": "Cameron Ward",
+      "position": "QB",
+      "team": "TEN",
+      "adp": "2.2"
+    },
+    {
+      "id": "jayden-higgins-hou-wr",
+      "name": "Jayden Higgins",
+      "position": "WR",
+      "team": "HOU",
+      "adp": "2.3"
+    },
+    {
+      "id": "cameron-skattebo-nyg-rb",
+      "name": "Cameron Skattebo",
+      "position": "RB",
+      "team": "NYG",
+      "adp": "2.4"
+    },
+    {
+      "id": "tre-harris-lac-wr",
+      "name": "Tre Harris",
+      "position": "WR",
+      "team": "LAC",
+      "adp": "2.5"
+    },
+    {
+      "id": "jack-bech-lvr-wr",
+      "name": "Jack Bech",
+      "position": "WR",
+      "team": "LVR",
+      "adp": "2.6"
+    },
+    {
+      "id": "bhayshul-tuten-jac-rb",
+      "name": "Bhayshul Tuten",
+      "position": "RB",
+      "team": "JAC",
+      "adp": "2.7"
+    },
+    {
+      "id": "jaylin-noel-hou-wr",
+      "name": "Jaylin Noel",
+      "position": "WR",
+      "team": "HOU",
+      "adp": "2.8"
+    },
+    {
+      "id": "jaydon-blue-dal-rb",
+      "name": "Jaydon Blue",
+      "position": "RB",
+      "team": "DAL",
+      "adp": "2.9"
+    },
+    {
+      "id": "mason-taylor-nyj-te",
+      "name": "Mason Taylor",
+      "position": "TE",
+      "team": "NYJ",
+      "adp": "2.10"
+    },
+    {
+      "id": "dylan-sampson-cle-rb",
+      "name": "Dylan Sampson",
+      "position": "RB",
+      "team": "CLE",
+      "adp": "2.11"
+    },
+    {
+      "id": "terrance-ferguson-lar-te",
+      "name": "Terrance Ferguson",
+      "position": "TE",
+      "team": "LAR",
+      "adp": "2.12"
+    },
+    {
+      "id": "kyle-williams-ne-wr",
+      "name": "Kyle Williams",
+      "position": "WR",
+      "team": "NE",
+      "adp": "3.1"
+    },
+    {
+      "id": "jaxson-dart-nyg-qb",
+      "name": "Jaxson Dart",
+      "position": "QB",
+      "team": "NYG",
+      "adp": "3.2"
+    },
+    {
+      "id": "jalen-royals-kc-wr",
+      "name": "Jalen Royals",
+      "position": "WR",
+      "team": "KC",
+      "adp": "3.3"
+    },
+    {
+      "id": "devin-neal-no-rb",
+      "name": "Devin Neal",
+      "position": "RB",
+      "team": "NO",
+      "adp": "3.4"
+    },
+    {
+      "id": "jalen-milroe-sea-qb",
+      "name": "Jalen Milroe",
+      "position": "QB",
+      "team": "SEA",
+      "adp": "3.5"
+    },
+    {
+      "id": "elijah-arroyo-sea-te",
+      "name": "Elijah Arroyo",
+      "position": "TE",
+      "team": "SEA",
+      "adp": "3.6"
+    },
+    {
+      "id": "harold-fannin-jr.-cle-te",
+      "name": "Harold Fannin Jr.",
+      "position": "TE",
+      "team": "CLE",
+      "adp": "3.7"
+    },
+    {
+      "id": "elic-ayomanor-ten-wr",
+      "name": "Elic Ayomanor",
+      "position": "WR",
+      "team": "TEN",
+      "adp": "3.8"
+    },
+    {
+      "id": "trevor-etienne-car-rb",
+      "name": "Trevor Etienne",
+      "position": "RB",
+      "team": "CAR",
+      "adp": "3.9"
+    },
+    {
+      "id": "ollie-gordon-ii-mia-rb",
+      "name": "Ollie Gordon II",
+      "position": "RB",
+      "team": "MIA",
+      "adp": "3.10"
+    },
+    {
+      "id": "dj-giddens-ind-rb",
+      "name": "DJ Giddens",
+      "position": "RB",
+      "team": "IND",
+      "adp": "3.11"
+    },
+    {
+      "id": "shedeur-sanders-cle-qb",
+      "name": "Shedeur Sanders",
+      "position": "QB",
+      "team": "CLE",
+      "adp": "3.12"
+    },
+    {
+      "id": "jordan-james-sf-rb",
+      "name": "Jordan James",
+      "position": "RB",
+      "team": "SF",
+      "adp": "4.1"
+    },
+    {
+      "id": "pat-bryant-den-wr",
+      "name": "Pat Bryant",
+      "position": "WR",
+      "team": "DEN",
+      "adp": "4.2"
+    },
+    {
+      "id": "damien-martinez-sea-rb",
+      "name": "Damien Martinez",
+      "position": "RB",
+      "team": "SEA",
+      "adp": "4.3"
+    },
+    {
+      "id": "isaac-teslaa-det-wr",
+      "name": "Isaac TeSlaa",
+      "position": "WR",
+      "team": "DET",
+      "adp": "4.4"
+    },
+    {
+      "id": "jarquez-hunter-lar-rb",
+      "name": "Jarquez Hunter",
+      "position": "RB",
+      "team": "LAR",
+      "adp": "4.5"
+    },
+    {
+      "id": "tahj-brooks-cin-rb",
+      "name": "Tahj Brooks",
+      "position": "RB",
+      "team": "CIN",
+      "adp": "4.6"
+    },
+    {
+      "id": "jo'quavious-marks-hou-rb",
+      "name": "Jo'Quavious Marks",
+      "position": "RB",
+      "team": "HOU",
+      "adp": "4.7"
+    },
+    {
+      "id": "tory-horton-sea-wr",
+      "name": "Tory Horton",
+      "position": "WR",
+      "team": "SEA",
+      "adp": "4.8"
+    },
+    {
+      "id": "savion-williams-gb-wr",
+      "name": "Savion Williams",
+      "position": "WR",
+      "team": "GB",
+      "adp": "4.9"
+    },
+    {
+      "id": "xavier-restrepo-ten-wr",
+      "name": "Xavier Restrepo",
+      "position": "WR",
+      "team": "TEN",
+      "adp": "4.10"
+    },
+    {
+      "id": "tai-felton-min-wr",
+      "name": "Tai Felton",
+      "position": "WR",
+      "team": "MIN",
+      "adp": "4.11"
+    },
+    {
+      "id": "tez-johnson-tb-wr",
+      "name": "Tez Johnson",
+      "position": "WR",
+      "team": "TB",
+      "adp": "4.12"
+    },
+    {
+      "id": "quinn-ewers-mia-qb",
+      "name": "Quinn Ewers",
+      "position": "QB",
+      "team": "MIA",
+      "adp": "5.1"
+    },
+    {
+      "id": "mitchell-evans-car-te",
+      "name": "Mitchell Evans",
+      "position": "TE",
+      "team": "CAR",
+      "adp": "5.2"
+    },
+    {
+      "id": "donovan-edwards-nyj-rb",
+      "name": "Donovan Edwards",
+      "position": "RB",
+      "team": "NYJ",
+      "adp": "5.3"
+    },
+    {
+      "id": "dillon-gabriel-cle-qb",
+      "name": "Dillon Gabriel",
+      "position": "QB",
+      "team": "CLE",
+      "adp": "5.4"
+    },
+    {
+      "id": "ricky-white-sea-wr",
+      "name": "Ricky White",
+      "position": "WR",
+      "team": "SEA",
+      "adp": "5.5"
+    },
+    {
+      "id": "isaiah-bond-rk-wr",
+      "name": "Isaiah Bond",
+      "position": "WR",
+      "team": "RK",
+      "adp": "5.6"
+    },
+    {
+      "id": "gunnar-helm-ten-te",
+      "name": "Gunnar Helm",
+      "position": "TE",
+      "team": "TEN",
+      "adp": "5.7"
+    },
+    {
+      "id": "brashard-smith-kc-rb",
+      "name": "Brashard Smith",
+      "position": "RB",
+      "team": "KC",
+      "adp": "5.8"
+    },
+    {
+      "id": "kalel-mullings-ten-rb",
+      "name": "Kalel Mullings",
+      "position": "RB",
+      "team": "TEN",
+      "adp": "5.9"
+    },
+    {
+      "id": "antwane-wells-jr.-nyg-wr",
+      "name": "Antwane Wells Jr.",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "5.10"
+    },
+    {
+      "id": "oronde-gadsden-ii-lac-te",
+      "name": "Oronde Gadsden II",
+      "position": "TE",
+      "team": "LAC",
+      "adp": "5.11"
+    },
+    {
+      "id": "bru-mccoy-rk-wr",
+      "name": "Bru McCoy",
+      "position": "WR",
+      "team": "RK",
+      "adp": "5.12"
+    },
+    {
+      "id": "nick-nash-atl-wr",
+      "name": "Nick Nash",
+      "position": "WR",
+      "team": "ATL",
+      "adp": "6.1"
+    },
+    {
+      "id": "raheim-sanders-lac-rb",
+      "name": "Raheim Sanders",
+      "position": "RB",
+      "team": "LAC",
+      "adp": "6.2"
+    },
+    {
+      "id": "corey-kiner-sf-rb",
+      "name": "Corey Kiner",
+      "position": "RB",
+      "team": "SF",
+      "adp": "6.3"
+    },
+    {
+      "id": "jimmy-horn-jr.-car-wr",
+      "name": "Jimmy Horn Jr.",
+      "position": "WR",
+      "team": "CAR",
+      "adp": "6.4"
+    },
+    {
+      "id": "kobe-hudson-car-wr",
+      "name": "Kobe Hudson",
+      "position": "WR",
+      "team": "CAR",
+      "adp": "6.5"
+    },
+    {
+      "id": "will-howard-pit-qb",
+      "name": "Will Howard",
+      "position": "QB",
+      "team": "PIT",
+      "adp": "6.6"
+    },
+    {
+      "id": "ja'quinden-jackson-jac-rb",
+      "name": "Ja'Quinden Jackson",
+      "position": "RB",
+      "team": "JAC",
+      "adp": "6.7"
+    },
+    {
+      "id": "moliki-matavao-no-te",
+      "name": "Moliki Matavao",
+      "position": "TE",
+      "team": "NO",
+      "adp": "6.8"
+    },
+    {
+      "id": "kyle-monangai-chi-rb",
+      "name": "Kyle Monangai",
+      "position": "RB",
+      "team": "CHI",
+      "adp": "6.9"
+    },
+    {
+      "id": "riley-leonard-ind-qb",
+      "name": "Riley Leonard",
+      "position": "QB",
+      "team": "IND",
+      "adp": "6.10"
+    },
+    {
+      "id": "lequint-allen-jac-rb",
+      "name": "LeQuint Allen",
+      "position": "RB",
+      "team": "JAC",
+      "adp": "6.11"
+    },
+    {
+      "id": "marcus-yarns-no-rb",
+      "name": "Marcus Yarns",
+      "position": "RB",
+      "team": "NO",
+      "adp": "6.12"
+    },
+    {
+      "id": "tyler-shough-no-qb",
+      "name": "Tyler Shough",
+      "position": "QB",
+      "team": "NO",
+      "adp": "7.1"
+    },
+    {
+      "id": "kyle-mccord-phi-qb",
+      "name": "Kyle McCord",
+      "position": "QB",
+      "team": "PHI",
+      "adp": "7.2"
+    },
+    {
+      "id": "dont'e-thornton-jr.-lvr-wr",
+      "name": "Dont'e Thornton Jr.",
+      "position": "WR",
+      "team": "LVR",
+      "adp": "7.3"
+    },
+    {
+      "id": "kurtis-rourke-sf-qb",
+      "name": "Kurtis Rourke",
+      "position": "QB",
+      "team": "SF",
+      "adp": "7.4"
+    },
+    {
+      "id": "jacory-croskey-merritt-was-rb",
+      "name": "Jacory Croskey-Merritt",
+      "position": "RB",
+      "team": "WAS",
+      "adp": "7.5"
+    },
+    {
+      "id": "ja'corey-brooks-was-wr",
+      "name": "Ja'Corey Brooks",
+      "position": "WR",
+      "team": "WAS",
+      "adp": "7.6"
+    },
+    {
+      "id": "efton-chism-ne-wr",
+      "name": "Efton Chism",
+      "position": "WR",
+      "team": "NE",
+      "adp": "7.7"
+    },
+    {
+      "id": "chimere-dike-ten-wr",
+      "name": "Chimere Dike",
+      "position": "WR",
+      "team": "TEN",
+      "adp": "7.8"
+    },
+    {
+      "id": "arian-smith-nyj-wr",
+      "name": "Arian Smith",
+      "position": "WR",
+      "team": "NYJ",
+      "adp": "7.9"
+    },
+    {
+      "id": "brady-cook-nyj-qb",
+      "name": "Brady Cook",
+      "position": "QB",
+      "team": "NYJ",
+      "adp": "7.10"
+    },
+    {
+      "id": "john-hoyland-bal-k",
+      "name": "John Hoyland",
+      "position": "K",
+      "team": "BAL",
+      "adp": "10.3"
+    },
+    {
+      "id": "shunderrick-powell-phi-rb",
+      "name": "ShunDerrick Powell",
+      "position": "RB",
+      "team": "PHI",
+      "adp": "15.3"
+    },
+    {
+      "id": "benjamin-yurosek-min-te",
+      "name": "Benjamin Yurosek",
+      "position": "TE",
+      "team": "MIN",
+      "adp": "17.1"
+    },
+    {
+      "id": "isaiah-neyor-sf-wr",
+      "name": "Isaiah Neyor",
+      "position": "WR",
+      "team": "SF",
+      "adp": "20.3"
+    },
+    {
+      "id": "ben-sauls-pit-k",
+      "name": "Ben Sauls",
+      "position": "K",
+      "team": "PIT",
+      "adp": "20.9"
+    },
+    {
+      "id": "daniel-jackson-hou-wr",
+      "name": "Daniel Jackson",
+      "position": "WR",
+      "team": "HOU",
+      "adp": "21.9"
+    },
+    {
+      "id": "cj-dippre-ne-te",
+      "name": "CJ Dippre",
+      "position": "TE",
+      "team": "NE",
+      "adp": "25.12"
+    }
+  ]
+}
