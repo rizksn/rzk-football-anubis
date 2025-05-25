@@ -4,7 +4,7 @@ from sqlalchemy import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import sessionmaker
 
-from anubis.db.schemas.nfl.nfl_player_wr_2024 import nfl_player_wr_2024
+from anubis.db.schemas.nfl.nfl_player_receiving_2024 import nfl_player_wr_2024
 from anubis.db.base import engine
 
 async_session = sessionmaker(

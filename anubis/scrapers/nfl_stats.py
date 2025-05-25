@@ -43,7 +43,7 @@ async def fetch_all_nfl_stats(stat_type: str = "rushing", year: int = 2024, outp
 
     if not output_path:
         base_dir = os.path.dirname(__file__)
-        output_path = os.path.join(base_dir, "..", "data", "raw", f"nfl_player_{abbrev}_{year}.json")
+        output_path = os.path.join(base_dir, "..", "data", "raw", "player_stats", f"nfl_player_{abbrev}_{year}.json")
         output_path = os.path.abspath(output_path)
 
     STAT_SORT_KEYS = {
