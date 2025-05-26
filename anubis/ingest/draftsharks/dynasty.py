@@ -5,7 +5,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import sessionmaker
 
 from anubis.db.base import engine
-from anubis.db.schemas.adp.draftsharks_dynasty_2025 import draftsharks_dynasty_2025
 from anubis.services.player import resolve_nfl_player_id  
 from .utils import parse_metadata, get_json_files
 
@@ -49,7 +48,7 @@ async def load_dynasty_adp():
                 if not valid_records:
                     print(f"⚠️ No valid records to insert from {file}")
                 else:
-                    await session.execute(insert(draftsharks_dynasty_2025), valid_records)
+                    # await session.execute(insert(draftsharks_dynasty_2025), valid_records)
                     print(f"✅ Inserted {len(records)} from {file}")
         await session.commit()
 

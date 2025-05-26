@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter
 from typing import List, Dict
-from anubis.scrapers.nfl_stats import fetch_nfl_stats
+from anubis.scrapers.nfl.fetch_player_season_stats_nfl import fetch_nfl_stats
 
 router = APIRouter()
 
