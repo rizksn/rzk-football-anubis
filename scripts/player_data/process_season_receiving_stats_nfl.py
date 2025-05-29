@@ -1,26 +1,15 @@
 import json
 from pathlib import Path
+from anubis.utils.convert_stat_value import convert_stat_value
 
-RAW_PATH = Path("anubis/data/raw/player_stats/nfl_player_receiving_2024.json")
-OUT_PATH = Path("anubis/data/processed/player_stats/nfl_player_receiving_2024.json")
+RAW_PATH = Path("anubis/data/raw/player_stats/nfl_player_receiving_2024.raw.json")
+OUT_PATH = Path("anubis/data/processed/player_stats/nfl_player_receiving_2024.processed.json")
 
 FLOAT_FIELDS = {"1st%", }
 INT_FIELDS = {
     "rec", "yds", "td", "20+", "40+", "lng",
     "rec_1st", "rec_fum", "rec_yac/r", "tgts"
 }
-
-def convert_value(key, value):
-    if value in ("", "--"):
-        return None
-    try:
-        if key in INT_FIELDS:
-            return int(value.replace(",", ""))
-        elif key in FLOAT_FIELDS:
-            return float(value.replace("%", "").replace(",", ""))
-    except ValueError:
-        return value
-    return value
 
 def process_receiving_stats():
     with RAW_PATH.open("r") as f:
@@ -33,7 +22,11 @@ def process_receiving_stats():
         for k, v in player.items():
             if k == "player":
                 continue
-            new_player[k] = convert_value(k, v)
+            new_player[k] = convert_stat_value(
+                k, v,
+                int_fields=INT_FIELDS,
+                float_fields=FLOAT_FIELDS
+            )
         cleaned.append(new_player)
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)

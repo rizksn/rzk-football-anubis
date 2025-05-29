@@ -2,16 +2,16 @@ import re
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from anubis.db.schemas.nfl.nfl_player_passing_2024 import nfl_player_qb_2024
-from anubis.db.schemas.nfl.nfl_player_rushing_2024 import nfl_player_rb_2024
-from anubis.db.schemas.nfl.nfl_player_receiving_2024 import nfl_player_wr_2024
-from anubis.db.schemas.nfl.nfl_player_kicking_2024 import nfl_player_k_2024
+from anubis.db.schemas.nfl.nfl_player_passing_2024 import nfl_player_passing_2024
+from anubis.db.schemas.nfl.nfl_player_rushing_2024 import nfl_player_rushing_2024
+from anubis.db.schemas.nfl.nfl_player_receiving_2024 import nfl_player_receiving_2024
+from anubis.db.schemas.nfl.nfl_player_kicking_2024 import nfl_player_kicking_2024
 
 POSITION_TABLES = {
-    "QB": nfl_player_qb_2024,
-    "RB": nfl_player_rb_2024,
-    "WR": nfl_player_wr_2024,
-    "K": nfl_player_k_2024,
+    "QB": nfl_player_passing_2024,
+    "RB": nfl_player_rushing_2024,
+    "WR": nfl_player_receiving_2024,
+    "K": nfl_player_kicking_2024,
 }
 
 def normalize_name_for_matching(name: str) -> str:

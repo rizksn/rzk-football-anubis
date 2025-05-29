@@ -13,7 +13,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-async def fetch_player_season_stats(stat_type: str = "rushing", year: int = 2024, output_path: str = None):
+async def fetch_player_season_stats(stat_type: str = "rushing", year: int = 2024, output_path: str = None, headless: bool = True):
     if stat_type not in STAT_TYPE_MAPPINGS:
         raise ValueError(f"Unsupported stat_type: {stat_type}")
 
@@ -26,7 +26,7 @@ async def fetch_player_season_stats(stat_type: str = "rushing", year: int = 2024
     logger.info(f"🌐 Scraping {stat_type} stats from: {url}")
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False, slow_mo=250)
+        browser = await p.chromium.launch(headless=headless, slow_mo=250)
         page = await browser.new_page()
         await page.goto(url)
         await page.wait_for_selector("table tbody tr", timeout=15000)
@@ -74,9 +74,9 @@ async def fetch_player_season_stats(stat_type: str = "rushing", year: int = 2024
         logger.info(f"✅ {stat_type.upper()} stats saved to {output_path}")
         await browser.close()
 
-async def fetch_all_positions(year: int = 2024):
+async def fetch_all_positions(year: int = 2024, headless: bool = True):
     for stat_type in STAT_TYPE_MAPPINGS.keys():
-        await fetch_player_season_stats(stat_type=stat_type, year=year)
+        await fetch_player_season_stats(stat_type=stat_type, year=year, headless=headless)
 
 if __name__ == "__main__":
     asyncio.run(fetch_all_positions())

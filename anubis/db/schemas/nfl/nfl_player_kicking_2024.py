@@ -1,11 +1,12 @@
-from sqlalchemy import Table, Column, Integer, String, Float, MetaData
+from anubis.db.schemas.core.players import players 
+from sqlalchemy import Table, Column, Integer, String, Float, MetaData, ForeignKey
 
 metadata = MetaData(schema="nfl")
 
 nfl_player_kicking_2024 = Table(
     "nfl_player_kicking_2024",
     metadata,
-    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("player_id", String, ForeignKey("core.players.player_id"), primary_key=True),
     Column("name", String, nullable=False),
     Column("fgm", Integer),
     Column("fga", Integer),

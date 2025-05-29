@@ -1,0 +1,39 @@
+import asyncio
+import sys
+import os
+
+# Ensure project root is in path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
+from anubis.ingest.nfl.passing import load_qb_data
+from anubis.ingest.nfl.receiving import load_wr_data
+from anubis.ingest.nfl.rushing import load_rb_data
+from anubis.ingest.nfl.kicking import load_kicker_data
+
+async def main():
+    print("🚀 Starting full NFL player stats ingestion...\n")
+
+    try:
+        await load_qb_data()
+    except Exception as e:
+        print(f"❌ Failed to load QB data: {e}")
+
+    try:
+        await load_wr_data()
+    except Exception as e:
+        print(f"❌ Failed to load WR data: {e}")
+
+    try:
+        await load_rb_data()
+    except Exception as e:
+        print(f"❌ Failed to load RB data: {e}")
+
+    try:
+        await load_kicker_data()
+    except Exception as e:
+        print(f"❌ Failed to load Kicker data: {e}")
+
+    print("\n✅ All NFL season stat tables successfully ingested.")
+
+if __name__ == "__main__":
+    asyncio.run(main())

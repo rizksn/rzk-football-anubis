@@ -8,4 +8,8 @@ __all__ = [
     "nfl_player_rushing_2024",
     "nfl_player_receiving_2024",
     "nfl_player_kicking_2024",
+    "passing_metadata",
+    "rushing_metadata",
+    "receiving_metadata",
+    "kicking_metadata",
 ]

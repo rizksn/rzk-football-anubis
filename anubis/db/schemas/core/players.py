@@ -1,7 +1,6 @@
-from sqlalchemy import Table, Column, String, Integer, Boolean, Date, MetaData
+from sqlalchemy import Table, Column, String, Integer, Float, Boolean, Date, MetaData
 
-metadata = MetaData(schema="core")  # ✅ local, schema-bound metadata
-
+metadata = MetaData(schema="core")  # ✅ schema-bound
 players = Table(
     "players",
     metadata,
@@ -22,4 +21,6 @@ players = Table(
     Column("birth_date", Date),
     Column("years_exp", Integer),
     Column("active", Boolean),
+    Column("number", Integer),
+    Column("age_years", Float),
 )

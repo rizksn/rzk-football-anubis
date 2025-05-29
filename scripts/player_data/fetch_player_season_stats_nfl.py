@@ -12,12 +12,13 @@ if __name__ == "__main__":
     parser.add_argument("--stat-type", type=str, default="rushing", help="Stat type: passing, rushing, receiving, field-goals")
     parser.add_argument("--year", type=int, default=2024, help="NFL season year")
     parser.add_argument("--all", action="store_true", help="Scrape all stat types")
+    parser.add_argument("--headless", action="store_true", help="Run in headless mode (for cron)")
 
     args = parser.parse_args()
 
     print(f"📡 Scraping NFL stats for {args.stat_type if not args.all else 'ALL TYPES'} ({args.year})...")
     
     if args.all:
-        asyncio.run(fetch_all_positions(year=args.year))
+        asyncio.run(fetch_all_positions(year=args.year, headless=args.headless))
     else:
-        asyncio.run(fetch_player_season_stats(stat_type=args.stat_type, year=args.year))
+        asyncio.run(fetch_player_season_stats(stat_type=args.stat_type, year=args.year, headless=args.headless))

@@ -1,7 +1,6 @@
-# scripts/process_sleeper_players.py
-
 import json
 from pathlib import Path
+from datetime import datetime
 
 RAW_PATH = Path("anubis/data/raw/sleeper/sleeper_players_full.json")
 OUT_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
@@ -27,6 +26,22 @@ KEEP_FIELDS = {
     "depth_chart_order"
 }
 
+def calculate_age_years(birth_date_str: str) -> float | None:
+    try:
+        dob = datetime.strptime(birth_date_str, "%Y-%m-%d")
+        today = datetime.today()
+        delta = today - dob
+        return round(delta.days / 365.25, 1)  # One decimal place
+    except Exception:
+        return None
+
+def convert_numeric_fields(player: dict):
+    for key in ["height", "weight"]:
+        if key in player and isinstance(player[key], str) and player[key].isdigit():
+            player[key] = int(player[key])
+    if "birth_date" in player and player["birth_date"]:
+        player["age_years"] = calculate_age_years(player["birth_date"])
+
 def process_players():
     with RAW_PATH.open("r") as f:
         all_players = json.load(f)
@@ -37,20 +52,16 @@ def process_players():
         if player.get("status") != "Active":
             continue
 
-        slimmed = {
-            k: v for k, v in player.items()
-            if k in KEEP_FIELDS
-        }
-
-        # Always ensure player_id is kept (top-level key)
+        slimmed = {k: v for k, v in player.items() if k in KEEP_FIELDS}
         slimmed["player_id"] = pid
+        convert_numeric_fields(slimmed)
         cleaned.append(slimmed)
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with OUT_PATH.open("w") as f:
         json.dump(cleaned, f, indent=2)
 
-    print(f"Processed {len(cleaned)} active players → {OUT_PATH}")
+    print(f"✅ Processed {len(cleaned)} active players → {OUT_PATH}")
 
 if __name__ == "__main__":
     process_players()
