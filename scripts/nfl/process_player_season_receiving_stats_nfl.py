@@ -2,22 +2,21 @@ import json
 from pathlib import Path
 from anubis.utils.convert_stat_value import convert_stat_value
 
-RAW_PATH = Path("anubis/data/raw/player_stats/nfl_player_kicking_2024.raw.json")
-OUT_PATH = Path("anubis/data/processed/player_stats/nfl_player_kicking_2024.processed.json")
+RAW_PATH = Path("anubis/data/raw/nfl/nfl_player_receiving_2024.raw.json")
+OUT_PATH = Path("anubis/data/processed/nfl/nfl_player_receiving_2024.processed.json")
 
-INT_FIELDS = {"fgm", "att", "lng", "fg_blocked"}
-FLOAT_FIELDS = {"fg_percent"}
-
-STRING_FIELDS = {
-    "fg_1_19_>_", "fg_20_29_>_", "fg_30_39_>_",
-    "fg_40_49_>_", "fg_50_59_>_", "fg_60_plus_>_"
+FLOAT_FIELDS = {"1st%", }
+INT_FIELDS = {
+    "rec", "yds", "td", "20+", "40+", "lng",
+    "rec_1st", "rec_fum", "rec_yac/r", "tgts"
 }
 
-def process_kicking_stats():
+def process_receiving_stats():
     with RAW_PATH.open("r") as f:
         raw_data = json.load(f)
 
     cleaned = []
+
     for player in raw_data:
         new_player = {"player": player["player"].strip()}
         for k, v in player.items():
@@ -34,7 +33,7 @@ def process_kicking_stats():
     with OUT_PATH.open("w") as f:
         json.dump(cleaned, f, indent=2)
 
-    print(f"✅ Processed {len(cleaned)} kicker stat lines → {OUT_PATH}")
+    print(f"✅ Processed {len(cleaned)} receiving stat lines → {OUT_PATH}")
 
 if __name__ == "__main__":
-    process_kicking_stats()
+    process_receiving_stats()

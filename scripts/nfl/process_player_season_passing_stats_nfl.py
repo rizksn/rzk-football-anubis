@@ -2,20 +2,21 @@ import json
 from pathlib import Path
 from anubis.utils.convert_stat_value import convert_stat_value
 
-RAW_PATH = Path("anubis/data/raw/player_stats/nfl_player_rushing_2024.raw.json")
-OUT_PATH = Path("anubis/data/processed/player_stats/nfl_player_rushing_2024.processed.json")
+RAW_PATH = Path("anubis/data/raw/nfl/nfl_player_passing_2024.raw.json")
+OUT_PATH = Path("anubis/data/processed/nfl/nfl_player_passing_2024.processed.json")
 
-FLOAT_FIELDS = {"rush_1st%"}
+FLOAT_FIELDS = {"yds/att", "cmp_%", "rate", "1st%"}
 INT_FIELDS = {
-    "rush_yds", "att", "td", "20+", "40+", "lng",
-    "rush_1st", "rush_fum"
+    "pass_yds", "att", "cmp", "td", "int",
+    "1st", "20+", "40+", "lng", "sck", "scky"
 }
 
-def process_rushing_stats():
+def process_passing_stats():
     with RAW_PATH.open("r") as f:
         raw_data = json.load(f)
 
     cleaned = []
+
     for player in raw_data:
         new_player = {"player": player["player"].strip()}
         for k, v in player.items():
@@ -32,7 +33,7 @@ def process_rushing_stats():
     with OUT_PATH.open("w") as f:
         json.dump(cleaned, f, indent=2)
 
-    print(f"✅ Processed {len(cleaned)} rushing stat lines → {OUT_PATH}")
+    print(f"✅ Processed {len(cleaned)} passing stat lines → {OUT_PATH}")
 
 if __name__ == "__main__":
-    process_rushing_stats()
+    process_passing_stats()
