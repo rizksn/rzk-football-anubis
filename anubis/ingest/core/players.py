@@ -1,12 +1,24 @@
 import json
+import math
+import logging
 from pathlib import Path
-from sqlalchemy import insert
-from anubis.db.base import async_session
-from anubis.db.schemas.core.players import players
 from datetime import datetime
 from sqlalchemy.dialects.postgresql import insert
+from anubis.db.base import async_session
+from anubis.db.schemas.core.players import players
+
+# Logging setup to reduce terminal noise
+logging.getLogger("sqlalchemy.engine.Engine").setLevel(logging.INFO)
+logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
 
 PROCESSED_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
+
+def to_float_or_none(value):
+    try:
+        val = float(value)
+        return val if math.isfinite(val) else None  # ✅ Reject NaN, inf, -inf
+    except:
+        return None
 
 def parse_height(val):
     try:
@@ -20,18 +32,17 @@ def parse_height(val):
     except Exception:
         return None
 
-async def load_sleeper_players():
+async def load_sleeper_players(batch_size: int = 500):
     with PROCESSED_PATH.open("r") as f:
         data = json.load(f)
 
     INT_FIELDS = {"depth_chart_order", "height", "weight", "age", "years_exp"}
+    FLOAT_FIELDS = {"age_years"}
 
     for d in data:
-        # Convert fantasy_positions list to comma-separated string
         if isinstance(d.get("fantasy_positions"), list):
             d["fantasy_positions"] = ",".join(p.strip() for p in d["fantasy_positions"])
-        
-        # Clean up optional integer fields
+
         for field in INT_FIELDS:
             val = d.get(field)
             if field == "height":
@@ -41,7 +52,6 @@ async def load_sleeper_players():
             elif val in (None, ""):
                 d[field] = None
 
-        # Convert string birth_date to datetime.date
         birth_date = d.get("birth_date")
         if isinstance(birth_date, str):
             try:
@@ -49,12 +59,17 @@ async def load_sleeper_players():
             except ValueError:
                 d["birth_date"] = None
 
+        for field in FLOAT_FIELDS:
+            d[field] = to_float_or_none(d.get(field))
+
     async with async_session() as session:
         async with session.begin():
-            stmt = insert(players).values(data).on_conflict_do_nothing()
-            await session.execute(stmt)
+            for i in range(0, len(data), batch_size):
+                batch = data[i:i + batch_size]
+                stmt = insert(players).values(batch).on_conflict_do_nothing()
+                await session.execute(stmt)
 
-    print(f"✅ Inserted {len(data)} Sleeper players into DB")
+    print(f"✅ Inserted {len(data)} Sleeper players into DB in batches of {batch_size}")
 
 if __name__ == "__main__":
     import asyncio

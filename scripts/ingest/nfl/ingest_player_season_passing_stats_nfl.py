@@ -1,16 +1,15 @@
-# scripts/ingest/ingest_season_kicking_stats_nfl.py
-
 import asyncio
 import sys
 import os
 
+# Fix path for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
-from anubis.ingest.nfl.kicking import load_kicker_data
+from anubis.ingest.nfl.season_passing import load_qb_data
 
 async def main():
-    print("🚀 Ingesting NFL kicking stats...")
-    await load_kicker_data()
+    print("🚀 Ingesting NFL passing stats...")
+    await load_qb_data()
     print("✅ Done.")
 
 if __name__ == "__main__":

@@ -1,9 +1,9 @@
-from sqlalchemy import Table, Column, String, Integer, Float, Boolean, Date, MetaData
+from sqlalchemy import Table, Column, String, Integer, Float, Boolean, Date
+from anubis.db.schemas.core import core_metadata  # ✅ IMPORT shared metadata
 
-metadata = MetaData(schema="core")  # ✅ schema-bound
 players = Table(
     "players",
-    metadata,
+    core_metadata,  # ✅ shared metadata object
     Column("player_id", String, primary_key=True),
     Column("full_name", String),
     Column("search_full_name", String),
@@ -24,3 +24,5 @@ players = Table(
     Column("number", Integer),
     Column("age_years", Float),
 )
+
+__all__ = ["players"]
