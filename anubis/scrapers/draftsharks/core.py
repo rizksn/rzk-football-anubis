@@ -4,11 +4,10 @@ import time
 from bs4 import BeautifulSoup
 
 def save_adp_data(players, format_, type_, scoring, platform):
-    fname = f"{format_}_{type_}_{scoring}_{platform}.json".lower().replace(" ", "-")
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+    base_dir = os.path.join(project_root, "anubis", "data", "raw", "draftsharks", format_.lower())
 
-    # Correct project root: we’re 4 levels deep under backend
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
-    base_dir = os.path.join(project_root, "anubis", "data", "raw", "adp", "draftsharks", format_.lower())
+    fname = f"{format_}_{type_}_{scoring}_{platform}.raw.json".lower().replace(" ", "-")
 
     path = os.path.join(base_dir, fname)
     os.makedirs(os.path.dirname(path), exist_ok=True)
