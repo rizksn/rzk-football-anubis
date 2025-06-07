@@ -2,8 +2,8 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-RAW_PATH = Path("anubis/data/raw/sleeper/sleeper_players_full.json")
-OUT_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
+raw_path = Path("anubis/data/raw/sleeper/sleeper_players_full.json")
+out_path = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
 
 KEEP_FIELDS = {
     "player_id",
@@ -43,7 +43,7 @@ def convert_numeric_fields(player: dict):
         player["age_years"] = calculate_age_years(player["birth_date"])
 
 def process_players():
-    with RAW_PATH.open("r") as f:
+    with raw_path.open("r") as f:
         all_players = json.load(f)
 
     cleaned = []
@@ -57,11 +57,11 @@ def process_players():
         convert_numeric_fields(slimmed)
         cleaned.append(slimmed)
 
-    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with OUT_PATH.open("w") as f:
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with out_path.open("w") as f:
         json.dump(cleaned, f, indent=2)
 
-    print(f"✅ Processed {len(cleaned)} active players → {OUT_PATH}")
+    print(f"✅ Processed {len(cleaned)} active players → {out_path}")
 
 if __name__ == "__main__":
     process_players()
