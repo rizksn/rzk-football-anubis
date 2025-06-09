@@ -3,9 +3,12 @@ import json
 import time
 from bs4 import BeautifulSoup
 
+def format_folder_name(name: str) -> str:
+    return name.lower().replace(" ", "_").strip()
+
 def save_adp_data(players, format_, type_, scoring, platform):
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-    base_dir = os.path.join(project_root, "anubis", "data", "raw", "draftsharks", format_.lower())
+    base_dir = os.path.join(project_root, "anubis", "data", "raw", "draftsharks", format_folder_name(format_))
 
     fname = f"{format_}_{type_}_{scoring}_{platform}.raw.json".lower().replace(" ", "-")
 

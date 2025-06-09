@@ -7,9 +7,11 @@ from sqlalchemy.dialects.postgresql import insert
 from anubis.db.base import async_session
 from anubis.db.schemas.core.players import players
 
-# Logging setup to reduce terminal noise
-logging.getLogger("sqlalchemy.engine.Engine").setLevel(logging.INFO)
+# 🔇 Full SQLAlchemy logging suppression (both sync and asyncpg)
+logging.basicConfig(level=logging.WARNING)
+logging.getLogger("sqlalchemy").setLevel(logging.WARNING)
 logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
+logging.getLogger("sqlalchemy.dialects.postgresql.asyncpg").setLevel(logging.WARNING)
 
 PROCESSED_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
 

@@ -1,10 +1,18 @@
-# scripts/ingest/ingest_players_sleeper.py
-
-import asyncio
-import sys
+import logging
 import os
+import sys
+import asyncio
 
-# Fix import path
+# 💣 Fully suppress SQLAlchemy logging
+logging.basicConfig(level=logging.WARNING)
+logging.getLogger("sqlalchemy").setLevel(logging.WARNING)
+logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
+logging.getLogger("sqlalchemy.dialects.postgresql.asyncpg").setLevel(logging.WARNING)
+
+# Optional: suppress asyncio debug noise
+logging.getLogger("asyncio").setLevel(logging.WARNING)
+
+# Project path fix
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 from anubis.ingest.core.players import load_sleeper_players

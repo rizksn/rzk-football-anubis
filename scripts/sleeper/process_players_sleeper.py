@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from datetime import datetime
+from anubis.utils.normalize.name import normalize_name_for_display
 
 raw_path = Path("anubis/data/raw/sleeper/sleeper_players_full.json")
 out_path = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
@@ -53,7 +54,11 @@ def process_players():
             continue
 
         slimmed = {k: v for k, v in player.items() if k in KEEP_FIELDS}
+        from anubis.utils.normalize.team import normalize_team
+        slimmed["team"] = normalize_team(slimmed.get("team"))
+
         slimmed["player_id"] = pid
+        slimmed["full_name"] = normalize_name_for_display(slimmed.get("full_name", ""))
         convert_numeric_fields(slimmed)
         cleaned.append(slimmed)
 

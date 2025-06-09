@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from anubis.utils.convert_stat_value import convert_stat_value
+from anubis.utils.parse.stat_value import convert_stat_value
 
 RAW_PATH = Path("anubis/data/raw/nfl/nfl_player_kicking_2024.raw.json")
 OUT_PATH = Path("anubis/data/processed/nfl/nfl_player_kicking_2024.processed.json")

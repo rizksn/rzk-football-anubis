@@ -1,43 +1,63 @@
-import re
+import os
+import json
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from anubis.db.schemas.nfl.nfl_player_passing_2024 import nfl_player_passing_2024
-from anubis.db.schemas.nfl.nfl_player_rushing_2024 import nfl_player_rushing_2024
-from anubis.db.schemas.nfl.nfl_player_receiving_2024 import nfl_player_receiving_2024
-from anubis.db.schemas.nfl.nfl_player_kicking_2024 import nfl_player_kicking_2024
+from anubis.db.schemas.core.players import players as core_players_table
+from anubis.utils.normalize.name import normalize_name_for_matching
 
-POSITION_TABLES = {
-    "QB": nfl_player_passing_2024,
-    "RB": nfl_player_rushing_2024,
-    "WR": nfl_player_receiving_2024,
-    "K": nfl_player_kicking_2024,
-}
-
-def normalize_name_for_matching(name: str) -> str:
-    name = name.lower().strip()
-    name = re.sub(r'\b(jr\.?|sr\.?|iii|ii|iv)\b', '', name)  # remove suffixes
-    name = re.sub(r'\s+', ' ', name)  # collapse extra spaces
-    return name.strip()
-
-async def resolve_nfl_player_id(session: AsyncSession, player: dict) -> int:
-    position = player["position"].upper()
-    table = POSITION_TABLES.get(position)
-    if not table:
-        raise ValueError(f"❌ Unknown position: {position}")
-
+async def resolve_nfl_player_id(session: AsyncSession, player: dict) -> str:
+    if player["position"].upper() == "DEF":
+        return None
+    
     normalized_name = normalize_name_for_matching(player["name"])
     team = player["team"].strip().lower()
+    position = player["position"].upper()
 
-    stmt = select(table.c.id).where(
-        func.lower(table.c.team) == team,
-        func.lower(func.replace(table.c.name, '.', '')) == normalized_name.replace('.', '')  # handles 'Bijan Robinson Jr.' vs 'Bijan Robinson'
+    stmt = select(core_players_table.c.player_id).where(
+        func.lower(core_players_table.c.team) == team,
+        func.lower(
+            func.replace(
+                func.replace(
+                    func.replace(core_players_table.c.full_name, "-", ""),
+                    "'",
+                    ""
+                ),
+                ".",
+                ""
+            )
+        ).ilike(normalized_name.replace("-", "").replace("'", "").replace(".", ""))
     )
 
     result = await session.execute(stmt)
     player_id = result.scalar_one_or_none()
 
     if player_id is None:
+        log_path = f"logs/unmatched_draftsharks_adp_{position.lower()}s.json"
+        os.makedirs("logs", exist_ok=True)
+
+        try:
+            if os.path.exists(log_path):
+                with open(log_path, "r") as f:
+                    unmatched = json.load(f)
+            else:
+                unmatched = []
+        except Exception:
+            unmatched = []
+
+        if all(
+            normalize_name_for_matching(player["name"]) != normalize_name_for_matching(entry.get("name", ""))
+            for entry in unmatched
+        ):
+            unmatched.append({
+                "name": player["name"],
+                "team": player["team"],
+                "position": player["position"],
+                "normalized_name": normalized_name
+            })
+            with open(log_path, "w") as f:
+                json.dump(unmatched, f, indent=2)
+
         raise ValueError(f"❌ Could not resolve ID for {player['name']} ({player['team']} - {position})")
 
     return player_id

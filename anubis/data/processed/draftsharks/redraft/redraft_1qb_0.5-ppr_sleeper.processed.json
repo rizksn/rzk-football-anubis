@@ -63,7 +63,7 @@
     {
       "name": "Brian Thomas Jr.",
       "position": "WR",
-      "team": "JAC",
+      "team": "JAX",
       "adp": "1.11"
     },
     {
@@ -75,7 +75,7 @@
     {
       "name": "Brock Bowers",
       "position": "TE",
-      "team": "LVR",
+      "team": "LV",
       "adp": "2.1"
     },
     {
@@ -99,7 +99,7 @@
     {
       "name": "Ashton Jeanty",
       "position": "RB",
-      "team": "LVR",
+      "team": "LV",
       "adp": "2.5"
     },
     {
@@ -441,7 +441,7 @@
     {
       "name": "Travis Hunter",
       "position": "WR",
-      "team": "JAC",
+      "team": "JAX",
       "adp": "7.2"
     },
     {
@@ -531,7 +531,7 @@
     {
       "name": "Jakobi Meyers",
       "position": "WR",
-      "team": "LVR",
+      "team": "LV",
       "adp": "8.5"
     },
     {
@@ -579,7 +579,7 @@
     {
       "name": "Travis Etienne",
       "position": "RB",
-      "team": "JAC",
+      "team": "JAX",
       "adp": "9.1"
     },
     {
@@ -741,7 +741,7 @@
     {
       "name": "Tank Bigsby",
       "position": "RB",
-      "team": "JAC",
+      "team": "JAX",
       "adp": "11.4"
     },
     {
@@ -831,17 +831,17 @@
     {
       "name": "Trevor Lawrence",
       "position": "QB",
-      "team": "JAC",
+      "team": "JAX",
       "adp": "12.7"
     },
     {
       "name": "J.K. Dobbins",
       "position": "RB",
-      "team": "UNS",
+      "team": "FA",
       "adp": "12.8"
     },
     {
-      "name": "Marquise Brown",
+      "name": "Hollywood Brown",
       "position": "WR",
       "team": "KC",
       "adp": "12.9"
@@ -885,13 +885,13 @@
     {
       "name": "Keenan Allen",
       "position": "WR",
-      "team": "UNS",
+      "team": "FA",
       "adp": "13.4"
     },
     {
       "name": "Amari Cooper",
       "position": "WR",
-      "team": "UNS",
+      "team": "FA",
       "adp": "13.5"
     },
     {
@@ -921,7 +921,7 @@
     {
       "name": "Bhayshul Tuten",
       "position": "RB",
-      "team": "JAC",
+      "team": "JAX",
       "adp": "13.10"
     },
     {
@@ -939,7 +939,7 @@
     {
       "name": "Jack Bech",
       "position": "WR",
-      "team": "LVR",
+      "team": "LV",
       "adp": "14.1"
     },
     {
@@ -1059,7 +1059,7 @@
     {
       "name": "Justin Tucker",
       "position": "K",
-      "team": "UNS",
+      "team": "FA",
       "adp": "15.9"
     },
     {
@@ -1077,7 +1077,7 @@
     {
       "name": "Geno Smith",
       "position": "QB",
-      "team": "LVR",
+      "team": "LV",
       "adp": "15.12"
     },
     {
@@ -1131,7 +1131,7 @@
     {
       "name": "Nick Chubb",
       "position": "RB",
-      "team": "UNS",
+      "team": "HOU",
       "adp": "16.9"
     },
     {
@@ -1179,7 +1179,7 @@
     {
       "name": "Brenton Strange",
       "position": "TE",
-      "team": "JAC",
+      "team": "JAX",
       "adp": "17.5"
     },
     {

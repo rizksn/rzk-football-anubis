@@ -5,7 +5,7 @@ from anubis.db.schemas.market import market_metadata
 rookie_1qb_1_ppr_sleeper = Table(
     "rookie_1qb_1_ppr_sleeper",
     market_metadata,
-    Column("player_id", String, ForeignKey("core.players.player_id"), primary_key=True),
+    Column("player_id", String, ForeignKey("core.players.player_id"), nullable=True, primary_key=True),
     Column("name", String),
     Column("position", String),
     Column("team", String),
@@ -15,7 +15,7 @@ rookie_1qb_1_ppr_sleeper = Table(
 rookie_superflex_1_ppr_sleeper = Table(
     "rookie_superflex_1_ppr_sleeper",
     market_metadata,
-    Column("player_id", String, ForeignKey("core.players.player_id"), primary_key=True),
+    Column("player_id", String, ForeignKey("core.players.player_id"), nullable=True, primary_key=True),
     Column("name", String),
     Column("position", String),
     Column("team", String),

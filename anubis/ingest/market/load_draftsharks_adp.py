@@ -1,68 +1,97 @@
 import os
 import json
-from sqlalchemy import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.dialects.postgresql import insert as pg_insert
 
 from anubis.db.base import engine
 from anubis.services.player import resolve_nfl_player_id
-from anubis.db.schemas.market import (
-    draftsharks_redraft_2025,
-    draftsharks_dynasty_2025,
-    draftsharks_rookie_2025,
-    draftsharks_bestball_2025,
-)
-from .utils import parse_metadata, get_json_files
+import anubis.db.schemas.market.draftsharks_adp_redraft as redraft_tables
+import anubis.db.schemas.market.draftsharks_adp_dynasty as dynasty_tables
+import anubis.db.schemas.market.draftsharks_adp_rookie as rookie_tables
+import anubis.db.schemas.market.draftsharks_adp_bestball as bestball_tables
+
+from anubis.ingest.utils.utils import parse_metadata, get_json_files
+from anubis.utils.normalize.name import normalize_name_for_display
 
 async_session = sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
 
 FORMAT_TO_TABLE = {
-    "redraft": draftsharks_redraft_2025,
-    "dynasty": draftsharks_dynasty_2025,
-    "rookie": draftsharks_rookie_2025,
-    "best_ball": draftsharks_bestball_2025,
+    "redraft": redraft_tables,
+    "dynasty": dynasty_tables,
+    "rookie": rookie_tables,
+    "best_ball": bestball_tables,
 }
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), "../../data/processed/draftsharks")
 
+def normalize_table_key(meta: dict, format_name: str) -> str:
+    return (
+        f"{format_name}_{meta['type']}_{meta['scoring']}_{meta['platform']}"
+        .lower()
+        .replace(" ", "_")
+        .replace("-", "_")
+    )
+
 async def load_all_draftsharks_adp():
     async with async_session() as session:
-        for format_name, table in FORMAT_TO_TABLE.items():
+        for format_name, format_module in FORMAT_TO_TABLE.items():
             format_path = os.path.join(BASE_DIR, format_name)
             files = get_json_files(format_path)
 
             for file in files:
                 meta = parse_metadata(file)
+                table_key = normalize_table_key(meta, format_name)
+                table = getattr(format_module, table_key, None)
+
+                if table is None:
+                    print(f"❌ No matching table found for key: {table_key} (from file: {file})")
+                    continue
+
                 with open(os.path.join(format_path, file)) as f:
                     raw = json.load(f)["data"]
                     records = []
 
                     for player in raw:
                         try:
+                            if not isinstance(player, dict):
+                                print(f"❌ Skipping malformed entry (not a dict): {player}")
+                                continue
+
                             player_id = await resolve_nfl_player_id(session, player)
+
                             record = {
                                 "player_id": player_id,
-                                "name": player["name"],
+                                "name": normalize_name_for_display(player["name"]),
                                 "team": player["team"],
                                 "position": player["position"],
-                                "adp": float(player["adp"]),
-                                "scoring": meta["scoring"],
-                                "platform": meta["platform"],
-                                "type": meta["type"]
+                                "adp": str(player["adp"]),
                             }
                             records.append(record)
-                        except Exception as e:
-                            print(f"⚠️ Skipped {player['name']}: {e}")
 
-                    invalid = [r for r in records if not r.get("player_id")]
-                    for r in invalid:
-                        print(f"❌ Skipping invalid record (missing player_id): {r.get('name')}")
+                        except Exception as e:
+                            name = player["name"] if isinstance(player, dict) and "name" in player else str(player)
+                            print(f"⚠️ Skipped {name}: {e}")
+                            print(f"📄 Processing file: {file}")
 
                     valid_records = [r for r in records if r.get("player_id")]
                     if not valid_records:
                         print(f"⚠️ No valid records to insert from {file}")
                     else:
-                        await session.execute(insert(table), valid_records)
+                        from sqlalchemy.dialects.postgresql import insert as pg_insert
+
+                        stmt = pg_insert(table).values(valid_records)
+                        stmt = stmt.on_conflict_do_update(
+                            index_elements=["player_id"],  # this matches your PK constraint
+                            set_={
+                                "name": stmt.excluded.name,
+                                "team": stmt.excluded.team,
+                                "position": stmt.excluded.position,
+                                "adp": stmt.excluded.adp,
+                            },
+                        )
+                        await session.execute(stmt)
+
                         print(f"✅ Inserted {len(valid_records)} from {file}")
 
         await session.commit()

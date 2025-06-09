@@ -291,7 +291,7 @@
     {
       "name": "Brock Bowers",
       "position": "TE",
-      "team": "LVR",
+      "team": "LV",
       "adp": "5.1"
     },
     {
@@ -339,7 +339,7 @@
     {
       "name": "J.K. Dobbins",
       "position": "RB",
-      "team": "UNS",
+      "team": "FA",
       "adp": "5.9"
     },
     {
@@ -465,7 +465,7 @@
     {
       "name": "Travis Etienne",
       "position": "RB",
-      "team": "JAC",
+      "team": "JAX",
       "adp": "7.6"
     },
     {
@@ -525,7 +525,7 @@
     {
       "name": "Justin Tucker",
       "position": "K",
-      "team": "UNS",
+      "team": "FA",
       "adp": "8.4"
     },
     {
@@ -567,7 +567,7 @@
     {
       "name": "Nick Chubb",
       "position": "RB",
-      "team": "UNS",
+      "team": "HOU",
       "adp": "8.11"
     },
     {
@@ -597,7 +597,7 @@
     {
       "name": "Amari Cooper",
       "position": "WR",
-      "team": "UNS",
+      "team": "FA",
       "adp": "9.4"
     },
     {
@@ -645,7 +645,7 @@
     {
       "name": "Brian Thomas Jr.",
       "position": "WR",
-      "team": "JAC",
+      "team": "JAX",
       "adp": "9.12"
     },
     {
@@ -771,7 +771,7 @@
     {
       "name": "Geno Smith",
       "position": "QB",
-      "team": "LVR",
+      "team": "LV",
       "adp": "11.9"
     },
     {
@@ -837,7 +837,7 @@
     {
       "name": "Keenan Allen",
       "position": "WR",
-      "team": "UNS",
+      "team": "FA",
       "adp": "12.8"
     },
     {
@@ -897,7 +897,7 @@
     {
       "name": "Zamir White",
       "position": "RB",
-      "team": "LVR",
+      "team": "LV",
       "adp": "13.6"
     },
     {
@@ -993,7 +993,7 @@
     {
       "name": "Raheem Mostert",
       "position": "RB",
-      "team": "LVR",
+      "team": "LV",
       "adp": "14.10"
     },
     {
@@ -1005,7 +1005,7 @@
     {
       "name": "Jakobi Meyers",
       "position": "WR",
-      "team": "LVR",
+      "team": "LV",
       "adp": "14.12"
     },
     {
@@ -1119,7 +1119,7 @@
     {
       "name": "Gabriel Davis",
       "position": "WR",
-      "team": "UNS",
+      "team": "FA",
       "adp": "16.7"
     },
     {

@@ -1,6 +1,8 @@
 import argparse
 import json
 from pathlib import Path
+from anubis.utils.normalize.team import normalize_team  
+from anubis.utils.normalize.name import normalize_name_for_display
 
 def process_adp_files(format_filter=None):
     raw_path = Path("anubis/data/raw/draftsharks")
@@ -11,7 +13,7 @@ def process_adp_files(format_filter=None):
             continue
 
         if format_filter and format_folder.name.lower() != format_filter.lower():
-            continue  # Skip non-matching formats
+            continue
 
         processed_format_dir = out_path / format_folder.name
         processed_format_dir.mkdir(parents=True, exist_ok=True)
@@ -20,10 +22,12 @@ def process_adp_files(format_filter=None):
             with file.open("r") as f:
                 data = json.load(f)
 
-            clean_data = [
-                p for p in data.get("data", [])
-                if all(k in p for k in ["name", "position", "team", "adp"])
-            ]
+            clean_data = []
+            for p in data.get("data", []):
+                if all(k in p for k in ["name", "position", "team", "adp"]):
+                    p["team"] = normalize_team(p["team"])  
+                    p["name"] = normalize_name_for_display(p["name"])
+                    clean_data.append(p)
 
             out_file = processed_format_dir / file.name.replace(".raw.json", ".processed.json")
             with out_file.open("w") as f:
