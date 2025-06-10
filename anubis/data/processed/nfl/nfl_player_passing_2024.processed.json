@@ -15,7 +15,13 @@
     "40+": 12,
     "lng": 70,
     "sck": 48,
-    "scky": 278
+    "scky": 278,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jared Goff",
@@ -33,7 +39,13 @@
     "40+": 11,
     "lng": 82,
     "sck": 31,
-    "scky": 234
+    "scky": 234,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Baker Mayfield",
@@ -51,7 +63,13 @@
     "40+": 5,
     "lng": 57,
     "sck": 40,
-    "scky": 248
+    "scky": 248,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Geno Smith",
@@ -69,7 +87,13 @@
     "40+": 4,
     "lng": 71,
     "sck": 50,
-    "scky": 338
+    "scky": 338,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Sam Darnold",
@@ -87,7 +111,13 @@
     "40+": 10,
     "lng": 97,
     "sck": 48,
-    "scky": 335
+    "scky": 335,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Lamar Jackson",
@@ -105,7 +135,13 @@
     "40+": 14,
     "lng": 84,
     "sck": 23,
-    "scky": 149
+    "scky": 149,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Patrick Mahomes",
@@ -123,7 +159,13 @@
     "40+": 4,
     "lng": 54,
     "sck": 36,
-    "scky": 239
+    "scky": 239,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Aaron Rodgers",
@@ -141,7 +183,13 @@
     "40+": 7,
     "lng": 71,
     "sck": 40,
-    "scky": 302
+    "scky": 302,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Justin Herbert",
@@ -159,7 +207,13 @@
     "40+": 7,
     "lng": 66,
     "sck": 41,
-    "scky": 242
+    "scky": 242,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Brock Purdy",
@@ -177,7 +231,13 @@
     "40+": 11,
     "lng": 76,
     "sck": 31,
-    "scky": 153
+    "scky": 153,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Kyler Murray",
@@ -195,7 +255,13 @@
     "40+": 3,
     "lng": 60,
     "sck": 30,
-    "scky": 220
+    "scky": 220,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Bo Nix",
@@ -213,7 +279,13 @@
     "40+": 6,
     "lng": 93,
     "sck": 24,
-    "scky": 198
+    "scky": 198,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Matthew Stafford",
@@ -231,7 +303,13 @@
     "40+": 6,
     "lng": 69,
     "sck": 28,
-    "scky": 213
+    "scky": 213,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Josh Allen",
@@ -249,7 +327,13 @@
     "40+": 10,
     "lng": 64,
     "sck": 14,
-    "scky": 63
+    "scky": 63,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "C.J. Stroud",
@@ -267,7 +351,13 @@
     "40+": 6,
     "lng": 67,
     "sck": 52,
-    "scky": 408
+    "scky": 408,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jayden Daniels",
@@ -285,7 +375,13 @@
     "40+": 10,
     "lng": 86,
     "sck": 47,
-    "scky": 238
+    "scky": 238,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Caleb Williams",
@@ -303,7 +399,13 @@
     "40+": 6,
     "lng": 47,
     "sck": 68,
-    "scky": 466
+    "scky": 466,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Kirk Cousins",
@@ -321,7 +423,13 @@
     "40+": 7,
     "lng": 60,
     "sck": 28,
-    "scky": 201
+    "scky": 201,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jordan Love",
@@ -339,7 +447,13 @@
     "40+": 12,
     "lng": 70,
     "sck": 14,
-    "scky": 95
+    "scky": 95,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jalen Hurts",
@@ -357,7 +471,13 @@
     "40+": 10,
     "lng": 67,
     "sck": 38,
-    "scky": 271
+    "scky": 271,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Tua Tagovailoa",
@@ -375,7 +495,13 @@
     "40+": 3,
     "lng": 80,
     "sck": 21,
-    "scky": 154
+    "scky": 154,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Russell Wilson",
@@ -393,7 +519,13 @@
     "40+": 6,
     "lng": 46,
     "sck": 33,
-    "scky": 219
+    "scky": 219,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Bryce Young",
@@ -411,7 +543,13 @@
     "40+": 3,
     "lng": 83,
     "sck": 29,
-    "scky": 186
+    "scky": 186,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Drake Maye",
@@ -429,7 +567,13 @@
     "40+": 1,
     "lng": 40,
     "sck": 34,
-    "scky": 229
+    "scky": 229,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Derek Carr",
@@ -447,7 +591,13 @@
     "40+": 7,
     "lng": 71,
     "sck": 8,
-    "scky": 48
+    "scky": 48,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jameis Winston",
@@ -465,7 +615,13 @@
     "40+": 4,
     "lng": 89,
     "sck": 24,
-    "scky": 130
+    "scky": 130,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Will Levis",
@@ -483,7 +639,13 @@
     "40+": 7,
     "lng": 98,
     "sck": 41,
-    "scky": 233
+    "scky": 233,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Daniel Jones",
@@ -501,7 +663,13 @@
     "40+": 2,
     "lng": 43,
     "sck": 29,
-    "scky": 172
+    "scky": 172,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Trevor Lawrence",
@@ -519,7 +687,13 @@
     "40+": 4,
     "lng": 85,
     "sck": 18,
-    "scky": 140
+    "scky": 140,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Gardner Minshew",
@@ -537,7 +711,13 @@
     "40+": 2,
     "lng": 57,
     "sck": 29,
-    "scky": 164
+    "scky": 164,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Dak Prescott",
@@ -555,7 +735,13 @@
     "40+": 3,
     "lng": 65,
     "sck": 21,
-    "scky": 112
+    "scky": 112,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Cooper Rush",
@@ -573,7 +759,13 @@
     "40+": 4,
     "lng": 64,
     "sck": 13,
-    "scky": 95
+    "scky": 95,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Anthony Richardson",
@@ -591,7 +783,13 @@
     "40+": 6,
     "lng": 69,
     "sck": 14,
-    "scky": 115
+    "scky": 115,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Joe Flacco",
@@ -609,7 +807,13 @@
     "40+": 4,
     "lng": 65,
     "sck": 18,
-    "scky": 123
+    "scky": 123,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Mac Jones",
@@ -627,7 +831,13 @@
     "40+": 4,
     "lng": 62,
     "sck": 14,
-    "scky": 100
+    "scky": 100,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Aidan O'Connell",
@@ -645,7 +855,13 @@
     "40+": 2,
     "lng": 58,
     "sck": 10,
-    "scky": 82
+    "scky": 82,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Mason Rudolph",
@@ -663,7 +879,13 @@
     "40+": 2,
     "lng": 47,
     "sck": 11,
-    "scky": 71
+    "scky": 71,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Spencer Rattler",
@@ -681,7 +903,13 @@
     "40+": 1,
     "lng": 41,
     "sck": 22,
-    "scky": 136
+    "scky": 136,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Deshaun Watson",
@@ -699,7 +927,13 @@
     "40+": 0,
     "lng": 35,
     "sck": 33,
-    "scky": 191
+    "scky": 191,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Justin Fields",
@@ -717,7 +951,13 @@
     "40+": 2,
     "lng": 55,
     "sck": 16,
-    "scky": 124
+    "scky": 124,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Drew Lock",
@@ -735,7 +975,13 @@
     "40+": 2,
     "lng": 59,
     "sck": 12,
-    "scky": 88
+    "scky": 88,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Andy Dalton",
@@ -753,7 +999,13 @@
     "40+": 0,
     "lng": 39,
     "sck": 7,
-    "scky": 37
+    "scky": 37,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Tyler Huntley",
@@ -771,7 +1023,13 @@
     "40+": 0,
     "lng": 25,
     "sck": 15,
-    "scky": 92
+    "scky": 92,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jacoby Brissett",
@@ -789,7 +1047,13 @@
     "40+": 1,
     "lng": 50,
     "sck": 18,
-    "scky": 119
+    "scky": 119,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Michael Penix Jr.",
@@ -807,7 +1071,13 @@
     "40+": 1,
     "lng": 42,
     "sck": 4,
-    "scky": 14
+    "scky": 14,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Malik Willis",
@@ -825,7 +1095,13 @@
     "40+": 2,
     "lng": 51,
     "sck": 8,
-    "scky": 37
+    "scky": 37,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Desmond Ridder",
@@ -843,7 +1119,13 @@
     "40+": 0,
     "lng": 28,
     "sck": 10,
-    "scky": 64
+    "scky": 64,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Dorian Thompson-Robinson",
@@ -861,7 +1143,13 @@
     "40+": 0,
     "lng": 29,
     "sck": 8,
-    "scky": 47
+    "scky": 47,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Marcus Mariota",
@@ -879,7 +1167,13 @@
     "40+": 0,
     "lng": 29,
     "sck": 3,
-    "scky": 29
+    "scky": 29,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Joshua Dobbs",
@@ -897,7 +1191,13 @@
     "40+": 0,
     "lng": 36,
     "sck": 2,
-    "scky": 28
+    "scky": 28,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jimmy Garoppolo",
@@ -915,7 +1215,13 @@
     "40+": 1,
     "lng": 50,
     "sck": 3,
-    "scky": 15
+    "scky": 15,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Tanner McKee",
@@ -933,7 +1239,13 @@
     "40+": 0,
     "lng": 25,
     "sck": 2,
-    "scky": 17
+    "scky": 17,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Kenny Pickett",
@@ -951,7 +1263,13 @@
     "40+": 2,
     "lng": 49,
     "sck": 4,
-    "scky": 33
+    "scky": 33,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Tim Boyle",
@@ -969,7 +1287,13 @@
     "40+": 0,
     "lng": 30,
     "sck": 2,
-    "scky": 11
+    "scky": 11,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Trey Lance",
@@ -987,7 +1311,13 @@
     "40+": 0,
     "lng": 33,
     "sck": 4,
-    "scky": 23
+    "scky": 23,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Tommy DeVito",
@@ -1005,7 +1335,13 @@
     "40+": 0,
     "lng": 23,
     "sck": 6,
-    "scky": 31
+    "scky": 31,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Joe Milton III",
@@ -1023,7 +1359,13 @@
     "40+": 1,
     "lng": 48,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jake Haener",
@@ -1041,7 +1383,13 @@
     "40+": 0,
     "lng": 36,
     "sck": 6,
-    "scky": 55
+    "scky": 55,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Davis Mills",
@@ -1059,7 +1407,13 @@
     "40+": 0,
     "lng": 25,
     "sck": 2,
-    "scky": 18
+    "scky": 18,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Brandon Allen",
@@ -1077,7 +1431,13 @@
     "40+": 0,
     "lng": 31,
     "sck": 2,
-    "scky": 2
+    "scky": 2,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Skylar Thompson",
@@ -1095,7 +1455,13 @@
     "40+": 0,
     "lng": 22,
     "sck": 6,
-    "scky": 44
+    "scky": 44,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Mitchell Trubisky",
@@ -1113,7 +1479,13 @@
     "40+": 1,
     "lng": 69,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Bailey Zappe",
@@ -1131,7 +1503,13 @@
     "40+": 0,
     "lng": 30,
     "sck": 1,
-    "scky": 5
+    "scky": 5,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Tyrod Taylor",
@@ -1149,7 +1527,13 @@
     "40+": 0,
     "lng": 20,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Carson Wentz",
@@ -1167,7 +1551,13 @@
     "40+": 0,
     "lng": 25,
     "sck": 4,
-    "scky": 22
+    "scky": 22,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Hendon Hooker",
@@ -1185,7 +1575,13 @@
     "40+": 0,
     "lng": 21,
     "sck": 1,
-    "scky": 9
+    "scky": 9,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Nick Mullens",
@@ -1203,7 +1599,13 @@
     "40+": 0,
     "lng": 24,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jaxon Smith-Njigba",
@@ -1221,7 +1623,13 @@
     "40+": 0,
     "lng": 35,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "AJ Cole",
@@ -1239,7 +1647,13 @@
     "40+": 0,
     "lng": 34,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Courtland Sutton",
@@ -1257,7 +1671,13 @@
     "40+": 0,
     "lng": 28,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Taylor Heinicke",
@@ -1275,7 +1695,13 @@
     "40+": 0,
     "lng": 18,
     "sck": 3,
-    "scky": 28
+    "scky": 28,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Mike White",
@@ -1293,7 +1719,13 @@
     "40+": 0,
     "lng": 14,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Sam Howell",
@@ -1311,7 +1743,13 @@
     "40+": 0,
     "lng": 12,
     "sck": 4,
-    "scky": 21
+    "scky": 21,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Adonai Mitchell",
@@ -1329,7 +1767,13 @@
     "40+": 0,
     "lng": 24,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Justin Jefferson",
@@ -1347,7 +1791,13 @@
     "40+": 0,
     "lng": 22,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Taysom Hill",
@@ -1365,7 +1815,13 @@
     "40+": 0,
     "lng": 18,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Cedrick Wilson Jr.",
@@ -1383,7 +1839,13 @@
     "40+": 0,
     "lng": 21,
     "sck": 1,
-    "scky": 3
+    "scky": 3,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Kyle Allen",
@@ -1401,7 +1863,13 @@
     "40+": 0,
     "lng": 19,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jalen Coker",
@@ -1419,7 +1887,13 @@
     "40+": 0,
     "lng": 19,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jack Fox",
@@ -1437,7 +1911,13 @@
     "40+": 0,
     "lng": 17,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Josh Johnson",
@@ -1455,7 +1935,13 @@
     "40+": 0,
     "lng": 16,
     "sck": 1,
-    "scky": 5
+    "scky": 5,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Stefon Diggs",
@@ -1473,7 +1959,13 @@
     "40+": 0,
     "lng": 13,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Tyson Bagent",
@@ -1491,7 +1983,13 @@
     "40+": 0,
     "lng": 6,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Clayton Tune",
@@ -1509,7 +2007,13 @@
     "40+": 0,
     "lng": 7,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Amon-Ra St. Brown",
@@ -1527,7 +2031,13 @@
     "40+": 0,
     "lng": 7,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Kyle Trask",
@@ -1545,7 +2055,13 @@
     "40+": 0,
     "lng": 5,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Bryan Anger",
@@ -1563,7 +2079,13 @@
     "40+": 0,
     "lng": 4,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Riley Dixon",
@@ -1581,7 +2103,13 @@
     "40+": 0,
     "lng": 3,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "David Montgomery",
@@ -1599,7 +2127,13 @@
     "40+": 0,
     "lng": 3,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "J.K. Scott",
@@ -1617,7 +2151,13 @@
     "40+": 0,
     "lng": 3,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Keenan Allen",
@@ -1635,7 +2175,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Tutu Atwell",
@@ -1653,7 +2199,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Saquon Barkley",
@@ -1671,7 +2223,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 1,
-    "scky": 2
+    "scky": 2,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Kendrick Bourne",
@@ -1689,7 +2247,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Tyler Boyd",
@@ -1707,7 +2271,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Dyami Brown",
@@ -1725,7 +2295,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Ty Chandler",
@@ -1743,7 +2319,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 1,
-    "scky": 1
+    "scky": 1,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Johnny Hekker",
@@ -1761,7 +2343,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Miles Killebrew",
@@ -1779,7 +2367,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Allen Lazard",
@@ -1797,7 +2391,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Jakobi Meyers",
@@ -1815,7 +2415,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 1,
-    "scky": 10
+    "scky": 10,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Joe Mixon",
@@ -1833,7 +2439,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Darnell Mooney",
@@ -1851,7 +2463,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "DJ Moore",
@@ -1869,7 +2487,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Malik Nabers",
@@ -1887,7 +2511,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Chris Oladokun",
@@ -1905,7 +2535,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 1,
-    "scky": 5
+    "scky": 5,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Ricky Pearsall",
@@ -1923,7 +2559,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Bradley Pinion",
@@ -1941,7 +2583,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 0,
-    "scky": 0
+    "scky": 0,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Deebo Samuel Sr.",
@@ -1959,7 +2607,13 @@
     "40+": 0,
     "lng": 0,
     "sck": 1,
-    "scky": 4
+    "scky": 4,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   },
   {
     "player": "Penei Sewell",
@@ -1977,6 +2631,12 @@
     "40+": 0,
     "lng": 0,
     "sck": 1,
-    "scky": 1
+    "scky": 1,
+    "full_name": "",
+    "search_full_name": "",
+    "team": "FA",
+    "position": "",
+    "first_name": "",
+    "last_name": ""
   }
 ]

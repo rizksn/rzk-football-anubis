@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from anubis.utils.parse.stat_value import convert_stat_value
+from anubis.utils.normalize.player import normalize_player_fields  
 
 RAW_PATH = Path("anubis/data/raw/nfl/nfl_player_rushing_2024.raw.json")
 OUT_PATH = Path("anubis/data/processed/nfl/nfl_player_rushing_2024.processed.json")
@@ -26,6 +27,8 @@ def process_rushing_stats():
                 int_fields=INT_FIELDS,
                 float_fields=FLOAT_FIELDS
             )
+        
+        new_player = normalize_player_fields(new_player)
         cleaned.append(new_player)
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)

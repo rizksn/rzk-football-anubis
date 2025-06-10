@@ -11,7 +11,7 @@ async def fetch_sleeper_players():
             output_path = Path("anubis/data/raw/sleeper/sleeper_players_full.json")
             output_path.parent.mkdir(parents=True, exist_ok=True)
             with output_path.open("w") as f:
-                json.dump(data, f, indent=2)
+                json.dump(data, f, indent=2, sort_keys=True)
             print(f"Saved {len(data)} players to {output_path}")
 
 if __name__ == "__main__":
