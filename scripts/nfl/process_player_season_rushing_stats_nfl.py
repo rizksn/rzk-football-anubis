@@ -32,7 +32,7 @@ def process_rushing_stats():
         display_name = normalize_name_for_display(raw_name)
         search_name = normalize_name_for_matching(raw_name)
 
-        sleeper_player = match_player_by_name(search_name, sleeper_pool)
+        sleeper_player = match_player_by_name(raw_name, sleeper_pool)
 
         new_player = {
             "player_id": sleeper_player["player_id"] if sleeper_player else "",

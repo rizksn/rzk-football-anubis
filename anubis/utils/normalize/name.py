@@ -3,8 +3,8 @@ import unicodedata
 
 # 🧠 Canonical aliases for display and DB insertion
 NAME_ALIASES = {
-    "marquise brown": "Hollywood Brown",
-    "josh palmer": "Joshua Palmer",
+    "marquisebrown": "Hollywood Brown",
+    "joshpalmer": "Joshua Palmer",
     # Add more as needed
 }
 
