@@ -2,7 +2,10 @@ import json
 from pathlib import Path
 from anubis.utils.parse.stat_value import convert_stat_value
 from anubis.utils.normalize.player import normalize_player_fields
-from anubis.utils.normalize.name import normalize_name_for_display
+from anubis.utils.normalize.name import (
+    normalize_name_for_display,
+    normalize_name_for_matching
+)
 from anubis.ingest.utils.match_players import match_player_by_name
 
 RAW_PATH = Path("anubis/data/raw/nfl/nfl_player_passing_2024.raw.json")
@@ -27,12 +30,14 @@ def process_passing_stats():
     for player in raw_data:
         raw_name = player["player"].strip()
         display_name = normalize_name_for_display(raw_name)
+        search_name = normalize_name_for_matching(raw_name)
 
-        sleeper_player = match_player_by_name(raw_name, sleeper_pool)
+        sleeper_player = match_player_by_name(search_name, sleeper_pool)
 
         new_player = {
+            "player_id": sleeper_player["player_id"] if sleeper_player else "",
             "full_name": display_name,
-            "search_full_name": sleeper_player["search_full_name"] if sleeper_player else "",
+            "search_full_name": sleeper_player["search_full_name"] if sleeper_player else search_name,
             "first_name": sleeper_player["first_name"] if sleeper_player else "",
             "last_name": sleeper_player["last_name"] if sleeper_player else "",
             "team": sleeper_player["team"] if sleeper_player else "FA",

@@ -3,6 +3,7 @@ import os
 import json
 import logging
 from playwright.async_api import async_playwright
+from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 from anubis.scrapers.nfl.path_utils import get_stat_output_path
 from anubis.scrapers.nfl.config import STAT_TYPE_MAPPINGS, STAT_SORT_KEYS, POSITION_ABBREV
 from anubis.scrapers.nfl.utils import clean_header
@@ -26,7 +27,7 @@ async def fetch_player_season_stats(stat_type: str = "rushing", year: int = 2024
     logger.info(f"🌐 Scraping {stat_type} stats from: {url}")
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=headless, slow_mo=250)
+        browser = await p.chromium.launch(headless=headless)
         page = await browser.new_page()
         await page.goto(url)
         await page.wait_for_selector("table tbody tr", timeout=15000)
@@ -45,6 +46,10 @@ async def fetch_player_season_stats(stat_type: str = "rushing", year: int = 2024
                     clean_header(await h.inner_text())
                     for h in await page.query_selector_all("table thead tr th")
                 ]
+                if not headers:
+                    logger.error("🚨 Failed to parse headers on page 1. Exiting early.")
+                    await browser.close()
+                    return
                 logger.debug(f"🧠 Parsed headers: {headers}")
 
             rows = await page.query_selector_all("table tbody tr")
@@ -64,8 +69,22 @@ async def fetch_player_season_stats(stat_type: str = "rushing", year: int = 2024
             if not next_button or await next_button.get_attribute("aria-disabled") == "true":
                 break
 
-            await next_button.click()
-            await page.wait_for_timeout(1500)
+            try:
+                await next_button.click(timeout=5000)
+                await page.wait_for_selector("table tbody tr", timeout=15000)
+                rows = await page.query_selector_all("table tbody tr")
+                if not rows:
+                    logger.warning(f"⚠️ Page {current_page + 1} is blank... assuming end of data.")
+                    break
+
+                logger.debug(f"✅ Finished loading page {current_page + 1}")
+            except PlaywrightTimeoutError as e:
+                logger.warning(f"❌ Timeout during pagination on page {current_page}: {e}")
+                break
+            except Exception as e:
+                logger.warning(f"❌ Unexpected error on page {current_page}: {e}")
+                break
+
             current_page += 1
 
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
