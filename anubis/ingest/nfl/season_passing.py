@@ -9,22 +9,24 @@ from anubis.db.schemas.nfl.nfl_player_passing_2024 import nfl_player_passing_202
 from anubis.db.base import engine
 from anubis.ingest.utils.match_players import match_player_by_name
 
-# ✅ Logger
+from anubis.utils.normalize.name import normalize_name_for_display
+
+# Logger setup
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
-# ✅ DB session
+# DB session
 async_session = sessionmaker(
     bind=engine,
     expire_on_commit=False,
     class_=AsyncSession,
 )
 
-# ✅ Safe casting helpers
+# Safe casting helpers
 def to_int(val): return int(val) if val not in ("", "--", None) else None
 def to_float(val): return float(val) if val not in ("", "--", None) else None
 
-# ✅ Convert one QB record into schema-ready format
+# Convert one QB record into schema-ready format
 def parse_qb_record(record, player_id):
     return {
         "player_id": player_id,
@@ -46,12 +48,12 @@ def parse_qb_record(record, player_id):
         "scky": to_int(record["scky"]),
     }
 
-# ✅ Load and ingest passing stats
+# Load and ingest passing stats
 async def load_qb_data():
     base_dir = os.path.dirname(__file__)
 
     # Load processed QB stats
-    json_path = os.path.abspath(os.path.join(base_dir, "../../data/processed/player_stats/nfl_player_passing_2024.processed.json"))
+    json_path = os.path.abspath(os.path.join(base_dir, "../../data/processed/nfl/nfl_player_passing_2024.processed.json"))
     with open(json_path, "r") as f:
         raw_data = json.load(f)
 
@@ -64,12 +66,13 @@ async def load_qb_data():
     unmatched_players = []
 
     for record in raw_data:
-        player_id = match_player_by_name(record["player"], player_pool)
+        normalized_name = normalize_name_for_display(record["player"])
+        player_id = match_player_by_name(normalized_name, player_pool)
         if player_id:
             parsed_data.append(parse_qb_record(record, player_id))
         else:
             unmatched_players.append(record["player"])
-            logger.warning(f"❌ Unmatched QB: {record['player']}")
+            logger.warning(f"❌ Unmatched QB: {record['player']} (normalized: {normalized_name})")
 
     if unmatched_players:
         log_path = os.path.join(base_dir, "../../logs/unmatched_qbs.json")
@@ -82,7 +85,7 @@ async def load_qb_data():
         await session.commit()
         logger.info(f"✅ Inserted {len(parsed_data)} QB records into nfl_player_passing_2024")
 
-# ✅ Run if direct
+# Run if direct
 if __name__ == "__main__":
     import asyncio
     asyncio.run(load_qb_data())

@@ -66,12 +66,17 @@ async def load_sleeper_players(batch_size: int = 500):
 
     async with async_session() as session:
         async with session.begin():
+            total_inserted = 0
+
             for i in range(0, len(data), batch_size):
                 batch = data[i:i + batch_size]
                 stmt = insert(players).values(batch).on_conflict_do_nothing()
-                await session.execute(stmt)
+                result = await session.execute(stmt)
+                inserted = result.rowcount or 0  
+                total_inserted += inserted
+                print(f"✅ Inserted {inserted} new rows in batch {i // batch_size + 1}")
 
-    print(f"✅ Inserted {len(data)} Sleeper players into DB in batches of {batch_size}")
+    print(f"✅ Total new Sleeper players inserted: {total_inserted}")
 
 if __name__ == "__main__":
     import asyncio

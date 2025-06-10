@@ -9,22 +9,24 @@ from anubis.db.schemas.nfl.nfl_player_receiving_2024 import nfl_player_receiving
 from anubis.db.base import engine
 from anubis.ingest.utils.match_players import match_player_by_name
 
-# ✅ Logger setup
+from anubis.utils.normalize.name import normalize_name_for_display
+
+# Logger setup
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
-# ✅ DB session
+# DB session
 async_session = sessionmaker(
     bind=engine,
     expire_on_commit=False,
     class_=AsyncSession,
 )
 
-# ✅ Type-safe converters
+# Type-safe converters
 def to_int(val): return int(val) if val not in ("", "--", None) else None
 def to_float(val): return float(val) if val not in ("", "--", None) else None
 
-# ✅ Record parser
+# Record parser
 def parse_wr_record(record, player_id):
     return {
         "player_id": player_id,
@@ -42,12 +44,12 @@ def parse_wr_record(record, player_id):
         "tgts": to_int(record["tgts"]),
     }
 
-# ✅ Load and insert WR stats
+# Load and insert WR stats
 async def load_wr_data():
     base_dir = os.path.dirname(__file__)
 
     # Load processed receiving stats
-    stat_path = os.path.abspath(os.path.join(base_dir, "../../data/processed/player_stats/nfl_player_receiving_2024.processed.json"))
+    stat_path = os.path.abspath(os.path.join(base_dir, "../../data/processed/nfl/nfl_player_receiving_2024.processed.json"))
     sleeper_path = os.path.abspath(os.path.join(base_dir, "../../data/processed/sleeper/sleeper_players_processed.json"))
 
     with open(stat_path, "r") as f:
@@ -60,7 +62,8 @@ async def load_wr_data():
     unmatched_players = []
 
     for record in raw_data:
-        player_id = match_player_by_name(record["player"], player_pool)
+        normalized_name = normalize_name_for_display(record["player"])
+        player_id = match_player_by_name(normalized_name, player_pool)
         if player_id:
             parsed_data.append(parse_wr_record(record, player_id))
         else:
@@ -78,7 +81,7 @@ async def load_wr_data():
         await session.commit()
         logger.info(f"✅ Inserted {len(parsed_data)} WR records into nfl_player_receiving_2024")
 
-# ✅ Run directly
+# Run directly
 if __name__ == "__main__":
     import asyncio
     asyncio.run(load_wr_data())

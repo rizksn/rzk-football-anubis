@@ -12,7 +12,6 @@ POSITION_ABBREV = {
     "field-goals": "kicking"    
 }
 
-
 STAT_SORT_KEYS = {
     "passing": "passingyards",
     "rushing": "rushingyards",

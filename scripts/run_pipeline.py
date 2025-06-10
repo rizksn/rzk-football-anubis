@@ -9,7 +9,7 @@ PIPELINE_STEPS = [
     ("sleeper", "Sleeper: Process players", "sleeper/process_players_sleeper.py"),
     ("sleeper", "Core: Ingest players", "ingest/core/ingest_players_sleeper.py"),
 
-    ("nfl", "NFL: Fetch raw stats", "nfl/fetch_player_season_stats_nfl.py"),
+    ("nfl", "NFL: Fetch raw stats", ["nfl/fetch_player_season_stats_nfl.py", "--all"]),
     ("nfl", "NFL: Process all stats", "nfl/process_all_player_season_stats_nfl.py"),
     ("nfl", "NFL: Ingest all stats", "ingest/nfl/ingest_all_player_season_stats_nfl.py"),
 
@@ -21,12 +21,16 @@ PIPELINE_STEPS = [
 # Use absolute path of current script directory no matter how it's called
 SCRIPTS_DIR = Path(__file__).resolve().parent
 
-def run_script(label, script_name):
+def run_script(label, script_entry):
     print(f"\n🚀 Starting: {label}")
-    script_path = SCRIPTS_DIR / script_name
+    if isinstance(script_entry, list):
+        script_path = [str(SCRIPTS_DIR / script_entry[0])] + script_entry[1:]
+    else:
+        script_path = [str(SCRIPTS_DIR / script_entry)]
+    
     start = time.time()
     try:
-        subprocess.run(["python", str(script_path)], check=True)
+        subprocess.run(["python"] + script_path, check=True)
     except subprocess.CalledProcessError as e:
         print(f"❌ Failed: {label}")
         sys.exit(e.returncode)
