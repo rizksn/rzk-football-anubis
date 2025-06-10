@@ -27,7 +27,7 @@ def to_int(val): return int(val) if val not in ("", "--", None) else None
 def to_float(val): return float(val) if val not in ("", "--", None) else None
 
 # Parser
-def parse_rb_record(record, player_id):
+def parse_rushing_record(record, player_id):
     return {
         "player_id": player_id,
         "name": record["player"],
@@ -43,7 +43,7 @@ def parse_rb_record(record, player_id):
     }
 
 # Ingest logic
-async def load_rb_data():
+async def load_rushing_data():
     base_dir = os.path.dirname(__file__)
 
     stat_path = os.path.abspath(os.path.join(base_dir, "../../data/processed/nfl/nfl_player_rushing_2024.processed.json"))
@@ -62,7 +62,7 @@ async def load_rb_data():
         player_id = match_player_by_name(normalized_name, player_pool)
 
         if player_id:
-            parsed_data.append(parse_rb_record(record, player_id))
+            parsed_data.append(parse_rushing_record(record, player_id))
         else:
             unmatched_players.append(record["player"])
             logger.warning(f"❌ Unmatched RB: {record['player']}")
@@ -81,4 +81,4 @@ async def load_rb_data():
 # Run if direct
 if __name__ == "__main__":
     import asyncio
-    asyncio.run(load_rb_data())
+    asyncio.run(load_rushing_data())

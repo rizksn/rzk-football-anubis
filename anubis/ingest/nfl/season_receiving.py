@@ -27,7 +27,7 @@ def to_int(val): return int(val) if val not in ("", "--", None) else None
 def to_float(val): return float(val) if val not in ("", "--", None) else None
 
 # Record parser
-def parse_wr_record(record, player_id):
+def parse_receiving_record(record, player_id):
     return {
         "player_id": player_id,
         "name": record["player"],
@@ -45,7 +45,7 @@ def parse_wr_record(record, player_id):
     }
 
 # Load and insert WR stats
-async def load_wr_data():
+async def load_receiving_data():
     base_dir = os.path.dirname(__file__)
 
     # Load processed receiving stats
@@ -65,7 +65,7 @@ async def load_wr_data():
         normalized_name = normalize_name_for_display(record["player"])
         player_id = match_player_by_name(normalized_name, player_pool)
         if player_id:
-            parsed_data.append(parse_wr_record(record, player_id))
+            parsed_data.append(parse_receiving_record(record, player_id))
         else:
             unmatched_players.append(record["player"])
             logger.warning(f"❌ Unmatched WR: {record['player']}")
@@ -84,4 +84,4 @@ async def load_wr_data():
 # Run directly
 if __name__ == "__main__":
     import asyncio
-    asyncio.run(load_wr_data())
+    asyncio.run(load_receiving_data())

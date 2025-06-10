@@ -5,11 +5,11 @@ import os
 # Fix path for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
-from anubis.ingest.nfl.season_passing import load_qb_data
+from anubis.ingest.nfl.season_passing import load_passing_data
 
 async def main():
     print("🚀 Ingesting NFL passing stats...")
-    await load_qb_data()
+    await load_passing_data()
     print("✅ Done.")
 
 if __name__ == "__main__":

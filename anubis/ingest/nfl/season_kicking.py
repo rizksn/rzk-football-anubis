@@ -9,8 +9,6 @@ from anubis.db.base import engine
 from anubis.db.schemas.nfl.nfl_player_kicking_2024 import nfl_player_kicking_2024
 from anubis.ingest.utils.match_players import match_player_by_name
 
-from anubis.utils.normalize.name import normalize_name_for_display
-
 # Logger setup
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -65,15 +63,16 @@ async def load_kicker_data():
     unmatched_players = []
 
     for record in raw_data:
-        # Normalize NFL name to match Sleeper’s canonical version
-        normalized_name = normalize_name_for_display(record["player"])
-        player_id = match_player_by_name(normalized_name, player_pool)
+        search_name = record.get("search_full_name")
+        display_name = record.get("full_name") or record.get("player")
+
+        player_id = match_player_by_name(search_name, player_pool)
 
         if player_id:
-            parsed_data.append(parse_kicker_record(record, player_id))
+            parsed_data.append(parse_kicker_record({**record, "player": display_name}, player_id))
         else:
-            unmatched_players.append(record["player"])
-            logger.warning(f"❌ Unmatched K: {record['player']} (normalized: {normalized_name})")
+            unmatched_players.append(display_name)
+            logger.warning(f"❌ Unmatched K: {display_name} (normalized: {search_name})")
 
     if unmatched_players:
         log_path = os.path.join(base_dir, "../../logs/unmatched_draftsharks_adp_k.json")

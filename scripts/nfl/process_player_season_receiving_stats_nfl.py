@@ -1,12 +1,15 @@
 import json
 from pathlib import Path
 from anubis.utils.parse.stat_value import convert_stat_value
-from anubis.utils.normalize.player import normalize_player_fields  
+from anubis.utils.normalize.name import normalize_name_for_display
+from anubis.utils.normalize.player import normalize_player_fields
+from anubis.ingest.utils.match_players import match_player_by_name
 
 RAW_PATH = Path("anubis/data/raw/nfl/nfl_player_receiving_2024.raw.json")
 OUT_PATH = Path("anubis/data/processed/nfl/nfl_player_receiving_2024.processed.json")
+SLEEPER_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
 
-FLOAT_FIELDS = {"1st%", }
+FLOAT_FIELDS = {"1st%"}
 INT_FIELDS = {
     "rec", "yds", "td", "20+", "40+", "lng",
     "rec_1st", "rec_fum", "rec_yac/r", "tgts"
@@ -16,10 +19,26 @@ def process_receiving_stats():
     with RAW_PATH.open("r") as f:
         raw_data = json.load(f)
 
+    with SLEEPER_PATH.open("r") as f:
+        sleeper_pool = json.load(f)
+
     cleaned = []
 
     for player in raw_data:
-        new_player = {"player": player["player"].strip()}
+        raw_name = player["player"].strip()
+        display_name = normalize_name_for_display(raw_name)
+
+        sleeper_player = match_player_by_name(raw_name, sleeper_pool)
+
+        new_player = {
+            "full_name": display_name,
+            "search_full_name": sleeper_player["search_full_name"] if sleeper_player else "",
+            "first_name": sleeper_player["first_name"] if sleeper_player else "",
+            "last_name": sleeper_player["last_name"] if sleeper_player else "",
+            "team": sleeper_player["team"] if sleeper_player else "FA",
+            "position": sleeper_player["position"] if sleeper_player else ""
+        }
+
         for k, v in player.items():
             if k == "player":
                 continue
