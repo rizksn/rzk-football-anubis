@@ -1,1204 +1,2591 @@
 {
   "data": [
     {
-      "name": "Ja'Marr Chase",
-      "position": "WR",
+      "player_id": "7564",
+      "full_name": "Ja'Marr Chase",
+      "search_full_name": "jamarrchase",
+      "first_name": "Ja'Marr",
+      "last_name": "Chase",
       "team": "CIN",
-      "adp": "1.1"
+      "position": "WR",
+      "adp": "1.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Saquon Barkley",
+      "player_id": "7569",
+      "full_name": "Nico Collins",
+      "search_full_name": "nicocollins",
+      "first_name": "Nico",
+      "last_name": "Collins",
+      "team": "HOU",
+      "position": "WR",
+      "adp": "1.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "3198",
+      "full_name": "Derrick Henry",
+      "search_full_name": "derrickhenry",
+      "first_name": "Derrick",
+      "last_name": "Henry",
+      "team": "BAL",
       "position": "RB",
+      "adp": "1.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11631",
+      "full_name": "Brian Thomas",
+      "search_full_name": "brianthomas",
+      "first_name": "Brian",
+      "last_name": "Thomas",
+      "team": "JAX",
+      "position": "WR",
+      "adp": "1.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4866",
+      "full_name": "Saquon Barkley",
+      "search_full_name": "saquonbarkley",
+      "first_name": "Saquon",
+      "last_name": "Barkley",
       "team": "PHI",
-      "adp": "1.2"
+      "position": "RB",
+      "adp": "1.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Justin Jefferson",
-      "position": "WR",
+      "player_id": "6794",
+      "full_name": "Justin Jefferson",
+      "search_full_name": "justinjefferson",
+      "first_name": "Justin",
+      "last_name": "Jefferson",
       "team": "MIN",
-      "adp": "1.3"
+      "position": "WR",
+      "adp": "1.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Bijan Robinson",
-      "position": "RB",
+      "player_id": "9509",
+      "full_name": "Bijan Robinson",
+      "search_full_name": "bijanrobinson",
+      "first_name": "Bijan",
+      "last_name": "Robinson",
       "team": "ATL",
-      "adp": "1.4"
-    },
-    {
-      "name": "CeeDee Lamb",
-      "position": "WR",
-      "team": "DAL",
-      "adp": "1.5"
-    },
-    {
-      "name": "Jahmyr Gibbs",
       "position": "RB",
-      "team": "DET",
-      "adp": "1.6"
+      "adp": "1.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Amon-Ra St. Brown",
-      "position": "WR",
+      "player_id": "9221",
+      "full_name": "Jahmyr Gibbs",
+      "search_full_name": "jahmyrgibbs",
+      "first_name": "Jahmyr",
+      "last_name": "Gibbs",
       "team": "DET",
-      "adp": "1.7"
+      "position": "RB",
+      "adp": "1.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Puka Nacua",
+      "player_id": "7547",
+      "full_name": "Amon-Ra St. Brown",
+      "search_full_name": "amonrastbrown",
+      "first_name": "Amon-Ra",
+      "last_name": "St. Brown",
+      "team": "DET",
       "position": "WR",
+      "adp": "1.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "6786",
+      "full_name": "CeeDee Lamb",
+      "search_full_name": "ceedeelamb",
+      "first_name": "CeeDee",
+      "last_name": "Lamb",
+      "team": "DAL",
+      "position": "WR",
+      "adp": "1.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9493",
+      "full_name": "Puka Nacua",
+      "search_full_name": "pukanacua",
+      "first_name": "Puka",
+      "last_name": "Nacua",
       "team": "LAR",
-      "adp": "1.8"
+      "position": "WR",
+      "adp": "1.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Malik Nabers",
-      "position": "WR",
+      "player_id": "11632",
+      "full_name": "Malik Nabers",
+      "search_full_name": "maliknabers",
+      "first_name": "Malik",
+      "last_name": "Nabers",
       "team": "NYG",
-      "adp": "1.9"
+      "position": "WR",
+      "adp": "1.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Nico Collins",
-      "position": "WR",
+      "player_id": "11560",
+      "full_name": "Caleb Williams",
+      "search_full_name": "calebwilliams",
+      "first_name": "Caleb",
+      "last_name": "Williams",
+      "team": "CHI",
+      "position": "QB",
+      "adp": "10.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9758",
+      "full_name": "C.J. Stroud",
+      "search_full_name": "cjstroud",
+      "first_name": "C.J.",
+      "last_name": "Stroud",
       "team": "HOU",
-      "adp": "1.10"
+      "position": "QB",
+      "adp": "10.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Derrick Henry",
-      "position": "RB",
-      "team": "BAL",
-      "adp": "1.11"
-    },
-    {
-      "name": "Brian Thomas Jr.",
+      "player_id": "11637",
+      "full_name": "Keon Coleman",
+      "search_full_name": "keoncoleman",
+      "first_name": "Keon",
+      "last_name": "Coleman",
+      "team": "BUF",
       "position": "WR",
-      "team": "JAX",
-      "adp": "1.12"
+      "adp": "10.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Brock Bowers",
+      "player_id": "3294",
+      "full_name": "Dak Prescott",
+      "search_full_name": "dakprescott",
+      "first_name": "Dak",
+      "last_name": "Prescott",
+      "team": "DAL",
+      "position": "QB",
+      "adp": "10.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "10236",
+      "full_name": "Dalton Kincaid",
+      "search_full_name": "daltonkincaid",
+      "first_name": "Dalton",
+      "last_name": "Kincaid",
+      "team": "BUF",
       "position": "TE",
-      "team": "LV",
-      "adp": "2.1"
+      "adp": "10.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Drake London",
-      "position": "WR",
+      "player_id": "6804",
+      "full_name": "Jordan Love",
+      "search_full_name": "jordanlove",
+      "first_name": "Jordan",
+      "last_name": "Love",
+      "team": "GB",
+      "position": "QB",
+      "adp": "10.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12517",
+      "full_name": "Colston Loveland",
+      "search_full_name": "colstonloveland",
+      "first_name": "Colston",
+      "last_name": "Loveland",
+      "team": "CHI",
+      "position": "TE",
+      "adp": "10.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7090",
+      "full_name": "Darnell Mooney",
+      "search_full_name": "darnellmooney",
+      "first_name": "Darnell",
+      "last_name": "Mooney",
       "team": "ATL",
-      "adp": "2.2"
-    },
-    {
-      "name": "De'Von Achane",
-      "position": "RB",
-      "team": "MIA",
-      "adp": "2.3"
-    },
-    {
-      "name": "Ashton Jeanty",
-      "position": "RB",
-      "team": "LV",
-      "adp": "2.4"
-    },
-    {
-      "name": "A.J. Brown",
       "position": "WR",
-      "team": "PHI",
-      "adp": "2.5"
+      "adp": "10.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Christian McCaffrey",
-      "position": "RB",
-      "team": "SF",
-      "adp": "2.6"
-    },
-    {
-      "name": "Bucky Irving",
-      "position": "RB",
-      "team": "TB",
-      "adp": "2.7"
-    },
-    {
-      "name": "Josh Allen",
-      "position": "QB",
-      "team": "BUF",
-      "adp": "2.8"
-    },
-    {
-      "name": "Ladd McConkey",
-      "position": "WR",
-      "team": "LAC",
-      "adp": "2.9"
-    },
-    {
-      "name": "Trey McBride",
-      "position": "TE",
-      "team": "ARI",
-      "adp": "2.10"
-    },
-    {
-      "name": "Josh Jacobs",
-      "position": "RB",
-      "team": "GB",
-      "adp": "2.11"
-    },
-    {
-      "name": "Jaxon Smith-Njigba",
-      "position": "WR",
+      "player_id": "9753",
+      "full_name": "Zach Charbonnet",
+      "search_full_name": "zachcharbonnet",
+      "first_name": "Zach",
+      "last_name": "Charbonnet",
       "team": "SEA",
-      "adp": "2.12"
-    },
-    {
-      "name": "Lamar Jackson",
-      "position": "QB",
-      "team": "BAL",
-      "adp": "3.1"
-    },
-    {
-      "name": "Jonathan Taylor",
       "position": "RB",
-      "team": "IND",
-      "adp": "3.2"
+      "adp": "10.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Tyreek Hill",
-      "position": "WR",
-      "team": "MIA",
-      "adp": "3.3"
-    },
-    {
-      "name": "Tee Higgins",
-      "position": "WR",
-      "team": "CIN",
-      "adp": "3.4"
-    },
-    {
-      "name": "Garrett Wilson",
-      "position": "WR",
-      "team": "NYJ",
-      "adp": "3.5"
-    },
-    {
-      "name": "Jayden Daniels",
-      "position": "QB",
-      "team": "WAS",
-      "adp": "3.6"
-    },
-    {
-      "name": "Terry McLaurin",
-      "position": "WR",
-      "team": "WAS",
-      "adp": "3.7"
-    },
-    {
-      "name": "Kyren Williams",
-      "position": "RB",
-      "team": "LAR",
-      "adp": "3.8"
-    },
-    {
-      "name": "Chase Brown",
-      "position": "RB",
-      "team": "CIN",
-      "adp": "3.9"
-    },
-    {
-      "name": "Breece Hall",
-      "position": "RB",
-      "team": "NYJ",
-      "adp": "3.10"
-    },
-    {
-      "name": "Mike Evans",
-      "position": "WR",
-      "team": "TB",
-      "adp": "3.11"
-    },
-    {
-      "name": "Marvin Harrison Jr.",
-      "position": "WR",
-      "team": "ARI",
-      "adp": "3.12"
-    },
-    {
-      "name": "James Cook",
-      "position": "RB",
-      "team": "BUF",
-      "adp": "4.1"
-    },
-    {
-      "name": "Jalen Hurts",
-      "position": "QB",
-      "team": "PHI",
-      "adp": "4.2"
-    },
-    {
-      "name": "Davante Adams",
-      "position": "WR",
-      "team": "LAR",
-      "adp": "4.3"
-    },
-    {
-      "name": "Joe Burrow",
-      "position": "QB",
-      "team": "CIN",
-      "adp": "4.4"
-    },
-    {
-      "name": "D.J. Moore",
-      "position": "WR",
-      "team": "CHI",
-      "adp": "4.5"
-    },
-    {
-      "name": "George Kittle",
-      "position": "TE",
-      "team": "SF",
-      "adp": "4.6"
-    },
-    {
-      "name": "Rashee Rice",
-      "position": "WR",
-      "team": "KC",
-      "adp": "4.7"
-    },
-    {
-      "name": "Kenneth Walker III",
-      "position": "RB",
-      "team": "SEA",
-      "adp": "4.8"
-    },
-    {
-      "name": "Alvin Kamara",
-      "position": "RB",
-      "team": "NO",
-      "adp": "4.9"
-    },
-    {
-      "name": "Joe Mixon",
-      "position": "RB",
-      "team": "HOU",
-      "adp": "4.10"
-    },
-    {
-      "name": "Chuba Hubbard",
-      "position": "RB",
-      "team": "CAR",
-      "adp": "4.11"
-    },
-    {
-      "name": "Omarion Hampton",
-      "position": "RB",
-      "team": "LAC",
-      "adp": "4.12"
-    },
-    {
-      "name": "Courtland Sutton",
-      "position": "WR",
-      "team": "DEN",
-      "adp": "5.1"
-    },
-    {
-      "name": "D.K. Metcalf",
-      "position": "WR",
-      "team": "PIT",
-      "adp": "5.2"
-    },
-    {
-      "name": "Zay Flowers",
-      "position": "WR",
-      "team": "BAL",
-      "adp": "5.3"
-    },
-    {
-      "name": "Sam LaPorta",
-      "position": "TE",
-      "team": "DET",
-      "adp": "5.4"
-    },
-    {
-      "name": "DeVonta Smith",
-      "position": "WR",
-      "team": "PHI",
-      "adp": "5.5"
-    },
-    {
-      "name": "T.J. Hockenson",
-      "position": "TE",
-      "team": "MIN",
-      "adp": "5.6"
-    },
-    {
-      "name": "James Conner",
-      "position": "RB",
-      "team": "ARI",
-      "adp": "5.7"
-    },
-    {
-      "name": "David Montgomery",
-      "position": "RB",
-      "team": "DET",
-      "adp": "5.8"
-    },
-    {
-      "name": "Xavier Worthy",
-      "position": "WR",
-      "team": "KC",
-      "adp": "5.9"
-    },
-    {
-      "name": "Patrick Mahomes",
-      "position": "QB",
-      "team": "KC",
-      "adp": "5.10"
-    },
-    {
-      "name": "Jameson Williams",
-      "position": "WR",
-      "team": "DET",
-      "adp": "5.11"
-    },
-    {
-      "name": "George Pickens",
-      "position": "WR",
+      "player_id": "8110",
+      "full_name": "Jake Ferguson",
+      "search_full_name": "jakeferguson",
+      "first_name": "Jake",
+      "last_name": "Ferguson",
       "team": "DAL",
-      "adp": "5.12"
-    },
-    {
-      "name": "Chris Olave",
-      "position": "WR",
-      "team": "NO",
-      "adp": "6.1"
-    },
-    {
-      "name": "Jaylen Waddle",
-      "position": "WR",
-      "team": "MIA",
-      "adp": "6.2"
-    },
-    {
-      "name": "Baker Mayfield",
-      "position": "QB",
-      "team": "TB",
-      "adp": "6.3"
-    },
-    {
-      "name": "Jordan Addison",
-      "position": "WR",
-      "team": "MIN",
-      "adp": "6.4"
-    },
-    {
-      "name": "Isiah Pacheco",
-      "position": "RB",
-      "team": "KC",
-      "adp": "6.5"
-    },
-    {
-      "name": "Chris Godwin",
-      "position": "WR",
-      "team": "TB",
-      "adp": "6.6"
-    },
-    {
-      "name": "Tetairoa McMillan",
-      "position": "WR",
-      "team": "CAR",
-      "adp": "6.7"
-    },
-    {
-      "name": "RJ Harvey",
-      "position": "RB",
-      "team": "DEN",
-      "adp": "6.8"
-    },
-    {
-      "name": "Aaron Jones",
-      "position": "RB",
-      "team": "MIN",
-      "adp": "6.9"
-    },
-    {
-      "name": "Travis Hunter",
-      "position": "WR",
-      "team": "JAX",
-      "adp": "6.10"
-    },
-    {
-      "name": "Quinshon Judkins",
-      "position": "RB",
-      "team": "CLE",
-      "adp": "6.11"
-    },
-    {
-      "name": "Jerry Jeudy",
-      "position": "WR",
-      "team": "CLE",
-      "adp": "6.12"
-    },
-    {
-      "name": "Travis Kelce",
       "position": "TE",
-      "team": "KC",
-      "adp": "7.1"
+      "adp": "10.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "TreVeyon Henderson",
-      "position": "RB",
-      "team": "NE",
-      "adp": "7.2"
+      "player_id": "9484",
+      "full_name": "Tucker Kraft",
+      "search_full_name": "tuckerkraft",
+      "first_name": "Tucker",
+      "last_name": "Kraft",
+      "team": "GB",
+      "position": "TE",
+      "adp": "10.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Tony Pollard",
-      "position": "RB",
+      "player_id": "9508",
+      "full_name": "Tyjae Spears",
+      "search_full_name": "tyjaespears",
+      "first_name": "Tyjae",
+      "last_name": "Spears",
       "team": "TEN",
-      "adp": "7.3"
+      "position": "RB",
+      "adp": "10.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Jonnu Smith",
+      "player_id": "5022",
+      "full_name": "Dallas Goedert",
+      "search_full_name": "dallasgoedert",
+      "first_name": "Dallas",
+      "last_name": "Goedert",
+      "team": "PHI",
       "position": "TE",
-      "team": "MIA",
-      "adp": "7.4"
+      "adp": "11.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Tyrone Tracy Jr.",
-      "position": "RB",
-      "team": "NYG",
-      "adp": "7.5"
-    },
-    {
-      "name": "Rome Odunze",
-      "position": "WR",
+      "player_id": "12519",
+      "full_name": "Luther Burden",
+      "search_full_name": "lutherburden",
+      "first_name": "Luther",
+      "last_name": "Burden",
       "team": "CHI",
-      "adp": "7.6"
-    },
-    {
-      "name": "D'Andre Swift",
-      "position": "RB",
-      "team": "CHI",
-      "adp": "7.7"
-    },
-    {
-      "name": "Calvin Ridley",
       "position": "WR",
-      "team": "TEN",
-      "adp": "7.8"
+      "adp": "11.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Khalil Shakir",
-      "position": "WR",
-      "team": "BUF",
-      "adp": "7.9"
-    },
-    {
-      "name": "Mark Andrews",
-      "position": "TE",
-      "team": "BAL",
-      "adp": "7.10"
-    },
-    {
-      "name": "Bo Nix",
-      "position": "QB",
-      "team": "DEN",
-      "adp": "7.11"
-    },
-    {
-      "name": "Najee Harris",
-      "position": "RB",
+      "player_id": "12509",
+      "full_name": "Tre Harris",
+      "search_full_name": "treharris",
+      "first_name": "Tre",
+      "last_name": "Harris",
       "team": "LAC",
-      "adp": "7.12"
-    },
-    {
-      "name": "Brian Robinson Jr.",
-      "position": "RB",
-      "team": "WAS",
-      "adp": "8.1"
-    },
-    {
-      "name": "Jakobi Meyers",
       "position": "WR",
-      "team": "LV",
-      "adp": "8.2"
+      "adp": "11.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Brandon Aiyuk",
-      "position": "WR",
-      "team": "SF",
-      "adp": "8.3"
-    },
-    {
-      "name": "Deebo Samuel",
-      "position": "WR",
-      "team": "WAS",
-      "adp": "8.4"
-    },
-    {
-      "name": "Jared Goff",
-      "position": "QB",
-      "team": "DET",
-      "adp": "8.5"
-    },
-    {
-      "name": "Jaylen Warren",
-      "position": "RB",
-      "team": "PIT",
-      "adp": "8.6"
-    },
-    {
-      "name": "Kaleb Johnson",
-      "position": "RB",
-      "team": "PIT",
-      "adp": "8.7"
-    },
-    {
-      "name": "Cooper Kupp",
-      "position": "WR",
-      "team": "SEA",
-      "adp": "8.8"
-    },
-    {
-      "name": "Kyler Murray",
-      "position": "QB",
-      "team": "ARI",
-      "adp": "8.9"
-    },
-    {
-      "name": "Evan Engram",
-      "position": "TE",
-      "team": "DEN",
-      "adp": "8.10"
-    },
-    {
-      "name": "Travis Etienne",
-      "position": "RB",
-      "team": "JAX",
-      "adp": "8.11"
-    },
-    {
-      "name": "Stefon Diggs",
-      "position": "WR",
-      "team": "NE",
-      "adp": "8.12"
-    },
-    {
-      "name": "David Njoku",
-      "position": "TE",
-      "team": "CLE",
-      "adp": "9.1"
-    },
-    {
-      "name": "Jayden Reed",
-      "position": "WR",
-      "team": "GB",
-      "adp": "9.2"
-    },
-    {
-      "name": "Justin Herbert",
-      "position": "QB",
-      "team": "LAC",
-      "adp": "9.3"
-    },
-    {
-      "name": "Ricky Pearsall",
-      "position": "WR",
-      "team": "SF",
-      "adp": "9.4"
-    },
-    {
-      "name": "Tyler Warren",
-      "position": "TE",
-      "team": "IND",
-      "adp": "9.5"
-    },
-    {
-      "name": "Matthew Golden",
-      "position": "WR",
-      "team": "GB",
-      "adp": "9.6"
-    },
-    {
-      "name": "Josh Downs",
-      "position": "WR",
-      "team": "IND",
-      "adp": "9.7"
-    },
-    {
-      "name": "Rhamondre Stevenson",
-      "position": "RB",
-      "team": "NE",
-      "adp": "9.8"
-    },
-    {
-      "name": "Cameron Skattebo",
-      "position": "RB",
-      "team": "NYG",
-      "adp": "9.9"
-    },
-    {
-      "name": "Javonte Williams",
-      "position": "RB",
-      "team": "DAL",
-      "adp": "9.10"
-    },
-    {
-      "name": "Michael Pittman Jr.",
-      "position": "WR",
-      "team": "IND",
-      "adp": "9.11"
-    },
-    {
-      "name": "Brock Purdy",
-      "position": "QB",
-      "team": "SF",
-      "adp": "9.12"
-    },
-    {
-      "name": "Caleb Williams",
-      "position": "QB",
-      "team": "CHI",
-      "adp": "10.1"
-    },
-    {
-      "name": "Jordan Love",
-      "position": "QB",
-      "team": "GB",
-      "adp": "10.2"
-    },
-    {
-      "name": "Dalton Kincaid",
-      "position": "TE",
-      "team": "BUF",
-      "adp": "10.3"
-    },
-    {
-      "name": "Colston Loveland",
-      "position": "TE",
-      "team": "CHI",
-      "adp": "10.4"
-    },
-    {
-      "name": "Jake Ferguson",
-      "position": "TE",
-      "team": "DAL",
-      "adp": "10.5"
-    },
-    {
-      "name": "Darnell Mooney",
-      "position": "WR",
+      "player_id": "7553",
+      "full_name": "Kyle Pitts",
+      "search_full_name": "kylepitts",
+      "first_name": "Kyle",
+      "last_name": "Pitts",
       "team": "ATL",
-      "adp": "10.6"
-    },
-    {
-      "name": "Zach Charbonnet",
-      "position": "RB",
-      "team": "SEA",
-      "adp": "10.7"
-    },
-    {
-      "name": "Tucker Kraft",
       "position": "TE",
-      "team": "GB",
-      "adp": "10.8"
+      "adp": "11.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Tyjae Spears",
-      "position": "RB",
-      "team": "TEN",
-      "adp": "10.9"
-    },
-    {
-      "name": "Keon Coleman",
-      "position": "WR",
-      "team": "BUF",
-      "adp": "10.10"
-    },
-    {
-      "name": "C.J. Stroud",
-      "position": "QB",
-      "team": "HOU",
-      "adp": "10.11"
-    },
-    {
-      "name": "Dak Prescott",
-      "position": "QB",
-      "team": "DAL",
-      "adp": "10.12"
-    },
-    {
-      "name": "Dallas Goedert",
-      "position": "TE",
-      "team": "PHI",
-      "adp": "11.1"
-    },
-    {
-      "name": "Rachaad White",
-      "position": "RB",
+      "player_id": "8136",
+      "full_name": "Rachaad White",
+      "search_full_name": "rachaadwhite",
+      "first_name": "Rachaad",
+      "last_name": "White",
       "team": "TB",
-      "adp": "11.2"
-    },
-    {
-      "name": "Drake Maye",
-      "position": "QB",
-      "team": "NE",
-      "adp": "11.3"
-    },
-    {
-      "name": "Rico Dowdle",
       "position": "RB",
+      "adp": "11.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11564",
+      "full_name": "Drake Maye",
+      "search_full_name": "drakemaye",
+      "first_name": "Drake",
+      "last_name": "Maye",
+      "team": "NE",
+      "position": "QB",
+      "adp": "11.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7021",
+      "full_name": "Rico Dowdle",
+      "search_full_name": "ricodowdle",
+      "first_name": "Rico",
+      "last_name": "Dowdle",
       "team": "CAR",
-      "adp": "11.4"
-    },
-    {
-      "name": "Jauan Jennings",
-      "position": "WR",
-      "team": "SF",
-      "adp": "11.5"
-    },
-    {
-      "name": "Tank Bigsby",
       "position": "RB",
+      "adp": "11.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9225",
+      "full_name": "Tank Bigsby",
+      "search_full_name": "tankbigsby",
+      "first_name": "Tank",
+      "last_name": "Bigsby",
       "team": "JAX",
-      "adp": "11.6"
-    },
-    {
-      "name": "Emeka Egbuka",
-      "position": "WR",
-      "team": "TB",
-      "adp": "11.7"
-    },
-    {
-      "name": "Jordan Mason",
       "position": "RB",
+      "adp": "11.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7049",
+      "full_name": "Jauan Jennings",
+      "search_full_name": "jauanjennings",
+      "first_name": "Jauan",
+      "last_name": "Jennings",
+      "team": "SF",
+      "position": "WR",
+      "adp": "11.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12514",
+      "full_name": "Emeka Egbuka",
+      "search_full_name": "emekaegbuka",
+      "first_name": "Emeka",
+      "last_name": "Egbuka",
+      "team": "TB",
+      "position": "WR",
+      "adp": "11.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8408",
+      "full_name": "Jordan Mason",
+      "search_full_name": "jordanmason",
+      "first_name": "Jordan",
+      "last_name": "Mason",
       "team": "MIN",
-      "adp": "11.8"
+      "position": "RB",
+      "adp": "11.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Jayden Higgins",
-      "position": "WR",
+      "player_id": "12484",
+      "full_name": "Jayden Higgins",
+      "search_full_name": "jaydenhiggins",
+      "first_name": "Jayden",
+      "last_name": "Higgins",
       "team": "HOU",
-      "adp": "11.9"
-    },
-    {
-      "name": "Tre Harris",
       "position": "WR",
-      "team": "LAC",
-      "adp": "11.10"
+      "adp": "11.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Luther Burden III",
-      "position": "WR",
-      "team": "CHI",
-      "adp": "11.11"
-    },
-    {
-      "name": "Justin Fields",
-      "position": "QB",
+      "player_id": "7591",
+      "full_name": "Justin Fields",
+      "search_full_name": "justinfields",
+      "first_name": "Justin",
+      "last_name": "Fields",
       "team": "NYJ",
-      "adp": "11.12"
-    },
-    {
-      "name": "Jaydon Blue",
-      "position": "RB",
-      "team": "DAL",
-      "adp": "12.1"
-    },
-    {
-      "name": "Rashid Shaheed",
-      "position": "WR",
-      "team": "NO",
-      "adp": "12.2"
-    },
-    {
-      "name": "Kyle Pitts",
-      "position": "TE",
-      "team": "ATL",
-      "adp": "12.3"
-    },
-    {
-      "name": "Bhayshul Tuten",
-      "position": "RB",
-      "team": "JAX",
-      "adp": "12.4"
-    },
-    {
-      "name": "Marvin Mims Jr.",
-      "position": "WR",
-      "team": "DEN",
-      "adp": "12.5"
-    },
-    {
-      "name": "Kyle Williams",
-      "position": "WR",
-      "team": "NE",
-      "adp": "12.6"
-    },
-    {
-      "name": "Jalen McMillan",
-      "position": "WR",
-      "team": "TB",
-      "adp": "12.7"
-    },
-    {
-      "name": "J.J. McCarthy",
       "position": "QB",
-      "team": "MIN",
-      "adp": "12.8"
+      "adp": "12.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Trevor Lawrence",
-      "position": "QB",
+      "player_id": "7523",
+      "full_name": "Trevor Lawrence",
+      "search_full_name": "trevorlawrence",
+      "first_name": "Trevor",
+      "last_name": "Lawrence",
       "team": "JAX",
-      "adp": "12.9"
+      "position": "QB",
+      "adp": "12.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Christian Kirk",
-      "position": "WR",
-      "team": "HOU",
-      "adp": "12.10"
-    },
-    {
-      "name": "Pat Freiermuth",
-      "position": "TE",
+      "player_id": "7600",
+      "full_name": "Pat Freiermuth",
+      "search_full_name": "patfreiermuth",
+      "first_name": "Pat",
+      "last_name": "Freiermuth",
       "team": "PIT",
-      "adp": "12.11"
+      "position": "TE",
+      "adp": "12.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Isaac Guerendo",
-      "position": "RB",
-      "team": "SF",
-      "adp": "12.12"
-    },
-    {
-      "name": "Austin Ekeler",
-      "position": "RB",
+      "player_id": "4663",
+      "full_name": "Austin Ekeler",
+      "search_full_name": "austinekeler",
+      "first_name": "Austin",
+      "last_name": "Ekeler",
       "team": "WAS",
-      "adp": "13.1"
+      "position": "RB",
+      "adp": "12.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Hollywood Brown",
+      "player_id": "8676",
+      "full_name": "Rashid Shaheed",
+      "search_full_name": "rashidshaheed",
+      "first_name": "Rashid",
+      "last_name": "Shaheed",
+      "team": "NO",
       "position": "WR",
-      "team": "KC",
-      "adp": "13.2"
+      "adp": "12.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Zach Ertz",
-      "position": "TE",
-      "team": "WAS",
-      "adp": "13.3"
-    },
-    {
-      "name": "Ray Davis",
+      "player_id": "12457",
+      "full_name": "Jaydon Blue",
+      "search_full_name": "jaydonblue",
+      "first_name": "Jaydon",
+      "last_name": "Blue",
+      "team": "DAL",
       "position": "RB",
-      "team": "BUF",
-      "adp": "13.4"
+      "adp": "12.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Cameron Ward",
-      "position": "QB",
-      "team": "TEN",
-      "adp": "13.5"
+      "player_id": "12490",
+      "full_name": "Bhayshul Tuten",
+      "search_full_name": "bhayshultuten",
+      "first_name": "Bhayshul",
+      "last_name": "Tuten",
+      "team": "JAX",
+      "position": "RB",
+      "adp": "12.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Hunter Henry",
-      "position": "TE",
+      "player_id": "9494",
+      "full_name": "Marvin Mims",
+      "search_full_name": "marvinmims",
+      "first_name": "Marvin",
+      "last_name": "Mims",
+      "team": "DEN",
+      "position": "WR",
+      "adp": "12.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11618",
+      "full_name": "Jalen McMillan",
+      "search_full_name": "jalenmcmillan",
+      "first_name": "Jalen",
+      "last_name": "McMillan",
+      "team": "TB",
+      "position": "WR",
+      "adp": "12.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12547",
+      "full_name": "Kyle Williams",
+      "search_full_name": "kylewilliams",
+      "first_name": "Kyle",
+      "last_name": "Williams",
       "team": "NE",
-      "adp": "13.6"
+      "position": "WR",
+      "adp": "12.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "J.K. Dobbins",
+      "player_id": "11565",
+      "full_name": "J.J. McCarthy",
+      "search_full_name": "jjmccarthy",
+      "first_name": "J.J.",
+      "last_name": "McCarthy",
+      "team": "MIN",
+      "position": "QB",
+      "adp": "12.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4950",
+      "full_name": "Christian Kirk",
+      "search_full_name": "christiankirk",
+      "first_name": "Christian",
+      "last_name": "Kirk",
+      "team": "HOU",
+      "position": "WR",
+      "adp": "12.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11651",
+      "full_name": "Isaac Guerendo",
+      "search_full_name": "isaacguerendo",
+      "first_name": "Isaac",
+      "last_name": "Guerendo",
+      "team": "SF",
       "position": "RB",
+      "adp": "13.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "1479",
+      "full_name": "Keenan Allen",
+      "search_full_name": "keenanallen",
+      "first_name": "Keenan",
+      "last_name": "Allen",
       "team": "FA",
-      "adp": "13.7"
-    },
-    {
-      "name": "Tyler Allgeier",
-      "position": "RB",
-      "team": "ATL",
-      "adp": "13.8"
-    },
-    {
-      "name": "Jerome Ford",
-      "position": "RB",
-      "team": "CLE",
-      "adp": "13.9"
-    },
-    {
-      "name": "Keenan Allen",
       "position": "WR",
-      "team": "FA",
-      "adp": "13.10"
+      "adp": "13.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Brandon Aubrey",
-      "position": "K",
+      "player_id": "11533",
+      "full_name": "Brandon Aubrey",
+      "search_full_name": "brandonaubrey",
+      "first_name": "Brandon",
+      "last_name": "Aubrey",
       "team": "DAL",
-      "adp": "13.11"
-    },
-    {
-      "name": "Jack Bech",
-      "position": "WR",
-      "team": "LV",
-      "adp": "13.12"
-    },
-    {
-      "name": "Cameron Dicker",
       "position": "K",
+      "adp": "13.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8259",
+      "full_name": "Cameron Dicker",
+      "search_full_name": "camerondicker",
+      "first_name": "Cameron",
+      "last_name": "Dicker",
       "team": "LAC",
-      "adp": "14.1"
-    },
-    {
-      "name": "Rashod Bateman",
-      "position": "WR",
-      "team": "BAL",
-      "adp": "14.2"
-    },
-    {
-      "name": "Trey Benson",
-      "position": "RB",
-      "team": "ARI",
-      "adp": "14.3"
-    },
-    {
-      "name": "Isaiah Likely",
-      "position": "TE",
-      "team": "BAL",
-      "adp": "14.4"
-    },
-    {
-      "name": "Harrison Butker",
       "position": "K",
+      "adp": "13.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5848",
+      "full_name": "Hollywood Brown",
+      "search_full_name": "hollywoodbrown",
+      "first_name": "Hollywood",
+      "last_name": "Brown",
       "team": "KC",
-      "adp": "14.5"
-    },
-    {
-      "name": "Ka'imi Fairbairn",
-      "position": "K",
-      "team": "HOU",
-      "adp": "14.6"
-    },
-    {
-      "name": "Adam Thielen",
       "position": "WR",
-      "team": "CAR",
-      "adp": "14.7"
+      "adp": "13.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Matthew Stafford",
-      "position": "QB",
-      "team": "LAR",
-      "adp": "14.8"
-    },
-    {
-      "name": "Michael Penix Jr.",
-      "position": "QB",
-      "team": "ATL",
-      "adp": "14.9"
-    },
-    {
-      "name": "Tua Tagovailoa",
-      "position": "QB",
-      "team": "MIA",
-      "adp": "14.10"
-    },
-    {
-      "name": "Mason Taylor",
+      "player_id": "1339",
+      "full_name": "Zach Ertz",
+      "search_full_name": "zachertz",
+      "first_name": "Zach",
+      "last_name": "Ertz",
+      "team": "WAS",
       "position": "TE",
-      "team": "NYJ",
-      "adp": "14.11"
+      "adp": "13.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Dylan Sampson",
-      "position": "RB",
-      "team": "CLE",
-      "adp": "14.12"
-    },
-    {
-      "name": "Xavier Legette",
-      "position": "WR",
-      "team": "CAR",
-      "adp": "15.1"
-    },
-    {
-      "name": "Quentin Johnston",
-      "position": "WR",
-      "team": "LAC",
-      "adp": "15.2"
-    },
-    {
-      "name": "Bryce Young",
+      "player_id": "12522",
+      "full_name": "Cameron Ward",
+      "search_full_name": "cameronward",
+      "first_name": "Cameron",
+      "last_name": "Ward",
+      "team": "TEN",
       "position": "QB",
-      "team": "CAR",
-      "adp": "15.3"
+      "adp": "13.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Jaylen Wright",
-      "position": "RB",
-      "team": "MIA",
-      "adp": "15.4"
-    },
-    {
-      "name": "DeAndre Hopkins",
-      "position": "WR",
-      "team": "BAL",
-      "adp": "15.5"
-    },
-    {
-      "name": "Wan'Dale Robinson",
-      "position": "WR",
-      "team": "NYG",
-      "adp": "15.6"
-    },
-    {
-      "name": "Mike Gesicki",
-      "position": "TE",
-      "team": "CIN",
-      "adp": "15.7"
-    },
-    {
-      "name": "Cade Otton",
-      "position": "TE",
-      "team": "TB",
-      "adp": "15.8"
-    },
-    {
-      "name": "Blake Corum",
-      "position": "RB",
-      "team": "LAR",
-      "adp": "15.9"
-    },
-    {
-      "name": "Braelon Allen",
-      "position": "RB",
-      "team": "NYJ",
-      "adp": "15.10"
-    },
-    {
-      "name": "Roschon Johnson",
-      "position": "RB",
-      "team": "CHI",
-      "adp": "15.11"
-    },
-    {
-      "name": "Devin Neal",
-      "position": "RB",
-      "team": "NO",
-      "adp": "15.12"
-    },
-    {
-      "name": "Joshua Palmer",
-      "position": "WR",
+      "player_id": "11575",
+      "full_name": "Ray Davis",
+      "search_full_name": "raydavis",
+      "first_name": "Ray",
+      "last_name": "Davis",
       "team": "BUF",
-      "adp": "16.1"
-    },
-    {
-      "name": "Romeo Doubs",
-      "position": "WR",
-      "team": "GB",
-      "adp": "16.2"
-    },
-    {
-      "name": "Anthony Richardson",
-      "position": "QB",
-      "team": "IND",
-      "adp": "16.3"
-    },
-    {
-      "name": "Nick Chubb",
       "position": "RB",
-      "team": "HOU",
-      "adp": "16.4"
+      "adp": "13.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Dalton Schultz",
+      "player_id": "3214",
+      "full_name": "Hunter Henry",
+      "search_full_name": "hunterhenry",
+      "first_name": "Hunter",
+      "last_name": "Henry",
+      "team": "NE",
       "position": "TE",
-      "team": "HOU",
-      "adp": "16.5"
+      "adp": "13.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Amari Cooper",
-      "position": "WR",
+      "player_id": "6806",
+      "full_name": "J.K. Dobbins",
+      "search_full_name": "jkdobbins",
+      "first_name": "J.K.",
+      "last_name": "Dobbins",
       "team": "FA",
-      "adp": "16.6"
+      "position": "RB",
+      "adp": "13.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Chris Boswell",
-      "position": "K",
-      "team": "PIT",
-      "adp": "16.7"
+      "player_id": "8132",
+      "full_name": "Tyler Allgeier",
+      "search_full_name": "tylerallgeier",
+      "first_name": "Tyler",
+      "last_name": "Allgeier",
+      "team": "ATL",
+      "position": "RB",
+      "adp": "13.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Jake Bates",
-      "position": "K",
-      "team": "DET",
-      "adp": "16.8"
-    },
-    {
-      "name": "Cedric Tillman",
-      "position": "WR",
+      "player_id": "8143",
+      "full_name": "Jerome Ford",
+      "search_full_name": "jeromeford",
+      "first_name": "Jerome",
+      "last_name": "Ford",
       "team": "CLE",
-      "adp": "16.9"
-    },
-    {
-      "name": "Tyler Bass",
-      "position": "K",
-      "team": "BUF",
-      "adp": "16.10"
-    },
-    {
-      "name": "Brenton Strange",
-      "position": "TE",
-      "team": "JAX",
-      "adp": "16.11"
-    },
-    {
-      "name": "Evan McPherson",
-      "position": "K",
-      "team": "CIN",
-      "adp": "16.12"
-    },
-    {
-      "name": "Jake Elliott",
-      "position": "K",
-      "team": "PHI",
-      "adp": "17.1"
-    },
-    {
-      "name": "Kareem Hunt",
       "position": "RB",
-      "team": "KC",
-      "adp": "17.2"
+      "adp": "13.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Geno Smith",
-      "position": "QB",
+      "player_id": "12483",
+      "full_name": "Jack Bech",
+      "search_full_name": "jackbech",
+      "first_name": "Jack",
+      "last_name": "Bech",
       "team": "LV",
-      "adp": "17.3"
-    },
-    {
-      "name": "Will Shipley",
-      "position": "RB",
-      "team": "PHI",
-      "adp": "17.4"
-    },
-    {
-      "name": "Jarquez Hunter",
-      "position": "RB",
-      "team": "LAR",
-      "adp": "17.5"
-    },
-    {
-      "name": "Alec Pierce",
       "position": "WR",
-      "team": "IND",
-      "adp": "17.6"
+      "adp": "14.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     },
     {
-      "name": "Pat Bryant",
-      "position": "WR",
-      "team": "DEN",
-      "adp": "17.7"
-    },
-    {
-      "name": "Sam Darnold",
+      "player_id": "11559",
+      "full_name": "Michael Penix",
+      "search_full_name": "michaelpenix",
+      "first_name": "Michael",
+      "last_name": "Penix",
+      "team": "ATL",
       "position": "QB",
+      "adp": "14.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "6768",
+      "full_name": "Tua Tagovailoa",
+      "search_full_name": "tuatagovailoa",
+      "first_name": "Tua",
+      "last_name": "Tagovailoa",
+      "team": "MIA",
+      "position": "QB",
+      "adp": "14.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9754",
+      "full_name": "Quentin Johnston",
+      "search_full_name": "quentinjohnston",
+      "first_name": "Quentin",
+      "last_name": "Johnston",
+      "team": "LAC",
+      "position": "WR",
+      "adp": "14.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4227",
+      "full_name": "Harrison Butker",
+      "search_full_name": "harrisonbutker",
+      "first_name": "Harrison",
+      "last_name": "Butker",
+      "team": "KC",
+      "position": "K",
+      "adp": "14.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "3451",
+      "full_name": "Ka'imi Fairbairn",
+      "search_full_name": "kaimifairbairn",
+      "first_name": "Ka'imi",
+      "last_name": "Fairbairn",
+      "team": "HOU",
+      "position": "K",
+      "adp": "14.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7571",
+      "full_name": "Rashod Bateman",
+      "search_full_name": "rashodbateman",
+      "first_name": "Rashod",
+      "last_name": "Bateman",
+      "team": "BAL",
+      "position": "WR",
+      "adp": "14.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11589",
+      "full_name": "Trey Benson",
+      "search_full_name": "treybenson",
+      "first_name": "Trey",
+      "last_name": "Benson",
+      "team": "ARI",
+      "position": "RB",
+      "adp": "14.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8131",
+      "full_name": "Isaiah Likely",
+      "search_full_name": "isaiahlikely",
+      "first_name": "Isaiah",
+      "last_name": "Likely",
+      "team": "BAL",
+      "position": "TE",
+      "adp": "14.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7839",
+      "full_name": "Evan McPherson",
+      "search_full_name": "evanmcpherson",
+      "first_name": "Evan",
+      "last_name": "McPherson",
+      "team": "CIN",
+      "position": "K",
+      "adp": "14.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "421",
+      "full_name": "Matthew Stafford",
+      "search_full_name": "matthewstafford",
+      "first_name": "Matthew",
+      "last_name": "Stafford",
+      "team": "LAR",
+      "position": "QB",
+      "adp": "14.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "1689",
+      "full_name": "Adam Thielen",
+      "search_full_name": "adamthielen",
+      "first_name": "Adam",
+      "last_name": "Thielen",
+      "team": "CAR",
+      "position": "WR",
+      "adp": "14.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12498",
+      "full_name": "Mason Taylor",
+      "search_full_name": "masontaylor",
+      "first_name": "Mason",
+      "last_name": "Taylor",
+      "team": "NYJ",
+      "position": "TE",
+      "adp": "15.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11576",
+      "full_name": "Braelon Allen",
+      "search_full_name": "braelonallen",
+      "first_name": "Braelon",
+      "last_name": "Allen",
+      "team": "NYJ",
+      "position": "RB",
+      "adp": "15.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11643",
+      "full_name": "Jaylen Wright",
+      "search_full_name": "jaylenwright",
+      "first_name": "Jaylen",
+      "last_name": "Wright",
+      "team": "MIA",
+      "position": "RB",
+      "adp": "15.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9229",
+      "full_name": "Anthony Richardson",
+      "search_full_name": "anthonyrichardson",
+      "first_name": "Anthony",
+      "last_name": "Richardson",
+      "team": "IND",
+      "position": "QB",
+      "adp": "15.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9228",
+      "full_name": "Bryce Young",
+      "search_full_name": "bryceyoung",
+      "first_name": "Bryce",
+      "last_name": "Young",
+      "team": "CAR",
+      "position": "QB",
+      "adp": "15.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "1426",
+      "full_name": "DeAndre Hopkins",
+      "search_full_name": "deandrehopkins",
+      "first_name": "DeAndre",
+      "last_name": "Hopkins",
+      "team": "BAL",
+      "position": "WR",
+      "adp": "15.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12469",
+      "full_name": "Dylan Sampson",
+      "search_full_name": "dylansampson",
+      "first_name": "Dylan",
+      "last_name": "Sampson",
+      "team": "CLE",
+      "position": "RB",
+      "adp": "15.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11626",
+      "full_name": "Xavier Legette",
+      "search_full_name": "xavierlegette",
+      "first_name": "Xavier",
+      "last_name": "Legette",
+      "team": "CAR",
+      "position": "WR",
+      "adp": "15.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8111",
+      "full_name": "Cade Otton",
+      "search_full_name": "cadeotton",
+      "first_name": "Cade",
+      "last_name": "Otton",
+      "team": "TB",
+      "position": "TE",
+      "adp": "15.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8126",
+      "full_name": "Wan'Dale Robinson",
+      "search_full_name": "wandalerobinson",
+      "first_name": "Wan'Dale",
+      "last_name": "Robinson",
+      "team": "NYG",
+      "position": "WR",
+      "adp": "15.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4993",
+      "full_name": "Mike Gesicki",
+      "search_full_name": "mikegesicki",
+      "first_name": "Mike",
+      "last_name": "Gesicki",
+      "team": "CIN",
+      "position": "TE",
+      "adp": "15.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11586",
+      "full_name": "Blake Corum",
+      "search_full_name": "blakecorum",
+      "first_name": "Blake",
+      "last_name": "Corum",
+      "team": "LAR",
+      "position": "RB",
+      "adp": "15.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7670",
+      "full_name": "Joshua Palmer",
+      "search_full_name": "joshuapalmer",
+      "first_name": "Joshua",
+      "last_name": "Palmer",
+      "team": "BUF",
+      "position": "WR",
+      "adp": "16.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7042",
+      "full_name": "Tyler Bass",
+      "search_full_name": "tylerbass",
+      "first_name": "Tyler",
+      "last_name": "Bass",
+      "team": "BUF",
+      "position": "K",
+      "adp": "16.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4195",
+      "full_name": "Jake Elliott",
+      "search_full_name": "jakeelliott",
+      "first_name": "Jake",
+      "last_name": "Elliott",
+      "team": "PHI",
+      "position": "K",
+      "adp": "16.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "10444",
+      "full_name": "Cedric Tillman",
+      "search_full_name": "cedrictillman",
+      "first_name": "Cedric",
+      "last_name": "Tillman",
+      "team": "CLE",
+      "position": "WR",
+      "adp": "16.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "10235",
+      "full_name": "Roschon Johnson",
+      "search_full_name": "roschonjohnson",
+      "first_name": "Roschon",
+      "last_name": "Johnson",
+      "team": "CHI",
+      "position": "RB",
+      "adp": "16.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8121",
+      "full_name": "Romeo Doubs",
+      "search_full_name": "romeodoubs",
+      "first_name": "Romeo",
+      "last_name": "Doubs",
+      "team": "GB",
+      "position": "WR",
+      "adp": "16.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12476",
+      "full_name": "Devin Neal",
+      "search_full_name": "devinneal",
+      "first_name": "Devin",
+      "last_name": "Neal",
+      "team": "NO",
+      "position": "RB",
+      "adp": "16.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5001",
+      "full_name": "Dalton Schultz",
+      "search_full_name": "daltonschultz",
+      "first_name": "Dalton",
+      "last_name": "Schultz",
+      "team": "HOU",
+      "position": "TE",
+      "adp": "16.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4988",
+      "full_name": "Nick Chubb",
+      "search_full_name": "nickchubb",
+      "first_name": "Nick",
+      "last_name": "Chubb",
+      "team": "HOU",
+      "position": "RB",
+      "adp": "16.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "2309",
+      "full_name": "Amari Cooper",
+      "search_full_name": "amaricooper",
+      "first_name": "Amari",
+      "last_name": "Cooper",
+      "team": "FA",
+      "position": "WR",
+      "adp": "16.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "1945",
+      "full_name": "Chris Boswell",
+      "search_full_name": "chrisboswell",
+      "first_name": "Chris",
+      "last_name": "Boswell",
+      "team": "PIT",
+      "position": "K",
+      "adp": "16.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11539",
+      "full_name": "Jake Bates",
+      "search_full_name": "jakebates",
+      "first_name": "Jake",
+      "last_name": "Bates",
+      "team": "DET",
+      "position": "K",
+      "adp": "16.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9480",
+      "full_name": "Brenton Strange",
+      "search_full_name": "brentonstrange",
+      "first_name": "Brenton",
+      "last_name": "Strange",
+      "team": "JAX",
+      "position": "TE",
+      "adp": "17.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "1373",
+      "full_name": "Geno Smith",
+      "search_full_name": "genosmith",
+      "first_name": "Geno",
+      "last_name": "Smith",
+      "team": "LV",
+      "position": "QB",
+      "adp": "17.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "1264",
+      "full_name": "Justin Tucker",
+      "search_full_name": "justintucker",
+      "first_name": "Justin",
+      "last_name": "Tucker",
+      "team": "FA",
+      "position": "K",
+      "adp": "17.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4943",
+      "full_name": "Sam Darnold",
+      "search_full_name": "samdarnold",
+      "first_name": "Sam",
+      "last_name": "Darnold",
       "team": "SEA",
-      "adp": "17.8"
+      "position": "QB",
+      "adp": "17.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4098",
+      "full_name": "Kareem Hunt",
+      "search_full_name": "kareemhunt",
+      "first_name": "Kareem",
+      "last_name": "Hunt",
+      "team": "KC",
+      "position": "RB",
+      "adp": "17.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12492",
+      "full_name": "Pat Bryant",
+      "search_full_name": "patbryant",
+      "first_name": "Pat",
+      "last_name": "Bryant",
+      "team": "DEN",
+      "position": "WR",
+      "adp": "17.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11577",
+      "full_name": "Will Shipley",
+      "search_full_name": "willshipley",
+      "first_name": "Will",
+      "last_name": "Shipley",
+      "team": "PHI",
+      "position": "RB",
+      "adp": "17.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8142",
+      "full_name": "Alec Pierce",
+      "search_full_name": "alecpierce",
+      "first_name": "Alec",
+      "last_name": "Pierce",
+      "team": "IND",
+      "position": "WR",
+      "adp": "17.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12527",
+      "full_name": "Ashton Jeanty",
+      "search_full_name": "ashtonjeanty",
+      "first_name": "Ashton",
+      "last_name": "Jeanty",
+      "team": "LV",
+      "position": "RB",
+      "adp": "2.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8130",
+      "full_name": "Trey McBride",
+      "search_full_name": "treymcbride",
+      "first_name": "Trey",
+      "last_name": "McBride",
+      "team": "ARI",
+      "position": "TE",
+      "adp": "2.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5850",
+      "full_name": "Josh Jacobs",
+      "search_full_name": "joshjacobs",
+      "first_name": "Josh",
+      "last_name": "Jacobs",
+      "team": "GB",
+      "position": "RB",
+      "adp": "2.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9488",
+      "full_name": "Jaxon Smith-Njigba",
+      "search_full_name": "jaxonsmithnjigba",
+      "first_name": "Jaxon",
+      "last_name": "Smith-Njigba",
+      "team": "SEA",
+      "position": "WR",
+      "adp": "2.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11604",
+      "full_name": "Brock Bowers",
+      "search_full_name": "brockbowers",
+      "first_name": "Brock",
+      "last_name": "Bowers",
+      "team": "LV",
+      "position": "TE",
+      "adp": "2.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8112",
+      "full_name": "Drake London",
+      "search_full_name": "drakelondon",
+      "first_name": "Drake",
+      "last_name": "London",
+      "team": "ATL",
+      "position": "WR",
+      "adp": "2.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9226",
+      "full_name": "De'Von Achane",
+      "search_full_name": "devonachane",
+      "first_name": "De'Von",
+      "last_name": "Achane",
+      "team": "MIA",
+      "position": "RB",
+      "adp": "2.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5859",
+      "full_name": "A.J. Brown",
+      "search_full_name": "ajbrown",
+      "first_name": "A.J.",
+      "last_name": "Brown",
+      "team": "PHI",
+      "position": "WR",
+      "adp": "2.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4034",
+      "full_name": "Christian McCaffrey",
+      "search_full_name": "christianmccaffrey",
+      "first_name": "Christian",
+      "last_name": "McCaffrey",
+      "team": "SF",
+      "position": "RB",
+      "adp": "2.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11584",
+      "full_name": "Bucky Irving",
+      "search_full_name": "buckyirving",
+      "first_name": "Bucky",
+      "last_name": "Irving",
+      "team": "TB",
+      "position": "RB",
+      "adp": "2.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4984",
+      "full_name": "Josh Allen",
+      "search_full_name": "joshallen",
+      "first_name": "Josh",
+      "last_name": "Allen",
+      "team": "BUF",
+      "position": "QB",
+      "adp": "2.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11635",
+      "full_name": "Ladd McConkey",
+      "search_full_name": "laddmcconkey",
+      "first_name": "Ladd",
+      "last_name": "McConkey",
+      "team": "LAC",
+      "position": "WR",
+      "adp": "2.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4881",
+      "full_name": "Lamar Jackson",
+      "search_full_name": "lamarjackson",
+      "first_name": "Lamar",
+      "last_name": "Jackson",
+      "team": "BAL",
+      "position": "QB",
+      "adp": "3.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8155",
+      "full_name": "Breece Hall",
+      "search_full_name": "breecehall",
+      "first_name": "Breece",
+      "last_name": "Hall",
+      "team": "NYJ",
+      "position": "RB",
+      "adp": "3.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "2216",
+      "full_name": "Mike Evans",
+      "search_full_name": "mikeevans",
+      "first_name": "Mike",
+      "last_name": "Evans",
+      "team": "TB",
+      "position": "WR",
+      "adp": "3.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11628",
+      "full_name": "Marvin Harrison",
+      "search_full_name": "marvinharrison",
+      "first_name": "Marvin",
+      "last_name": "Harrison",
+      "team": "ARI",
+      "position": "WR",
+      "adp": "3.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "6813",
+      "full_name": "Jonathan Taylor",
+      "search_full_name": "jonathantaylor",
+      "first_name": "Jonathan",
+      "last_name": "Taylor",
+      "team": "IND",
+      "position": "RB",
+      "adp": "3.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "6801",
+      "full_name": "Tee Higgins",
+      "search_full_name": "teehiggins",
+      "first_name": "Tee",
+      "last_name": "Higgins",
+      "team": "CIN",
+      "position": "WR",
+      "adp": "3.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "3321",
+      "full_name": "Tyreek Hill",
+      "search_full_name": "tyreekhill",
+      "first_name": "Tyreek",
+      "last_name": "Hill",
+      "team": "MIA",
+      "position": "WR",
+      "adp": "3.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11566",
+      "full_name": "Jayden Daniels",
+      "search_full_name": "jaydendaniels",
+      "first_name": "Jayden",
+      "last_name": "Daniels",
+      "team": "WAS",
+      "position": "QB",
+      "adp": "3.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8146",
+      "full_name": "Garrett Wilson",
+      "search_full_name": "garrettwilson",
+      "first_name": "Garrett",
+      "last_name": "Wilson",
+      "team": "NYJ",
+      "position": "WR",
+      "adp": "3.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5927",
+      "full_name": "Terry McLaurin",
+      "search_full_name": "terrymclaurin",
+      "first_name": "Terry",
+      "last_name": "McLaurin",
+      "team": "WAS",
+      "position": "WR",
+      "adp": "3.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8150",
+      "full_name": "Kyren Williams",
+      "search_full_name": "kyrenwilliams",
+      "first_name": "Kyren",
+      "last_name": "Williams",
+      "team": "LAR",
+      "position": "RB",
+      "adp": "3.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9224",
+      "full_name": "Chase Brown",
+      "search_full_name": "chasebrown",
+      "first_name": "Chase",
+      "last_name": "Brown",
+      "team": "CIN",
+      "position": "RB",
+      "adp": "3.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8138",
+      "full_name": "James Cook",
+      "search_full_name": "jamescook",
+      "first_name": "James",
+      "last_name": "Cook",
+      "team": "BUF",
+      "position": "RB",
+      "adp": "4.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4018",
+      "full_name": "Joe Mixon",
+      "search_full_name": "joemixon",
+      "first_name": "Joe",
+      "last_name": "Mixon",
+      "team": "HOU",
+      "position": "RB",
+      "adp": "4.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12507",
+      "full_name": "Omarion Hampton",
+      "search_full_name": "omarionhampton",
+      "first_name": "Omarion",
+      "last_name": "Hampton",
+      "team": "LAC",
+      "position": "RB",
+      "adp": "4.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7594",
+      "full_name": "Chuba Hubbard",
+      "search_full_name": "chubahubbard",
+      "first_name": "Chuba",
+      "last_name": "Hubbard",
+      "team": "CAR",
+      "position": "RB",
+      "adp": "4.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "6904",
+      "full_name": "Jalen Hurts",
+      "search_full_name": "jalenhurts",
+      "first_name": "Jalen",
+      "last_name": "Hurts",
+      "team": "PHI",
+      "position": "QB",
+      "adp": "4.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "2133",
+      "full_name": "Davante Adams",
+      "search_full_name": "davanteadams",
+      "first_name": "Davante",
+      "last_name": "Adams",
+      "team": "LAR",
+      "position": "WR",
+      "adp": "4.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "6770",
+      "full_name": "Joe Burrow",
+      "search_full_name": "joeburrow",
+      "first_name": "Joe",
+      "last_name": "Burrow",
+      "team": "CIN",
+      "position": "QB",
+      "adp": "4.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4217",
+      "full_name": "George Kittle",
+      "search_full_name": "georgekittle",
+      "first_name": "George",
+      "last_name": "Kittle",
+      "team": "SF",
+      "position": "TE",
+      "adp": "4.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4983",
+      "full_name": "DJ Moore",
+      "search_full_name": "djmoore",
+      "first_name": "DJ",
+      "last_name": "Moore",
+      "team": "CHI",
+      "position": "WR",
+      "adp": "4.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "10229",
+      "full_name": "Rashee Rice",
+      "search_full_name": "rasheerice",
+      "first_name": "Rashee",
+      "last_name": "Rice",
+      "team": "KC",
+      "position": "WR",
+      "adp": "4.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4634",
+      "full_name": "Kenneth Walker",
+      "search_full_name": "kennethwalker",
+      "first_name": "Kenneth",
+      "last_name": "Walker",
+      "team": "FA",
+      "position": "WR",
+      "adp": "4.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4035",
+      "full_name": "Alvin Kamara",
+      "search_full_name": "alvinkamara",
+      "first_name": "Alvin",
+      "last_name": "Kamara",
+      "team": "NO",
+      "position": "RB",
+      "adp": "4.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5045",
+      "full_name": "Courtland Sutton",
+      "search_full_name": "courtlandsutton",
+      "first_name": "Courtland",
+      "last_name": "Sutton",
+      "team": "DEN",
+      "position": "WR",
+      "adp": "5.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4046",
+      "full_name": "Patrick Mahomes",
+      "search_full_name": "patrickmahomes",
+      "first_name": "Patrick",
+      "last_name": "Mahomes",
+      "team": "KC",
+      "position": "QB",
+      "adp": "5.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8148",
+      "full_name": "Jameson Williams",
+      "search_full_name": "jamesonwilliams",
+      "first_name": "Jameson",
+      "last_name": "Williams",
+      "team": "DET",
+      "position": "WR",
+      "adp": "5.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8137",
+      "full_name": "George Pickens",
+      "search_full_name": "georgepickens",
+      "first_name": "George",
+      "last_name": "Pickens",
+      "team": "DAL",
+      "position": "WR",
+      "adp": "5.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5846",
+      "full_name": "DK Metcalf",
+      "search_full_name": "dkmetcalf",
+      "first_name": "DK",
+      "last_name": "Metcalf",
+      "team": "PIT",
+      "position": "WR",
+      "adp": "5.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9997",
+      "full_name": "Zay Flowers",
+      "search_full_name": "zayflowers",
+      "first_name": "Zay",
+      "last_name": "Flowers",
+      "team": "BAL",
+      "position": "WR",
+      "adp": "5.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "10859",
+      "full_name": "Sam LaPorta",
+      "search_full_name": "samlaporta",
+      "first_name": "Sam",
+      "last_name": "LaPorta",
+      "team": "DET",
+      "position": "TE",
+      "adp": "5.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5844",
+      "full_name": "T.J. Hockenson",
+      "search_full_name": "tjhockenson",
+      "first_name": "T.J.",
+      "last_name": "Hockenson",
+      "team": "MIN",
+      "position": "TE",
+      "adp": "5.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7525",
+      "full_name": "DeVonta Smith",
+      "search_full_name": "devontasmith",
+      "first_name": "DeVonta",
+      "last_name": "Smith",
+      "team": "PHI",
+      "position": "WR",
+      "adp": "5.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5892",
+      "full_name": "David Montgomery",
+      "search_full_name": "davidmontgomery",
+      "first_name": "David",
+      "last_name": "Montgomery",
+      "team": "DET",
+      "position": "RB",
+      "adp": "5.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4137",
+      "full_name": "James Conner",
+      "search_full_name": "jamesconner",
+      "first_name": "James",
+      "last_name": "Conner",
+      "team": "ARI",
+      "position": "RB",
+      "adp": "5.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11624",
+      "full_name": "Xavier Worthy",
+      "search_full_name": "xavierworthy",
+      "first_name": "Xavier",
+      "last_name": "Worthy",
+      "team": "KC",
+      "position": "WR",
+      "adp": "5.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8144",
+      "full_name": "Chris Olave",
+      "search_full_name": "chrisolave",
+      "first_name": "Chris",
+      "last_name": "Olave",
+      "team": "NO",
+      "position": "WR",
+      "adp": "6.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4199",
+      "full_name": "Aaron Jones",
+      "search_full_name": "aaronjones",
+      "first_name": "Aaron",
+      "last_name": "Jones",
+      "team": "MIN",
+      "position": "RB",
+      "adp": "6.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "6783",
+      "full_name": "Jerry Jeudy",
+      "search_full_name": "jerryjeudy",
+      "first_name": "Jerry",
+      "last_name": "Jeudy",
+      "team": "CLE",
+      "position": "WR",
+      "adp": "6.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12512",
+      "full_name": "Quinshon Judkins",
+      "search_full_name": "quinshonjudkins",
+      "first_name": "Quinshon",
+      "last_name": "Judkins",
+      "team": "CLE",
+      "position": "RB",
+      "adp": "6.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9756",
+      "full_name": "Jordan Addison",
+      "search_full_name": "jordanaddison",
+      "first_name": "Jordan",
+      "last_name": "Addison",
+      "team": "MIN",
+      "position": "WR",
+      "adp": "6.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7526",
+      "full_name": "Jaylen Waddle",
+      "search_full_name": "jaylenwaddle",
+      "first_name": "Jaylen",
+      "last_name": "Waddle",
+      "team": "MIA",
+      "position": "WR",
+      "adp": "6.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8205",
+      "full_name": "Isiah Pacheco",
+      "search_full_name": "isiahpacheco",
+      "first_name": "Isiah",
+      "last_name": "Pacheco",
+      "team": "KC",
+      "position": "RB",
+      "adp": "6.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12526",
+      "full_name": "Tetairoa McMillan",
+      "search_full_name": "tetairoamcmillan",
+      "first_name": "Tetairoa",
+      "last_name": "McMillan",
+      "team": "CAR",
+      "position": "WR",
+      "adp": "6.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12489",
+      "full_name": "RJ Harvey",
+      "search_full_name": "rjharvey",
+      "first_name": "RJ",
+      "last_name": "Harvey",
+      "team": "DEN",
+      "position": "RB",
+      "adp": "6.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4037",
+      "full_name": "Chris Godwin",
+      "search_full_name": "chrisgodwin",
+      "first_name": "Chris",
+      "last_name": "Godwin",
+      "team": "TB",
+      "position": "WR",
+      "adp": "6.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4892",
+      "full_name": "Baker Mayfield",
+      "search_full_name": "bakermayfield",
+      "first_name": "Baker",
+      "last_name": "Mayfield",
+      "team": "TB",
+      "position": "QB",
+      "adp": "6.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12530",
+      "full_name": "Travis Hunter",
+      "search_full_name": "travishunter",
+      "first_name": "Travis",
+      "last_name": "Hunter",
+      "team": "JAX",
+      "position": "WR",
+      "adp": "6.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12529",
+      "full_name": "TreVeyon Henderson",
+      "search_full_name": "treveyonhenderson",
+      "first_name": "TreVeyon",
+      "last_name": "Henderson",
+      "team": "NE",
+      "position": "RB",
+      "adp": "7.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5012",
+      "full_name": "Mark Andrews",
+      "search_full_name": "markandrews",
+      "first_name": "Mark",
+      "last_name": "Andrews",
+      "team": "BAL",
+      "position": "TE",
+      "adp": "7.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8154",
+      "full_name": "Brian Robinson",
+      "search_full_name": "brianrobinson",
+      "first_name": "Brian",
+      "last_name": "Robinson",
+      "team": "WAS",
+      "position": "RB",
+      "adp": "7.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11563",
+      "full_name": "Bo Nix",
+      "search_full_name": "bonix",
+      "first_name": "Bo",
+      "last_name": "Nix",
+      "team": "DEN",
+      "position": "QB",
+      "adp": "7.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "1466",
+      "full_name": "Travis Kelce",
+      "search_full_name": "traviskelce",
+      "first_name": "Travis",
+      "last_name": "Kelce",
+      "team": "KC",
+      "position": "TE",
+      "adp": "7.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5967",
+      "full_name": "Tony Pollard",
+      "search_full_name": "tonypollard",
+      "first_name": "Tony",
+      "last_name": "Pollard",
+      "team": "TEN",
+      "position": "RB",
+      "adp": "7.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4144",
+      "full_name": "Jonnu Smith",
+      "search_full_name": "jonnusmith",
+      "first_name": "Jonnu",
+      "last_name": "Smith",
+      "team": "MIA",
+      "position": "TE",
+      "adp": "7.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11620",
+      "full_name": "Rome Odunze",
+      "search_full_name": "romeodunze",
+      "first_name": "Rome",
+      "last_name": "Odunze",
+      "team": "CHI",
+      "position": "WR",
+      "adp": "7.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11655",
+      "full_name": "Tyrone Tracy",
+      "search_full_name": "tyronetracy",
+      "first_name": "Tyrone",
+      "last_name": "Tracy",
+      "team": "NYG",
+      "position": "RB",
+      "adp": "7.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "6790",
+      "full_name": "D'Andre Swift",
+      "search_full_name": "dandreswift",
+      "first_name": "D'Andre",
+      "last_name": "Swift",
+      "team": "CHI",
+      "position": "RB",
+      "adp": "7.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4981",
+      "full_name": "Calvin Ridley",
+      "search_full_name": "calvinridley",
+      "first_name": "Calvin",
+      "last_name": "Ridley",
+      "team": "TEN",
+      "position": "WR",
+      "adp": "7.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8134",
+      "full_name": "Khalil Shakir",
+      "search_full_name": "khalilshakir",
+      "first_name": "Khalil",
+      "last_name": "Shakir",
+      "team": "BUF",
+      "position": "WR",
+      "adp": "7.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7528",
+      "full_name": "Najee Harris",
+      "search_full_name": "najeeharris",
+      "first_name": "Najee",
+      "last_name": "Harris",
+      "team": "LAC",
+      "position": "RB",
+      "adp": "8.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4066",
+      "full_name": "Evan Engram",
+      "search_full_name": "evanengram",
+      "first_name": "Evan",
+      "last_name": "Engram",
+      "team": "DEN",
+      "position": "TE",
+      "adp": "8.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "2449",
+      "full_name": "Stefon Diggs",
+      "search_full_name": "stefondiggs",
+      "first_name": "Stefon",
+      "last_name": "Diggs",
+      "team": "NE",
+      "position": "WR",
+      "adp": "8.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7543",
+      "full_name": "Travis Etienne",
+      "search_full_name": "travisetienne",
+      "first_name": "Travis",
+      "last_name": "Etienne",
+      "team": "JAX",
+      "position": "RB",
+      "adp": "8.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5947",
+      "full_name": "Jakobi Meyers",
+      "search_full_name": "jakobimeyers",
+      "first_name": "Jakobi",
+      "last_name": "Meyers",
+      "team": "LV",
+      "position": "WR",
+      "adp": "8.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5872",
+      "full_name": "Deebo Samuel",
+      "search_full_name": "deebosamuel",
+      "first_name": "Deebo",
+      "last_name": "Samuel",
+      "team": "WAS",
+      "position": "WR",
+      "adp": "8.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "6803",
+      "full_name": "Brandon Aiyuk",
+      "search_full_name": "brandonaiyuk",
+      "first_name": "Brandon",
+      "last_name": "Aiyuk",
+      "team": "SF",
+      "position": "WR",
+      "adp": "8.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12504",
+      "full_name": "Kaleb Johnson",
+      "search_full_name": "kalebjohnson",
+      "first_name": "Kaleb",
+      "last_name": "Johnson",
+      "team": "PIT",
+      "position": "RB",
+      "adp": "8.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8228",
+      "full_name": "Jaylen Warren",
+      "search_full_name": "jaylenwarren",
+      "first_name": "Jaylen",
+      "last_name": "Warren",
+      "team": "PIT",
+      "position": "RB",
+      "adp": "8.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "3163",
+      "full_name": "Jared Goff",
+      "search_full_name": "jaredgoff",
+      "first_name": "Jared",
+      "last_name": "Goff",
+      "team": "DET",
+      "position": "QB",
+      "adp": "8.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4039",
+      "full_name": "Cooper Kupp",
+      "search_full_name": "cooperkupp",
+      "first_name": "Cooper",
+      "last_name": "Kupp",
+      "team": "SEA",
+      "position": "WR",
+      "adp": "8.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5849",
+      "full_name": "Kyler Murray",
+      "search_full_name": "kylermurray",
+      "first_name": "Kyler",
+      "last_name": "Murray",
+      "team": "ARI",
+      "position": "QB",
+      "adp": "8.9",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "4033",
+      "full_name": "David Njoku",
+      "search_full_name": "davidnjoku",
+      "first_name": "David",
+      "last_name": "Njoku",
+      "team": "CLE",
+      "position": "TE",
+      "adp": "9.1",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7611",
+      "full_name": "Rhamondre Stevenson",
+      "search_full_name": "rhamondrestevenson",
+      "first_name": "Rhamondre",
+      "last_name": "Stevenson",
+      "team": "NE",
+      "position": "RB",
+      "adp": "9.10",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8183",
+      "full_name": "Brock Purdy",
+      "search_full_name": "brockpurdy",
+      "first_name": "Brock",
+      "last_name": "Purdy",
+      "team": "SF",
+      "position": "QB",
+      "adp": "9.11",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "6819",
+      "full_name": "Michael Pittman",
+      "search_full_name": "michaelpittman",
+      "first_name": "Michael",
+      "last_name": "Pittman",
+      "team": "IND",
+      "position": "WR",
+      "adp": "9.12",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "10222",
+      "full_name": "Jayden Reed",
+      "search_full_name": "jaydenreed",
+      "first_name": "Jayden",
+      "last_name": "Reed",
+      "team": "GB",
+      "position": "WR",
+      "adp": "9.2",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "11638",
+      "full_name": "Ricky Pearsall",
+      "search_full_name": "rickypearsall",
+      "first_name": "Ricky",
+      "last_name": "Pearsall",
+      "team": "SF",
+      "position": "WR",
+      "adp": "9.3",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12518",
+      "full_name": "Tyler Warren",
+      "search_full_name": "tylerwarren",
+      "first_name": "Tyler",
+      "last_name": "Warren",
+      "team": "IND",
+      "position": "TE",
+      "adp": "9.4",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "6797",
+      "full_name": "Justin Herbert",
+      "search_full_name": "justinherbert",
+      "first_name": "Justin",
+      "last_name": "Herbert",
+      "team": "LAC",
+      "position": "QB",
+      "adp": "9.5",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "12501",
+      "full_name": "Matthew Golden",
+      "search_full_name": "matthewgolden",
+      "first_name": "Matthew",
+      "last_name": "Golden",
+      "team": "GB",
+      "position": "WR",
+      "adp": "9.6",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "9500",
+      "full_name": "Josh Downs",
+      "search_full_name": "joshdowns",
+      "first_name": "Josh",
+      "last_name": "Downs",
+      "team": "IND",
+      "position": "WR",
+      "adp": "9.7",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "7588",
+      "full_name": "Javonte Williams",
+      "search_full_name": "javontewilliams",
+      "first_name": "Javonte",
+      "last_name": "Williams",
+      "team": "DAL",
+      "position": "RB",
+      "adp": "9.8",
+      "scoring": "non-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
     }
   ]
 }

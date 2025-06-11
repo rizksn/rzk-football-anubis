@@ -16,9 +16,12 @@ def save_adp_data(players, format_, type_, scoring, platform):
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
     with open(path, "w") as f:
-        json.dump({"data": players}, f, indent=2)
+        json.dump({
+            "scraped_at": time.strftime('%Y-%m-%d %H:%M:%S'),
+            "data": players
+        }, f, indent=2)
 
-    print(f"\n✅ Saved {len(players)} players to {path}")
+    print(f"[{time.strftime('%H:%M:%S')}] ✅ Saved {len(players)} players to {path}")
 
 def parse_adp_html(html):
     soup = BeautifulSoup(html, "html.parser")
@@ -42,8 +45,10 @@ def parse_adp_html(html):
                 "team": team,
                 "adp": adp
             })
-        except:
+        except Exception as e:
+            print(f"⚠️ Failed to parse row: {e}")
             continue
+
     return players
 
 def scroll_to_load_all(page):
@@ -88,7 +93,7 @@ def set_toggle(page, to_superflex=True):
         print(f"⚠️ Error toggling superflex: {e}")
 
 def scrape_combination(page, format_, type_, scoring, platform):
-    print(f"🔍 Scraping: {format_}, {type_}, {scoring}, {platform}")
+    print(f"[{time.strftime('%H:%M:%S')}] 🔍 Scraping: {format_}, {type_}, {scoring}, {platform}")
     scroll_to_load_all(page)
     html = page.content()
     players = parse_adp_html(html)

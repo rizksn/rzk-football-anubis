@@ -1,4 +1,5 @@
 {
+  "scraped_at": "2025-06-11 11:21:14",
   "data": [
     {
       "name": "Ja'Marr Chase",
@@ -19,15 +20,15 @@
       "adp": "1.3"
     },
     {
-      "name": "Jahmyr Gibbs",
-      "position": "RB",
-      "team": "DET",
-      "adp": "1.4"
-    },
-    {
       "name": "CeeDee Lamb",
       "position": "WR",
       "team": "DAL",
+      "adp": "1.4"
+    },
+    {
+      "name": "Jahmyr Gibbs",
+      "position": "RB",
+      "team": "DET",
       "adp": "1.5"
     },
     {
@@ -283,15 +284,15 @@
       "adp": "4.11"
     },
     {
-      "name": "Xavier Worthy",
-      "position": "WR",
-      "team": "KC",
-      "adp": "4.12"
-    },
-    {
       "name": "D.J. Moore",
       "position": "WR",
       "team": "CHI",
+      "adp": "4.12"
+    },
+    {
+      "name": "Xavier Worthy",
+      "position": "WR",
+      "team": "KC",
       "adp": "5.1"
     },
     {
@@ -403,15 +404,15 @@
       "adp": "6.7"
     },
     {
-      "name": "Tony Pollard",
-      "position": "RB",
-      "team": "TEN",
-      "adp": "6.8"
-    },
-    {
       "name": "Tetairoa McMillan",
       "position": "WR",
       "team": "CAR",
+      "adp": "6.8"
+    },
+    {
+      "name": "Tony Pollard",
+      "position": "RB",
+      "team": "TEN",
       "adp": "6.9"
     },
     {
@@ -481,15 +482,15 @@
       "adp": "7.8"
     },
     {
-      "name": "Jakobi Meyers",
-      "position": "WR",
-      "team": "LVR",
-      "adp": "7.9"
-    },
-    {
       "name": "Jonnu Smith",
       "position": "TE",
       "team": "MIA",
+      "adp": "7.9"
+    },
+    {
+      "name": "Jakobi Meyers",
+      "position": "WR",
+      "team": "LVR",
       "adp": "7.10"
     },
     {
@@ -625,27 +626,27 @@
       "adp": "9.8"
     },
     {
-      "name": "Jayden Reed",
-      "position": "WR",
-      "team": "GB",
-      "adp": "9.9"
-    },
-    {
       "name": "Bhayshul Tuten",
       "position": "RB",
       "team": "JAC",
-      "adp": "9.10"
+      "adp": "9.9"
     },
     {
-      "name": "Jordan Mason",
-      "position": "RB",
-      "team": "MIN",
-      "adp": "9.11"
+      "name": "Jayden Reed",
+      "position": "WR",
+      "team": "GB",
+      "adp": "9.10"
     },
     {
       "name": "Caleb Williams",
       "position": "QB",
       "team": "CHI",
+      "adp": "9.11"
+    },
+    {
+      "name": "Jordan Mason",
+      "position": "RB",
+      "team": "MIN",
       "adp": "9.12"
     },
     {
@@ -829,15 +830,15 @@
       "adp": "12.6"
     },
     {
-      "name": "C.J. Stroud",
-      "position": "QB",
-      "team": "HOU",
-      "adp": "12.7"
-    },
-    {
       "name": "Zack Moss",
       "position": "RB",
       "team": "CIN",
+      "adp": "12.7"
+    },
+    {
+      "name": "C.J. Stroud",
+      "position": "QB",
+      "team": "HOU",
       "adp": "12.8"
     },
     {
@@ -861,7 +862,7 @@
     {
       "name": "J.K. Dobbins",
       "position": "RB",
-      "team": "UNS",
+      "team": "DEN",
       "adp": "12.12"
     },
     {
@@ -1045,27 +1046,27 @@
       "adp": "15.6"
     },
     {
-      "name": "Will Shipley",
-      "position": "RB",
-      "team": "PHI",
-      "adp": "15.7"
-    },
-    {
       "name": "Tyler Lockett",
       "position": "WR",
       "team": "TEN",
-      "adp": "15.8"
+      "adp": "15.7"
     },
     {
-      "name": "DJ Giddens",
+      "name": "Will Shipley",
       "position": "RB",
-      "team": "IND",
-      "adp": "15.9"
+      "team": "PHI",
+      "adp": "15.8"
     },
     {
       "name": "Tua Tagovailoa",
       "position": "QB",
       "team": "MIA",
+      "adp": "15.9"
+    },
+    {
+      "name": "DJ Giddens",
+      "position": "RB",
+      "team": "IND",
       "adp": "15.10"
     },
     {
@@ -1093,15 +1094,15 @@
       "adp": "16.2"
     },
     {
-      "name": "Mason Taylor",
-      "position": "TE",
-      "team": "NYJ",
-      "adp": "16.3"
-    },
-    {
       "name": "Jalen Coker",
       "position": "WR",
       "team": "CAR",
+      "adp": "16.3"
+    },
+    {
+      "name": "Mason Taylor",
+      "position": "TE",
+      "team": "NYJ",
       "adp": "16.4"
     },
     {
@@ -1165,15 +1166,15 @@
       "adp": "17.2"
     },
     {
-      "name": "Trevor Etienne",
-      "position": "RB",
-      "team": "CAR",
-      "adp": "17.3"
-    },
-    {
       "name": "Blake Corum",
       "position": "RB",
       "team": "LAR",
+      "adp": "17.3"
+    },
+    {
+      "name": "Trevor Etienne",
+      "position": "RB",
+      "team": "CAR",
       "adp": "17.4"
     },
     {

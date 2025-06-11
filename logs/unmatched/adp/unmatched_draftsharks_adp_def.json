@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Minnesota Vikings",
+    "normalized": "minnesotavikings",
+    "team": "MIN",
+    "position": "DEF"
+  },
+  {
+    "name": "Denver Broncos",
+    "normalized": "denverbroncos",
+    "team": "DEN",
+    "position": "DEF"
+  },
+  {
+    "name": "Baltimore Ravens",
+    "normalized": "baltimoreravens",
+    "team": "BAL",
+    "position": "DEF"
+  },
+  {
+    "name": "Pittsburgh Steelers",
+    "normalized": "pittsburghsteelers",
+    "team": "PIT",
+    "position": "DEF"
+  },
+  {
+    "name": "Kansas City Chiefs",
+    "normalized": "kansascitychiefs",
+    "team": "KC",
+    "position": "DEF"
+  },
+  {
+    "name": "New York Jets",
+    "normalized": "newyorkjets",
+    "team": "NYJ",
+    "position": "DEF"
+  },
+  {
+    "name": "Detroit Lions",
+    "normalized": "detroitlions",
+    "team": "DET",
+    "position": "DEF"
+  },
+  {
+    "name": "Houston Texans",
+    "normalized": "houstontexans",
+    "team": "HOU",
+    "position": "DEF"
+  },
+  {
+    "name": "Los Angeles Chargers",
+    "normalized": "losangeleschargers",
+    "team": "LAC",
+    "position": "DEF"
+  },
+  {
+    "name": "Philadelphia Eagles",
+    "normalized": "philadelphiaeagles",
+    "team": "PHI",
+    "position": "DEF"
+  },
+  {
+    "name": "New Orleans Saints",
+    "normalized": "neworleanssaints",
+    "team": "NO",
+    "position": "DEF"
+  },
+  {
+    "name": "Dallas Cowboys",
+    "normalized": "dallascowboys",
+    "team": "DAL",
+    "position": "DEF"
+  },
+  {
+    "name": "San Francisco 49ers",
+    "normalized": "sanfrancisco49ers",
+    "team": "SF",
+    "position": "DEF"
+  },
+  {
+    "name": "Cleveland Browns",
+    "normalized": "clevelandbrowns",
+    "team": "CLE",
+    "position": "DEF"
+  },
+  {
+    "name": "Tennessee Titans",
+    "normalized": "tennesseetitans",
+    "team": "TEN",
+    "position": "DEF"
+  },
+  {
+    "name": "Buffalo Bills",
+    "normalized": "buffalobills",
+    "team": "BUF",
+    "position": "DEF"
+  },
+  {
+    "name": "New York Giants",
+    "normalized": "newyorkgiants",
+    "team": "NYG",
+    "position": "DEF"
+  },
+  {
+    "name": "Miami Dolphins",
+    "normalized": "miamidolphins",
+    "team": "MIA",
+    "position": "DEF"
+  }
+]
