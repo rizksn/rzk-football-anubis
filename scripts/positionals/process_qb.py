@@ -16,12 +16,12 @@ RECEIVING_PATH = Path("anubis/data/processed/nfl/nfl_player_receiving_{year}.pro
 OUT_PATH = Path("anubis/data/processed/nfl/nfl_player_qb_{year}.processed.json")
 
 # Key mappings per stat type
-NFL_PASS_KEYS = {
+PASS_MAP = {
     "yds": "pass_yds",
     "yds/att": "pass_yds_att",
     "att": "pass_att",
     "cmp": "pass_cmp",
-    "cmp%": "pass_cmp_percent",
+    "cmp_%": "pass_cmp_percent",  
     "td": "pass_td",
     "int": "pass_int",
     "rate": "pass_rate",
@@ -29,24 +29,24 @@ NFL_PASS_KEYS = {
     "1st%": "pass_first_percent",
     "20+": "pass_20_plus",
     "40+": "pass_40_plus",
-    "long": "pass_long",
+    "lng": "pass_long",
     "sck": "pass_sck",
     "scky": "pass_scky",
 }
 
-NFL_RUSH_KEYS = {
+RUSH_MAP = {
     "att": "rush_att",
-    "yds": "rush_yds",
+    "rush_yds": "rush_yds",  
     "td": "rush_td",
     "20+": "rush_20_plus",
     "40+": "rush_40_plus",
-    "long": "rush_long",
+    "lng": "rush_long",
     "rush_1st": "rush_first",
     "rush_1st%": "rush_first_percent",
     "rush_fum": "rush_fum",
 }
 
-NFL_REC_KEYS = {
+REC_MAP = {
     "rec": "rec",
     "yds": "rec_yds",
     "td": "rec_td",
@@ -60,7 +60,7 @@ NFL_REC_KEYS = {
     "tgts": "rec_targets",
 }
 
-ALL_STAT_KEYS = set(NFL_PASS_KEYS.values()) | set(NFL_RUSH_KEYS.values()) | set(NFL_REC_KEYS.values())
+ALL_STAT_KEYS = set(PASS_MAP.values()) | set(RUSH_MAP.values()) | set(REC_MAP.values())
 
 def process_qb_stats(year: int):
     with SLEEPER_PATH.open("r") as f:
@@ -73,9 +73,9 @@ def process_qb_stats(year: int):
     merged = {}
 
     for source_data, key_map in [
-        (passing_data, NFL_PASS_KEYS),
-        (rushing_data, NFL_RUSH_KEYS),
-        (receiving_data, NFL_REC_KEYS),
+        (passing_data, PASS_MAP),
+        (rushing_data, RUSH_MAP),
+        (receiving_data, REC_MAP),
     ]:
         for player in source_data:
             raw_name = player["full_name"]
