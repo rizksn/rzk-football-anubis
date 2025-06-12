@@ -27,6 +27,11 @@ from anubis.db.schemas import (
 )
 from anubis.db.schemas.market import market_metadata
 
+from anubis.db.schemas.nfl.nfl_player_qb_2024 import nfl_player_qb_2024
+from anubis.db.schemas.nfl.nfl_player_rb_2024 import nfl_player_rb_2024
+from anubis.db.schemas.nfl.nfl_player_wr_2024 import nfl_player_wr_2024
+from anubis.db.schemas.nfl.nfl_player_te_2024 import nfl_player_te_2024
+
 # Load env vars
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
@@ -59,6 +64,12 @@ async def init():
                 + list(receiving_metadata.tables.values())
                 + list(kicking_metadata.tables.values())
                 + [
+                    nfl_player_qb_2024,
+                    nfl_player_rb_2024,
+                    nfl_player_wr_2024,
+                    nfl_player_te_2024,
+                ]
+                + [
                     # Redraft
                     redraft_tables.redraft_1qb_0_5_ppr_consensus,
                     redraft_tables.redraft_1qb_0_5_ppr_sleeper,
@@ -84,7 +95,7 @@ async def init():
                 ]
             )
             for table in all_tables:
-                print(f"✅ Creating table: {table.schema}.{table.name}")
+                print(f"✅ Creating table: {table.metadata.schema}.{table.name}")
 
             from sqlalchemy import MetaData
             tmp = MetaData()

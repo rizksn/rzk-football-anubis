@@ -10,6 +10,10 @@ from anubis.db.schemas.nfl import (
     rushing_metadata,
     receiving_metadata,
     kicking_metadata,
+    nfl_player_qb_2024,
+    nfl_player_rb_2024,
+    nfl_player_wr_2024,
+    nfl_player_te_2024,
 )
 
 from anubis.db.schemas.market import market_metadata
@@ -20,5 +24,10 @@ __all__ = [
     "nfl_player_rushing_2024", "rushing_metadata",
     "nfl_player_receiving_2024", "receiving_metadata",
     "nfl_player_kicking_2024", "kicking_metadata",
+    "market_metadata",
+    "nfl_player_qb_2024",
+    "nfl_player_rb_2024",
+    "nfl_player_wr_2024",
+    "nfl_player_te_2024",
     "market_metadata",
 ]

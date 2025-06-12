@@ -6,6 +6,7 @@ from anubis.utils.normalize.team import normalize_team
 from anubis.utils.normalize.player import normalize_player_fields
 from anubis.utils.parse.stat_value import convert_stat_value
 from anubis.ingest.utils.match_players import match_player_by_name
+from anubis.utils.stats.utils import pad_missing_stats
 
 # File paths
 SLEEPER_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
@@ -14,11 +15,52 @@ RUSHING_PATH = Path("anubis/data/processed/nfl/nfl_player_rushing_{year}.process
 RECEIVING_PATH = Path("anubis/data/processed/nfl/nfl_player_receiving_{year}.processed.json")
 OUT_PATH = Path("anubis/data/processed/nfl/nfl_player_qb_{year}.processed.json")
 
-# Relevant stat fields
-PASS_FIELDS = {"pass_yds", "yds_att", "att", "cmp", "cmp%", "td", "int", "rate", "1st", "1st%", "20+", "40+", "long", "sck", "scky"}
-RUSH_FIELDS = {"att", "rush_yds", "td", "20+", "40+", "long", "rush_1st", "rush_1st%", "rush_fum"}
-REC_FIELDS = {"rec", "yds", "td", "20+", "40+", "lng", "rec_1st", "1st%", "rec_fum", "rec_yac/r", "tgts"}
+# Key mappings per stat type
+NFL_PASS_KEYS = {
+    "yds": "pass_yds",
+    "yds/att": "pass_yds_att",
+    "att": "pass_att",
+    "cmp": "pass_cmp",
+    "cmp%": "pass_cmp_percent",
+    "td": "pass_td",
+    "int": "pass_int",
+    "rate": "pass_rate",
+    "1st": "pass_first",
+    "1st%": "pass_first_percent",
+    "20+": "pass_20_plus",
+    "40+": "pass_40_plus",
+    "long": "pass_long",
+    "sck": "pass_sck",
+    "scky": "pass_scky",
+}
 
+NFL_RUSH_KEYS = {
+    "att": "rush_att",
+    "yds": "rush_yds",
+    "td": "rush_td",
+    "20+": "rush_20_plus",
+    "40+": "rush_40_plus",
+    "long": "rush_long",
+    "rush_1st": "rush_first",
+    "rush_1st%": "rush_first_percent",
+    "rush_fum": "rush_fum",
+}
+
+NFL_REC_KEYS = {
+    "rec": "rec",
+    "yds": "rec_yds",
+    "td": "rec_td",
+    "20+": "rec_20_plus",
+    "40+": "rec_40_plus",
+    "lng": "rec_long",
+    "rec_1st": "rec_first",
+    "1st%": "rec_first_percent",
+    "rec_fum": "rec_fum",
+    "rec_yac/r": "rec_yac_per_rec",
+    "tgts": "rec_targets",
+}
+
+ALL_STAT_KEYS = set(NFL_PASS_KEYS.values()) | set(NFL_RUSH_KEYS.values()) | set(NFL_REC_KEYS.values())
 
 def process_qb_stats(year: int):
     with SLEEPER_PATH.open("r") as f:
@@ -30,13 +72,13 @@ def process_qb_stats(year: int):
 
     merged = {}
 
-    for source_data, fields in [
-        (passing_data, PASS_FIELDS),
-        (rushing_data, RUSH_FIELDS),
-        (receiving_data, REC_FIELDS),
+    for source_data, key_map in [
+        (passing_data, NFL_PASS_KEYS),
+        (rushing_data, NFL_RUSH_KEYS),
+        (receiving_data, NFL_REC_KEYS),
     ]:
         for player in source_data:
-            raw_name = player["player"]
+            raw_name = player["full_name"]
             match = match_player_by_name(raw_name, sleeper_pool)
             if not match or match["position"] != "QB":
                 continue
@@ -44,33 +86,34 @@ def process_qb_stats(year: int):
             pid = match["player_id"]
             if pid not in merged:
                 merged[pid] = {
-                    "player_id": match["player_id"],
+                    "player_id": pid,
                     "full_name": normalize_name_for_display(raw_name),
                     "search_full_name": match["search_full_name"],
                     "first_name": match["first_name"],
                     "last_name": match["last_name"],
                     "team": normalize_team(match["team"]),
-                    "position": match["position"]
+                    "position": match["position"],
                 }
 
-            for k in fields:
-                if k in player:
-                    merged[pid][k] = convert_stat_value(k, player[k])
+            for raw_key, value in player.items():
+                if raw_key in key_map:
+                    canonical_key = key_map[raw_key]
+                    merged[pid][canonical_key] = convert_stat_value(raw_key, value)
 
-    final = [normalize_player_fields(p) for p in merged.values()]
-    OUT_PATH.with_name(OUT_PATH.name.format(year=year)).parent.mkdir(parents=True, exist_ok=True)
-    with OUT_PATH.with_name(OUT_PATH.name.format(year=year)).open("w") as f:
+    final = [pad_missing_stats(normalize_player_fields(p), ALL_STAT_KEYS) for p in merged.values()]
+
+    output_path = OUT_PATH.with_name(OUT_PATH.name.format(year=year))
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("w") as f:
         json.dump(final, f, indent=2)
 
-    print(f"✅ Processed {len(final)} QBs → {OUT_PATH.name.format(year=year)}")
-
+    print(f"✅ Processed {len(final)} QBs → {output_path.name}")
 
 def _load_stat_json(path: Path):
     if not path.exists():
         return []
     with path.open("r") as f:
         return json.load(f)
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate combined QB stats for a given season")

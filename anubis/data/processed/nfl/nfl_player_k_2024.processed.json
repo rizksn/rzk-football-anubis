@@ -1,0 +1,422 @@
+[
+  {
+    "player_id": "1945",
+    "full_name": "Chris Boswell",
+    "search_full_name": "chrisboswell",
+    "first_name": "Chris",
+    "last_name": "Boswell",
+    "team": "PIT",
+    "position": "K",
+    "fgm": 41
+  },
+  {
+    "player_id": "11533",
+    "full_name": "Brandon Aubrey",
+    "search_full_name": "brandonaubrey",
+    "first_name": "Brandon",
+    "last_name": "Aubrey",
+    "team": "DAL",
+    "position": "K",
+    "fgm": 40
+  },
+  {
+    "player_id": "8259",
+    "full_name": "Cameron Dicker",
+    "search_full_name": "camerondicker",
+    "first_name": "Cameron",
+    "last_name": "Dicker",
+    "team": "LAC",
+    "position": "K",
+    "fgm": 39
+  },
+  {
+    "player_id": "5119",
+    "full_name": "Jason Sanders",
+    "search_full_name": "jasonsanders",
+    "first_name": "Jason",
+    "last_name": "Sanders",
+    "team": "MIA",
+    "position": "K",
+    "fgm": 37
+  },
+  {
+    "player_id": "3451",
+    "full_name": "Ka'imi Fairbairn",
+    "search_full_name": "kaimifairbairn",
+    "first_name": "Ka'imi",
+    "last_name": "Fairbairn",
+    "team": "HOU",
+    "position": "K",
+    "fgm": 36
+  },
+  {
+    "player_id": "5095",
+    "full_name": "Daniel Carlson",
+    "search_full_name": "danielcarlson",
+    "first_name": "Daniel",
+    "last_name": "Carlson",
+    "team": "LV",
+    "position": "K",
+    "fgm": 34
+  },
+  {
+    "player_id": "6083",
+    "full_name": "Matt Gay",
+    "search_full_name": "mattgay",
+    "first_name": "Matt",
+    "last_name": "Gay",
+    "team": "WAS",
+    "position": "K",
+    "fgm": 31
+  },
+  {
+    "player_id": "3678",
+    "full_name": "Wil Lutz",
+    "search_full_name": "willutz",
+    "first_name": "Wil",
+    "last_name": "Lutz",
+    "team": "DEN",
+    "position": "K",
+    "fgm": 31
+  },
+  {
+    "player_id": "6650",
+    "full_name": "Chase McLaughlin",
+    "search_full_name": "chasemclaughlin",
+    "first_name": "Chase",
+    "last_name": "McLaughlin",
+    "team": "TB",
+    "position": "K",
+    "fgm": 30
+  },
+  {
+    "player_id": "11789",
+    "full_name": "Joshua Karty",
+    "search_full_name": "joshuakarty",
+    "first_name": "Joshua",
+    "last_name": "Karty",
+    "team": "LAR",
+    "position": "K",
+    "fgm": 29
+  },
+  {
+    "player_id": "4195",
+    "full_name": "Jake Elliott",
+    "search_full_name": "jakeelliott",
+    "first_name": "Jake",
+    "last_name": "Elliott",
+    "team": "PHI",
+    "position": "K",
+    "fgm": 28
+  },
+  {
+    "player_id": "10955",
+    "full_name": "Chad Ryland",
+    "search_full_name": "chadryland",
+    "first_name": "Chad",
+    "last_name": "Ryland",
+    "team": "ARI",
+    "position": "K",
+    "fgm": 28
+  },
+  {
+    "player_id": "11058",
+    "full_name": "Blake Grupe",
+    "search_full_name": "blakegrupe",
+    "first_name": "Blake",
+    "last_name": "Grupe",
+    "team": "NO",
+    "position": "K",
+    "fgm": 27
+  },
+  {
+    "player_id": "11786",
+    "full_name": "Cam Little",
+    "search_full_name": "camlittle",
+    "first_name": "Cam",
+    "last_name": "Little",
+    "team": "JAX",
+    "position": "K",
+    "fgm": 27
+  },
+  {
+    "player_id": "6219",
+    "full_name": "Austin Seibert",
+    "search_full_name": "austinseibert",
+    "first_name": "Austin",
+    "last_name": "Seibert",
+    "team": "FA",
+    "position": "K",
+    "fgm": 27
+  },
+  {
+    "player_id": "11539",
+    "full_name": "Jake Bates",
+    "search_full_name": "jakebates",
+    "first_name": "Jake",
+    "last_name": "Bates",
+    "team": "DET",
+    "position": "K",
+    "fgm": 26
+  },
+  {
+    "player_id": "2747",
+    "full_name": "Jason Myers",
+    "search_full_name": "jasonmyers",
+    "first_name": "Jason",
+    "last_name": "Myers",
+    "team": "SEA",
+    "position": "K",
+    "fgm": 26
+  },
+  {
+    "player_id": "6528",
+    "full_name": "Joey Slye",
+    "search_full_name": "joeyslye",
+    "first_name": "Joey",
+    "last_name": "Slye",
+    "team": "TEN",
+    "position": "K",
+    "fgm": 26
+  },
+  {
+    "player_id": "4666",
+    "full_name": "Younghoe Koo",
+    "search_full_name": "younghoekoo",
+    "first_name": "Younghoe",
+    "last_name": "Koo",
+    "team": "ATL",
+    "position": "K",
+    "fgm": 25
+  },
+  {
+    "player_id": "7042",
+    "full_name": "Tyler Bass",
+    "search_full_name": "tylerbass",
+    "first_name": "Tyler",
+    "last_name": "Bass",
+    "team": "BUF",
+    "position": "K",
+    "fgm": 24
+  },
+  {
+    "player_id": "10937",
+    "full_name": "Jake Moody",
+    "search_full_name": "jakemoody",
+    "first_name": "Jake",
+    "last_name": "Moody",
+    "team": "SF",
+    "position": "K",
+    "fgm": 24
+  },
+  {
+    "player_id": "11792",
+    "full_name": "Will Reichard",
+    "search_full_name": "willreichard",
+    "first_name": "Will",
+    "last_name": "Reichard",
+    "team": "MIN",
+    "position": "K",
+    "fgm": 24
+  },
+  {
+    "player_id": "5189",
+    "full_name": "Eddy Pineiro",
+    "search_full_name": "eddypineiro",
+    "first_name": "Eddy",
+    "last_name": "Pineiro",
+    "team": "FA",
+    "position": "K",
+    "fgm": 22
+  },
+  {
+    "player_id": "1264",
+    "full_name": "Justin Tucker",
+    "search_full_name": "justintucker",
+    "first_name": "Justin",
+    "last_name": "Tucker",
+    "team": "FA",
+    "position": "K",
+    "fgm": 22
+  },
+  {
+    "player_id": "4227",
+    "full_name": "Harrison Butker",
+    "search_full_name": "harrisonbutker",
+    "first_name": "Harrison",
+    "last_name": "Butker",
+    "team": "KC",
+    "position": "K",
+    "fgm": 21
+  },
+  {
+    "player_id": "650",
+    "full_name": "Nick Folk",
+    "search_full_name": "nickfolk",
+    "first_name": "Nick",
+    "last_name": "Folk",
+    "team": "FA",
+    "position": "K",
+    "fgm": 21
+  },
+  {
+    "player_id": "2020",
+    "full_name": "Cairo Santos",
+    "search_full_name": "cairosantos",
+    "first_name": "Cairo",
+    "last_name": "Santos",
+    "team": "CHI",
+    "position": "K",
+    "fgm": 21
+  },
+  {
+    "player_id": "1433",
+    "full_name": "Brandon McManus",
+    "search_full_name": "brandonmcmanus",
+    "first_name": "Brandon",
+    "last_name": "McManus",
+    "team": "GB",
+    "position": "K",
+    "fgm": 20
+  },
+  {
+    "player_id": "1348",
+    "full_name": "Dustin Hopkins",
+    "search_full_name": "dustinhopkins",
+    "first_name": "Dustin",
+    "last_name": "Hopkins",
+    "team": "CLE",
+    "position": "K",
+    "fgm": 18
+  },
+  {
+    "player_id": "5272",
+    "full_name": "Greg Joseph",
+    "search_full_name": "gregjoseph",
+    "first_name": "Greg",
+    "last_name": "Joseph",
+    "team": "SF",
+    "position": "K",
+    "fgm": 16
+  },
+  {
+    "player_id": "7839",
+    "full_name": "Evan McPherson",
+    "search_full_name": "evanmcpherson",
+    "first_name": "Evan",
+    "last_name": "McPherson",
+    "team": "CIN",
+    "position": "K",
+    "fgm": 16
+  },
+  {
+    "player_id": "6268",
+    "full_name": "Matthew Wright",
+    "search_full_name": "matthewwright",
+    "first_name": "Matthew",
+    "last_name": "Wright",
+    "team": "CAR",
+    "position": "K",
+    "fgm": 15
+  },
+  {
+    "player_id": "11008",
+    "full_name": "Anders Carlson",
+    "search_full_name": "anderscarlson",
+    "first_name": "Anders",
+    "last_name": "Carlson",
+    "team": "NYJ",
+    "position": "K",
+    "fgm": 13
+  },
+  {
+    "player_id": "11949",
+    "full_name": "Brayden Narveson",
+    "search_full_name": "braydennarveson",
+    "first_name": "Brayden",
+    "last_name": "Narveson",
+    "team": "FA",
+    "position": "K",
+    "fgm": 12
+  },
+  {
+    "player_id": "503",
+    "full_name": "Graham Gano",
+    "search_full_name": "grahamgano",
+    "first_name": "Graham",
+    "last_name": "Gano",
+    "team": "NYG",
+    "position": "K",
+    "fgm": 9
+  },
+  {
+    "player_id": "8258",
+    "full_name": "Cade York",
+    "search_full_name": "cadeyork",
+    "first_name": "Cade",
+    "last_name": "York",
+    "team": "FA",
+    "position": "K",
+    "fgm": 9
+  },
+  {
+    "player_id": "1266",
+    "full_name": "Greg Zuerlein",
+    "search_full_name": "gregzuerlein",
+    "first_name": "Greg",
+    "last_name": "Zuerlein",
+    "team": "FA",
+    "position": "K",
+    "fgm": 9
+  },
+  {
+    "player_id": "17",
+    "full_name": "Matt Prater",
+    "search_full_name": "mattprater",
+    "first_name": "Matt",
+    "last_name": "Prater",
+    "team": "FA",
+    "position": "K",
+    "fgm": 6
+  },
+  {
+    "player_id": "4233",
+    "full_name": "Zane Gonzalez",
+    "search_full_name": "zanegonzalez",
+    "first_name": "Zane",
+    "last_name": "Gonzalez",
+    "team": "FA",
+    "position": "K",
+    "fgm": 5
+  },
+  {
+    "player_id": "12185",
+    "full_name": "Spencer Shrader",
+    "search_full_name": "spencershrader",
+    "first_name": "Spencer",
+    "last_name": "Shrader",
+    "team": "IND",
+    "position": "K",
+    "fgm": 5
+  },
+  {
+    "player_id": "7922",
+    "full_name": "Riley Patterson",
+    "search_full_name": "rileypatterson",
+    "first_name": "Riley",
+    "last_name": "Patterson",
+    "team": "FA",
+    "position": "K",
+    "fgm": 4
+  },
+  {
+    "player_id": "12385",
+    "full_name": "Jude McAtamney",
+    "search_full_name": "judemcatamney",
+    "first_name": "Jude",
+    "last_name": "McAtamney",
+    "team": "NYG",
+    "position": "K",
+    "fgm": 1
+  }
+]
