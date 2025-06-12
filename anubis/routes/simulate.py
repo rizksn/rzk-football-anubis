@@ -18,12 +18,17 @@ from anubis.draft_engine.logic.score_players import score_players
 router = APIRouter()
 
 # Load static ADP data from local file
-DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'adp-consensus-ppr.json')
+DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'processed', 'draftsharks', 'redraft', 'redraft_1qb_0.5-ppr_consensus.processed.json')
 
 @lru_cache()
 def load_adp_data():
-    with open(DATA_PATH, 'r') as f:
-        return json.load(f).get("data", [])
+    try:
+        with open(DATA_PATH, 'r') as f:
+            raw = json.load(f)
+            return raw["data"]
+    except Exception as e:
+        print(f"❌ Failed to load ADP: {e}")
+        return []
 
 # ✅ Cache scored players once on server start
 SCORED_PLAYERS = score_players(load_adp_data())
