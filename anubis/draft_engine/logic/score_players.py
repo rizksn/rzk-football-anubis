@@ -65,12 +65,12 @@ def score_players(players: List[Dict[str, Any]], team_size: int = 12, total_roun
 
         sorted_scored = sorted(scored, key=lambda x: x["final_score"], reverse=True)
         for rank, p in enumerate(sorted_scored):
-            name = p["name"]
+            display_name = p.get("full_name") or p.get("player_id") or "Unknown"
             adp = p["_debug"]["adp"]
             absolute_adp = int(p["absolute_adp"])
             scored_rank = rank + 1  # human-readable rank
             deviation = abs(absolute_adp - scored_rank)
 
-            print(f"{scored_rank:>3}. {name:<25} | ADP: {adp:<5} | AbsADP: {absolute_adp:<3} | Deviation: {deviation}")
+            print(f"{scored_rank:>3}. {display_name:<25} | ADP: {adp:<5} | AbsADP: {absolute_adp:<3} | Deviation: {deviation}")
 
     return scored
