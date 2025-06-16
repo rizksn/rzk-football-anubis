@@ -17,7 +17,7 @@ venv/
 # 🔒 Env & Secrets
 # -----------------------------
 .env*
-backend/secrets/
+secrets/
 
 # -----------------------------
 # 💻 OS & Editor Junk
