@@ -1,8 +1,9 @@
 from sqlalchemy import MetaData
 
-# ✅ This is the ONE shared metadata object for core schema
+# This is the ONE shared metadata object for core schema
 core_metadata = MetaData(schema="core")
 
-from .players import players  # ✅ players will now use this shared object
+from .players import players  
+from .user import users
 
-__all__ = ["players", "core_metadata"]
+__all__ = ["players", "users", "core_metadata"]

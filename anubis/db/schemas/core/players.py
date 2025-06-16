@@ -1,9 +1,9 @@
 from sqlalchemy import Table, Column, String, Integer, Float, Boolean, Date
-from anubis.db.schemas.core import core_metadata  # ✅ IMPORT shared metadata
+from anubis.db.schemas.core import core_metadata  
 
 players = Table(
     "players",
-    core_metadata,  # ✅ shared metadata object
+    core_metadata, 
     Column("player_id", String, primary_key=True),
     Column("full_name", String),
     Column("search_full_name", String),

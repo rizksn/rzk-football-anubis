@@ -5,7 +5,7 @@ from sqlalchemy import text
 from dotenv import load_dotenv
 
 # Core + NFL tables (for FK resolution)
-from anubis.db.schemas.core.players import players
+from anubis.db.schemas.core import core_metadata, players, users
 from anubis.db.schemas.nfl.nfl_player_passing_2024 import nfl_player_passing_2024
 from anubis.db.schemas.nfl.nfl_player_rushing_2024 import nfl_player_rushing_2024
 from anubis.db.schemas.nfl.nfl_player_receiving_2024 import nfl_player_receiving_2024
@@ -19,7 +19,6 @@ import anubis.db.schemas.market.draftsharks_adp_bestball as bestball_tables
 
 # Shared metadata
 from anubis.db.schemas import (
-    core_metadata,
     passing_metadata,
     rushing_metadata,
     receiving_metadata,
