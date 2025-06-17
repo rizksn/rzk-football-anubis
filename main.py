@@ -24,7 +24,10 @@ app = FastAPI()
 ENV = os.getenv("ENV", "development")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"] if ENV == "development" else ["https://rzkfootball.com"],
+    allow_origins=["*"] if ENV == "development" else [
+        "https://rzkfootball.com",
+        "https://rzk-anubis.onrender.com"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
