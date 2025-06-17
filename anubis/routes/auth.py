@@ -2,12 +2,13 @@ from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from anubis.auth.firebase_auth import verify_token
 from anubis.db.schemas.core.user import users
-from anubis.db.base import async_session  # 👈 your SQLAlchemy sessionmaker
+from anubis.db.base import async_session  
 
 router = APIRouter()
 
 @router.post("/auth/persist")
 async def persist_user(decoded_token=Depends(verify_token)):
+    print("🔥 Got token for UID:", decoded_token["uid"])
     firebase_uid = decoded_token["uid"]
     email = decoded_token.get("email")
     display_name = decoded_token.get("name")
