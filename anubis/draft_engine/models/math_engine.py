@@ -88,9 +88,9 @@ def decide_pick_math(
     team_roster: List[str],
     round_number: int,
     draft_board: List[List[Any]]
-) -> str:
+) -> tuple[Dict[str, Any] | None, str]:
     if not candidates:
-        return "Player Name: None\nExplanation: No candidates available."
+        return None, "No candidates available."
 
     picks_made = sum(1 for row in draft_board for cell in row if cell)
     actual = picks_made + 1
@@ -100,12 +100,14 @@ def decide_pick_math(
         weights = [0.25, 0.25, 0.20, 0.10, 0.08, 0.06, 0.04, 0.02]
         pick_index = random.choices(range(8), weights=weights, k=1)[0]
         best = candidates[pick_index]
+        explanation = "Weighted pick"
     else:
         best = candidates[0]
+        explanation = "Highest ranked by math model."
 
     expected = convert_adp_to_absolute(str(best["adp"]))
     deviation = actual - expected
 
     print(f"🏁 Picked: {best['name']} | ADP: {best['adp']} | Abs ADP: {expected} | Pick #: {actual} | Deviation: {deviation:+d}")
 
-    return f"Player Name: {best['name']}\nExplanation: {'Weighted pick' if actual >= 120 else 'Highest ranked by math model.'}"
+    return best, explanation

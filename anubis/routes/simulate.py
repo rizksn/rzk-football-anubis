@@ -18,7 +18,7 @@ from anubis.draft_engine.logic.score_players import score_players
 router = APIRouter()
 
 # Load static ADP data from local file
-DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'processed', 'draftsharks', 'redraft', 'redraft_1qb_0.5-ppr_consensus.processed.json')
+DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'processed', 'draftsharks', 'redraft', 'dynasty_1qb_1_ppr_sleeper.processed.json')
 
 @lru_cache()
 def load_adp_data():
@@ -68,10 +68,12 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
             # AI logic placeholder
             ...
         else:
-            pick = decide_pick_math(candidates, team_roster, round_number, draft_board)
-            print("✅ Math engine selected:", pick)
+            pick, explanation = decide_pick_math(candidates, team_roster, round_number, draft_board)
+            print(f"✅ Math engine selected: {pick} | Explanation: {explanation}")
+            elapsed = time.time() - start_time
+            print(f"⏱️ Pick took {elapsed:.2f}s")
 
-            return {"result": pick}
+            return {"result": pick, "explanation": explanation}
 
     except Exception as e:
         print("❌ Draft simulation crashed!")
