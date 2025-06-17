@@ -1,13 +1,19 @@
+import os
+import json
 import firebase_admin
 from firebase_admin import credentials, auth
 from fastapi import HTTPException, Depends, Header
-import os
 
-# 🔐 Load service account key securely from env
-FIREBASE_CRED_PATH = os.getenv("FIREBASE_ADMIN_CRED_PATH")
+# 🔐 Try to load from Render secret file first, fallback to local path
+cred_path = "/etc/secrets/firebase-adminsdk.json"
+
+# If the Render-mounted secret file doesn't exist, fallback to local env var or dev path
+if not os.path.exists(cred_path):
+    cred_path = os.getenv("FIREBASE_ADMIN_CRED_PATH", "backend/secrets/firebase-adminsdk.json")
+
+cred = credentials.Certificate(cred_path)
 
 if not firebase_admin._apps:
-    cred = credentials.Certificate(FIREBASE_CRED_PATH)
     firebase_admin.initialize_app(cred)
 
 def verify_token(authorization: str = Header(...)):
@@ -18,6 +24,6 @@ def verify_token(authorization: str = Header(...)):
 
     try:
         decoded_token = auth.verify_id_token(token)
-        return decoded_token  # includes 'uid', 'email', 'name', etc.
-    except Exception as e:
+        return decoded_token  # contains uid, email, etc.
+    except Exception:
         raise HTTPException(status_code=401, detail="Invalid or expired token")
