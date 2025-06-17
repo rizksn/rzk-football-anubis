@@ -1,19 +1,27 @@
-import os
-import json
-from fastapi import APIRouter, HTTPException
-from pathlib import Path
+from fastapi import APIRouter, HTTPException, Query
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import text
+from anubis.db.base import async_session
 
 router = APIRouter()
 
-DATA_PATH = Path(__file__).resolve().parent.parent / 'data' / 'adp-consensus-ppr.json'
+VALID_FORMATS = {
+    "dynasty_1qb_1_ppr_sleeper",
+    "redraft_1qb_0_5_ppr_consensus",
+    "rookie_1qb_1_ppr_sleeper",
+    # Add all valid format table names here
+}
 
 @router.get("/players")
-def get_adp_players():
-    try:
-        with open(DATA_PATH, 'r') as f:
-            data = json.load(f)
-            return data.get("data", [])
-    except FileNotFoundError:
-        raise HTTPException(status_code=404, detail="ADP data not found.")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error reading ADP data: {e}")
+async def get_players(format: str = Query("dynasty_1qb_1_ppr_sleeper")):
+    if format not in VALID_FORMATS:
+        raise HTTPException(status_code=400, detail="Invalid format")
+
+    async with async_session() as session:  
+        try:
+            query = text(f'SELECT * FROM market."{format}"')
+            result = await session.execute(query)
+            players = [dict(row._mapping) for row in result.fetchall()]
+            return {"data": players}
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"DB error: {e}")
