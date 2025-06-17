@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends
+from sqlalchemy import select
 from anubis.auth.firebase_auth import verify_token
 from anubis.db.schemas.core.user import users
-from anubis.db import database
+from anubis.db.base import async_session  # 👈 your SQLAlchemy sessionmaker
 
 router = APIRouter()
 
@@ -11,16 +12,18 @@ async def persist_user(decoded_token=Depends(verify_token)):
     email = decoded_token.get("email")
     display_name = decoded_token.get("name")
 
-    # Check if user already exists
-    existing_user = await database.fetch_one(
-        users.select().where(users.c.firebase_uid == firebase_uid)
-    )
+    async with async_session() as session:
+        result = await session.execute(
+            select(users).where(users.c.firebase_uid == firebase_uid)
+        )
+        existing_user = result.fetchone()
 
-    if not existing_user:
-        await database.execute(users.insert().values(
-            firebase_uid=firebase_uid,
-            email=email,
-            display_name=display_name
-        ))
+        if not existing_user:
+            await session.execute(users.insert().values(
+                firebase_uid=firebase_uid,
+                email=email,
+                display_name=display_name
+            ))
+            await session.commit()
 
     return {"status": "ok", "firebase_uid": firebase_uid}
