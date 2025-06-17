@@ -18,7 +18,7 @@ from anubis.draft_engine.logic.score_players import score_players
 router = APIRouter()
 
 # Load static ADP data from local file
-DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'processed', 'draftsharks', 'redraft', 'dynasty_1qb_1_ppr_sleeper.processed.json')
+DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'processed', 'draftsharks', 'dynasty', 'dynasty_1qb_1-ppr_sleeper.processed.json')
 
 @lru_cache()
 def load_adp_data():
