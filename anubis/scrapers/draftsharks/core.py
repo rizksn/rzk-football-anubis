@@ -11,7 +11,6 @@ def save_adp_data(players, format_, type_, scoring, platform):
     base_dir = os.path.join(project_root, "anubis", "data", "raw", "draftsharks", format_folder_name(format_))
 
     fname = f"{format_}_{type_}_{scoring}_{platform}.raw.json".lower().replace(" ", "-")
-
     path = os.path.join(base_dir, fname)
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
@@ -48,7 +47,6 @@ def parse_adp_html(html):
         except Exception as e:
             print(f"⚠️ Failed to parse row: {e}")
             continue
-
     return players
 
 def scroll_to_load_all(page):
@@ -75,7 +73,8 @@ def scroll_to_load_all(page):
 
 def is_superflex(page):
     try:
-        return page.eval_on_selector('input[type="checkbox"]', "el => el.checked")
+        checkbox = page.query_selector('input[type="checkbox"]')
+        return checkbox.is_checked() if checkbox else False
     except:
         return False
 
@@ -83,10 +82,11 @@ def set_toggle(page, to_superflex=True):
     try:
         checkbox = page.query_selector('input[type="checkbox"]')
         if not checkbox:
-            print("⚠️ Toggle switch not found — skipping toggle")
+            print("⚠️ Superflex toggle not available — skipping toggle")
             return
         current = checkbox.is_checked()
         if current != to_superflex:
+            print(f"🔁 Toggling to {'Superflex' if to_superflex else '1QB'}")
             page.click(".toggle-container")
             page.wait_for_timeout(800)
     except Exception as e:
@@ -97,9 +97,7 @@ def scrape_combination(page, format_, type_, scoring, platform):
     scroll_to_load_all(page)
     html = page.content()
     players = parse_adp_html(html)
-
     print(f"✅ Found {len(players)} players")
-
     save_adp_data(players, format_, type_, scoring, platform)
 
 def scrape_format(page, format_name, scorings, platforms, scrape_superflex):
@@ -110,42 +108,53 @@ def scrape_format(page, format_name, scorings, platforms, scrape_superflex):
             break
     page.wait_for_timeout(1000)
 
-    set_toggle(page, False)  # Start in 1QB
-
-    scoring_labels = [el.inner_text().strip() for el in page.query_selector_all(".badge-radio-group.adp-scorings .nav-item")]
-    print(f"🔍 Found scoring options: {scoring_labels}")
+    set_toggle(page, False)
 
     for scoring in scorings:
         try:
-            print(f"🟢 Attempting to select scoring: {scoring}")
+            print(f"🟢 [1QB] Selecting scoring: {scoring}")
             page.click(f".badge-radio-group.adp-scorings .nav-item:text('{scoring}')")
             page.wait_for_timeout(800)
         except:
             continue
+
         platform_elements = page.query_selector_all(".badge-radio-group.adp-sources .nav-item")
         platform_labels = [el.inner_text().strip() for el in platform_elements if el.is_visible()]
-        print(f"⚙️ Detected platforms: {platform_labels}")
 
         for platform in platform_labels:
             try:
-                print(f"🟢 Attempting to select platform: {platform}")
+                print(f"🟢 [1QB] Selecting platform: {platform}")
                 page.click(f".badge-radio-group.adp-sources .nav-item:text('{platform}')")
                 page.wait_for_timeout(1200)
-                scrape_combination(page, format_name, "1QB", scoring, platform)
+                type_ = "Superflex" if is_superflex(page) else "1QB"
+                scrape_combination(page, format_name, type_, scoring, platform)
             except Exception as e:
-                print(f"❌ Failed to select platform {platform}: {e}")
+                print(f"❌ Failed to select platform {platform} [1QB]: {e}")
                 continue
 
     if scrape_superflex:
         set_toggle(page, True)
-        try:
-            page.click(".badge-radio-group.adp-scorings .nav-item:text('1 PPR')")
-            page.wait_for_timeout(800)
-            page.click(".badge-radio-group.adp-sources .nav-item:text('Sleeper')")
-            page.wait_for_timeout(1200)
-            scrape_combination(page, format_name, "Superflex", "1 PPR", "Sleeper")
-        except:
-            print(f"⚠️ Superflex combo not found for {format_name}")
+        for scoring in scorings:
+            try:
+                print(f"🟢 [Superflex] Selecting scoring: {scoring}")
+                page.click(f".badge-radio-group.adp-scorings .nav-item:text('{scoring}')")
+                page.wait_for_timeout(800)
+            except:
+                continue
+
+            platform_elements = page.query_selector_all(".badge-radio-group.adp-sources .nav-item")
+            platform_labels = [el.inner_text().strip() for el in platform_elements if el.is_visible()]
+
+            for platform in platform_labels:
+                try:
+                    print(f"🟢 [Superflex] Selecting platform: {platform}")
+                    page.click(f".badge-radio-group.adp-sources .nav-item:text('{platform}')")
+                    page.wait_for_timeout(1200)
+                    type_ = "Superflex" if is_superflex(page) else "1QB"
+                    scrape_combination(page, format_name, type_, scoring, platform)
+                except Exception as e:
+                    print(f"❌ Failed to select platform {platform} [Superflex]: {e}")
+                    continue
 
 def run_scraper(scrape_fn):
     from playwright.sync_api import sync_playwright

@@ -25,12 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent / "../../data/processed/draftsharks"
 BASE_DIR = BASE_DIR.resolve()  # normalize the path
 
 def normalize_table_key(meta: dict, format_name: str) -> str:
-    return (
-        f"{format_name}_{meta['type']}_{meta['scoring']}_{meta['platform']}"
-        .lower()
-        .replace(" ", "_")
-        .replace("-", "_")
-    )
+    key = f"{format_name}_{meta['type']}_{meta['scoring']}_{meta['platform']}".lower()
+    key = key.replace(" ", "_").replace("-", "_")
+    key = key.replace("0.5", "0_5") 
+    key = key.replace("1.0", "1")    
+    return key
 
 async def load_all_draftsharks_adp():
     async with async_session() as session:

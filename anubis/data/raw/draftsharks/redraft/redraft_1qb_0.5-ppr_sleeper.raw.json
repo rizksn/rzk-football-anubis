@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2025-06-11 11:20:51",
+  "scraped_at": "2025-06-18 18:12:22",
   "data": [
     {
       "name": "Ja'Marr Chase",
@@ -1112,15 +1112,15 @@
       "adp": "16.5"
     },
     {
-      "name": "Dalton Schultz",
-      "position": "TE",
-      "team": "HOU",
-      "adp": "16.6"
-    },
-    {
       "name": "Sam Darnold",
       "position": "QB",
       "team": "SEA",
+      "adp": "16.6"
+    },
+    {
+      "name": "Dalton Schultz",
+      "position": "TE",
+      "team": "HOU",
       "adp": "16.7"
     },
     {

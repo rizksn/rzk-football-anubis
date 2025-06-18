@@ -106,5 +106,17 @@
     "normalized": "miamidolphins",
     "team": "MIA",
     "position": "DEF"
+  },
+  {
+    "name": "Seattle Seahawks",
+    "normalized": "seattleseahawks",
+    "team": "SEA",
+    "position": "DEF"
+  },
+  {
+    "name": "Green Bay Packers",
+    "normalized": "greenbaypackers",
+    "team": "GB",
+    "position": "DEF"
   }
 ]

@@ -82,12 +82,17 @@ async def init():
                     redraft_tables.redraft_1qb_non_ppr_consensus,
                     redraft_tables.redraft_1qb_non_ppr_sleeper,
                     redraft_tables.redraft_superflex_1_ppr_sleeper,
+
                     # Dynasty
+                    dynasty_tables.dynasty_1qb_non_ppr_sleeper,
+                    dynasty_tables.dynasty_1qb_0_5_ppr_sleeper,
                     dynasty_tables.dynasty_1qb_1_ppr_sleeper,
                     dynasty_tables.dynasty_superflex_1_ppr_sleeper,
+
                     # Rookie
                     rookie_tables.rookie_1qb_1_ppr_sleeper,
                     rookie_tables.rookie_superflex_1_ppr_sleeper,
+
                     # Best Ball
                     bestball_tables.best_ball_1qb_0_5_ppr_underdog,
                     bestball_tables.best_ball_1qb_te_premium_ffpc,

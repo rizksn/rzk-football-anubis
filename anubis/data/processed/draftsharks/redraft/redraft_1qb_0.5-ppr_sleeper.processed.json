@@ -1184,19 +1184,6 @@
       "type": "1qb"
     },
     {
-      "player_id": "5001",
-      "full_name": "Dalton Schultz",
-      "search_full_name": "daltonschultz",
-      "first_name": "Dalton",
-      "last_name": "Schultz",
-      "team": "HOU",
-      "position": "TE",
-      "adp": "16.6",
-      "scoring": "0.5-ppr",
-      "platform": "sleeper",
-      "type": "1qb"
-    },
-    {
       "player_id": "4943",
       "full_name": "Sam Darnold",
       "search_full_name": "samdarnold",
@@ -1204,6 +1191,19 @@
       "last_name": "Darnold",
       "team": "SEA",
       "position": "QB",
+      "adp": "16.6",
+      "scoring": "0.5-ppr",
+      "platform": "sleeper",
+      "type": "1qb"
+    },
+    {
+      "player_id": "5001",
+      "full_name": "Dalton Schultz",
+      "search_full_name": "daltonschultz",
+      "first_name": "Dalton",
+      "last_name": "Schultz",
+      "team": "HOU",
+      "position": "TE",
       "adp": "16.7",
       "scoring": "0.5-ppr",
       "platform": "sleeper",
