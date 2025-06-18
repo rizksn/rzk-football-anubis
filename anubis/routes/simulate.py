@@ -15,7 +15,7 @@ from anubis.draft_engine.models.math_engine import generate_scored_candidates, d
 from anubis.draft_engine.models.ai_engine import decide_pick_ai
 from anubis.draft_engine.logic.score_players import score_players  
 
-router = APIRouter()
+router = APIRouter(prefix="/api")
 
 # Load static ADP data from local file
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'processed', 'draftsharks', 'dynasty', 'dynasty_1qb_1-ppr_sleeper.processed.json')

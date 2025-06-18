@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
 from anubis.db.base import async_session
 
-router = APIRouter()
+router = APIRouter(prefix="/api")
 
 VALID_FORMATS = {
     "dynasty_1qb_1_ppr_sleeper",

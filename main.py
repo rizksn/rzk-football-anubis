@@ -16,6 +16,7 @@ from anubis.routes import (
 from anubis.routes.players import router as players_router
 from anubis.routes.simulate import router as simulate_router
 from anubis.routes.player_data import router as player_data_router
+from anubis.routes.stripe import router as stripe_router
 
 # App instance
 app = FastAPI()
@@ -37,6 +38,7 @@ app.add_middleware(
 app.include_router(players_router)
 app.include_router(simulate_router)
 app.include_router(player_data_router)
+app.include_router(stripe_router)
 app.include_router(auth_routes.router)
 
 # Health check

@@ -4,7 +4,7 @@ from anubis.auth.firebase_auth import verify_token
 from anubis.db.schemas.core.user import users
 from anubis.db.base import async_session  
 
-router = APIRouter()
+router = APIRouter(prefix="/api")
 
 @router.post("/auth/persist")
 async def persist_user(decoded_token=Depends(verify_token)):
