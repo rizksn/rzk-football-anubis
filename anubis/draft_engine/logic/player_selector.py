@@ -1,5 +1,5 @@
 from typing import List, Dict, Any, Set
-from draft_engine.logic.player_filter import get_drafted_names
+from anubis.draft_engine.logic.player_filter import get_drafted_names
 from anubis.draft_engine.logic.score_players import score_players
 
 def select_top_candidates(

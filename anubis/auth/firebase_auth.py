@@ -2,11 +2,17 @@ import os
 import firebase_admin
 from firebase_admin import credentials, auth
 from fastapi import HTTPException, Header
+from dotenv import load_dotenv
 
-# 🔐 Prefer Render secret mount, fallback to env var or local path
+load_dotenv()
+
+# Prefer production mount, fallback to env var or default
 cred_path = "/etc/secrets/firebase-adminsdk.json"
 if not os.path.exists(cred_path):
-    cred_path = os.getenv("FIREBASE_ADMIN_CRED_PATH", "backend/secrets/firebase-adminsdk.json")
+    cred_path = os.getenv("FIREBASE_ADMIN_CRED_PATH", "secrets/firebase-adminsdk.json")
+
+if not os.path.exists(cred_path):
+    raise RuntimeError(f"Firebase credential not found at {cred_path}")
 
 cred = credentials.Certificate(cred_path)
 

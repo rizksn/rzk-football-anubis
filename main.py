@@ -1,31 +1,22 @@
-# Standard lib
+# ─── 📦 Standard Library ─────────────────────────────
 import os
-import sys
 
-# Third-party
+# ─── 🔧 Third-party ──────────────────────────────────
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# Extend Python path (for running from root)
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "anubis")))
+# ─── 📡 Environment ──────────────────────────────────
+ENV = os.getenv("ENV", "development").lower()
+IS_DEV = ENV == "development"
+print(f"🚀 Starting FastAPI in {ENV.upper()} mode")
 
-# Local imports
-from anubis.routes import (
-    auth as auth_routes,
-)
-from anubis.routes.players import router as players_router
-from anubis.routes.simulate import router as simulate_router
-from anubis.routes.player_data import router as player_data_router
-from anubis.routes.stripe import router as stripe_router
-
-# App instance
+# ─── ⚙️ App Setup ─────────────────────────────────────
 app = FastAPI()
 
-# CORS
-ENV = os.getenv("ENV", "development")
+# CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"] if ENV == "development" else [
+    allow_origins=["*"] if IS_DEV else [
         "https://rzkfootball.com",
         "https://rzk-anubis.onrender.com"
     ],
@@ -34,14 +25,25 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Routers
-app.include_router(players_router)
-app.include_router(simulate_router)
-app.include_router(player_data_router)
-app.include_router(stripe_router)
-app.include_router(auth_routes.router)
+# ─── 📁 Routers ──────────────────────────────────────
+from anubis.routes import auth as auth_routes
+from anubis.routes.players import router as players_router
+from anubis.routes.simulate import router as simulate_router
+from anubis.routes.player_data import router as player_data_router
+from anubis.routes.stripe import router as stripe_router
 
-# Health check
+ROUTERS = [
+    players_router,
+    simulate_router,
+    player_data_router,
+    stripe_router,
+    auth_routes.router,
+]
+
+for router in ROUTERS:
+    app.include_router(router)
+
+# ─── 🩺 Health Check ─────────────────────────────────
 @app.get("/")
 def read_root():
     return {"message": "Backend is up and running!"}
