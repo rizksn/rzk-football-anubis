@@ -2,28 +2,40 @@
 import os
 
 # ─── 🔧 Third-party ──────────────────────────────────
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 # ─── 📡 Environment ──────────────────────────────────
-ENV = os.getenv("ENV", "development").lower()
+ENV = os.getenv("ENV", "production").lower()
 IS_DEV = ENV == "development"
+
 print(f"🚀 Starting FastAPI in {ENV.upper()} mode")
+
+# ─── 🔐 CORS Configuration ───────────────────────────
+allow_origins = [
+    "https://rzkfootball.com",
+    "https://rzk-anubis.onrender.com",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+]
+
+print(f"🔐 CORS allowed origins: {allow_origins}")
 
 # ─── ⚙️ App Setup ─────────────────────────────────────
 app = FastAPI()
 
-# CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"] if IS_DEV else [
-        "https://rzkfootball.com",
-        "https://rzk-anubis.onrender.com"
-    ],
+    allow_origins=allow_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# ─── 🧱 Optional: Block localhost in production routes ─────────
+def block_local_requests_in_prod(request: Request):
+    if ENV == "production" and request.client.host.startswith("127."):
+        raise HTTPException(status_code=403, detail="Local access not allowed in production")
 
 # ─── 📁 Routers ──────────────────────────────────────
 from anubis.routes import auth as auth_routes
@@ -45,5 +57,7 @@ for router in ROUTERS:
 
 # ─── 🩺 Health Check ─────────────────────────────────
 @app.get("/")
-def read_root():
+async def read_root(request: Request):
+    # Optional production safeguard
+    block_local_requests_in_prod(request)
     return {"message": "Backend is up and running!"}
