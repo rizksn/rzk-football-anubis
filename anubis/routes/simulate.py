@@ -15,6 +15,9 @@ from anubis.draft_engine.models.math_engine import generate_scored_candidates, d
 from anubis.draft_engine.models.ai_engine import decide_pick_ai
 from anubis.draft_engine.logic.score_players import score_players  
 
+import logging
+logger = logging.getLogger("uvicorn.error")
+
 router = APIRouter(prefix="/api")
 
 # Load static ADP data from local file
@@ -30,28 +33,31 @@ def load_adp_data():
         print(f"❌ Failed to load ADP: {e}")
         return []
 
-# ✅ Cache scored players once on server start
+# Cache scored players once on server start
 SCORED_PLAYERS = score_players(load_adp_data())
 
 @router.post("/simulate")
 async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
     start_time = time.time()
     body = await request.json()
-    use_ai = body.get("use_ai", False)
-    league_format = body.get("leagueFormat", "1QB")  # 👈 add this if not already there
 
+    use_ai = body.get("use_ai", False)
+    league_format = body.get("leagueFormat", "1QB")
     draft_board = body.get("draftBoard", [])
     team_index = body.get("teamIndex", 11)
 
     try:
-        # Count picks and round
         picks_made = sum(1 for row in draft_board for p in row if p)
         round_number = get_round_number(picks_made)
         current_pick_number = picks_made + 1
 
         print(f"\n🚨 NEW PICK | Team #{team_index} | Pick #{current_pick_number} | Round {round_number}")
+        print(f"📥 use_ai={use_ai} | league_format={league_format}")
+        print(f"📋 Draft board has {picks_made} picks made.")
 
-        # Build candidate pool
+        # ✅ Check how many scored players exist
+        print(f"📊 SCORED_PLAYERS available: {len(SCORED_PLAYERS)}")
+
         candidates = generate_scored_candidates(
             scored_players=SCORED_PLAYERS,
             draft_board=draft_board,
@@ -60,22 +66,34 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
             league_format=league_format
         )
 
-        # Extract team roster
-        team_roster = extract_team_roster(draft_board, team_index)
+        print(f"🎯 Candidates returned: {len(candidates)}")
+        for i, p in enumerate(candidates):
+            print(f"  {i+1}. {p.get('full_name', 'Unknown')} | Score: {p['final_score']:.2f}")
 
-        # Decide pick
+        team_roster = extract_team_roster(draft_board, team_index)
+        print(f"🧪 Team #{team_index} roster has {len(team_roster)} players.")
+
         if use_ai:
-            # AI logic placeholder
-            ...
+            print("🤖 AI mode not implemented yet.")
+            return {"error": "AI mode not active"}
         else:
             pick, explanation = decide_pick_math(candidates, team_roster, round_number, draft_board)
-            print(f"✅ Math engine selected: {pick} | Explanation: {explanation}")
-            elapsed = time.time() - start_time
-            print(f"⏱️ Pick took {elapsed:.2f}s")
+
+            if not pick:
+                print("⚠️ No valid pick returned by math engine.")
+                return {
+                    "error": "No valid pick found",
+                    "candidates": candidates,
+                }
+
+            print(f"✅ Math engine selected: {pick.get('full_name', 'Unknown')} | Explanation: {explanation}")
+            print(f"⏱️ Pick took {time.time() - start_time:.2f}s")
 
             return {"result": pick, "explanation": explanation}
 
     except Exception as e:
         print("❌ Draft simulation crashed!")
-        import traceback; traceback.print_exc()
+        print(f"🪵 Error type: {type(e)} | Message: {repr(e)}")
+        logger.exception("Unhandled exception in /simulate")
         raise HTTPException(status_code=500, detail=f"Draft simulation failed: {str(e)}")
+

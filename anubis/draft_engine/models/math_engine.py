@@ -2,7 +2,7 @@ from typing import List, Dict, Any
 import random
 
 from anubis.draft_engine.logic.score_players import convert_adp_to_absolute
-from anubis.draft_engine.logic.player_filter import get_drafted_names, filter_positional_needs
+from anubis.draft_engine.logic.player_filter import get_drafted_player_ids, filter_positional_needs
 
 def generate_scored_candidates(
     scored_players: List[Dict[str, Any]],
@@ -17,8 +17,8 @@ def generate_scored_candidates(
     """
 
     # 1. Filter out already drafted players
-    drafted_names = get_drafted_names(draft_board)
-    available = [p for p in scored_players if p["name"] not in drafted_names]
+    drafted_ids = get_drafted_player_ids(draft_board)
+    available = [p for p in scored_players if p["player_id"] not in drafted_ids]
 
     # 2. Rebuild current team roster from board
     team_roster = [p for row in draft_board for p in row if p and p.get("team_index") == team_index]
@@ -41,17 +41,17 @@ def generate_scored_candidates(
         qb_candidates = [p for p in adjusted if p["position"] == "QB"]
         if has_qb and len(qb_candidates) > 1:
             top_qb = qb_candidates[0]
-            adjusted = [p for p in adjusted if p["position"] != "QB"]  # remove all QBs
-            adjusted.insert(0, top_qb)  # re-insert best QB at top (optional)
-    
+            adjusted = [p for p in adjusted if p["position"] != "QB"]
+            adjusted.insert(0, top_qb)
+
     # 8. Slice top-N after penalty logic
     top_adjusted = adjusted[:top_n]
 
-    # 9. Debug log
+    # 9. Debug log (still use full_name here for readability)
     print("🎯 Top candidates (after penalties):")
     for rank, p in enumerate(top_adjusted):
         expected = convert_adp_to_absolute(str(p["adp"]))
-        print(f"{rank+1}. {p['name']} → ADP: {p['adp']} | Abs ADP: {expected} | Score: {p['final_score']:.2f} | Adjusted: {p['adjusted_score']:.2f}")
+        print(f"{rank+1}. {p.get('full_name', 'Unknown')} → ADP: {p['adp']} | Abs ADP: {expected} | Score: {p['final_score']:.2f} | Adjusted: {p['adjusted_score']:.2f}")
 
     return top_adjusted
 
@@ -60,7 +60,7 @@ def apply_contextual_penalty(
     candidates: List[Dict[str, Any]],
     team_roster: List[Dict[str, Any]],
     league_format: str,
-    current_pick_number: int  # Still passed in, in case you want to use it later
+    current_pick_number: int
 ) -> List[Dict[str, Any]]:
     adjusted = []
     has_qb = any(p["position"] == "QB" for p in team_roster)
@@ -95,7 +95,6 @@ def decide_pick_math(
     picks_made = sum(1 for row in draft_board for cell in row if cell)
     actual = picks_made + 1
 
-    # 🎯 Pick logic with randomness after pick 120
     if actual >= 120 and len(candidates) >= 8:
         weights = [0.25, 0.25, 0.20, 0.10, 0.08, 0.06, 0.04, 0.02]
         pick_index = random.choices(range(8), weights=weights, k=1)[0]
@@ -108,6 +107,7 @@ def decide_pick_math(
     expected = convert_adp_to_absolute(str(best["adp"]))
     deviation = actual - expected
 
-    print(f"🏁 Picked: {best['name']} | ADP: {best['adp']} | Abs ADP: {expected} | Pick #: {actual} | Deviation: {deviation:+d}")
+    # Use full_name for display, but logic uses player_id
+    print(f"🏁 Picked: {best.get('full_name', best['player_id'])} | ADP: {best['adp']} | Abs ADP: {expected} | Pick #: {actual} | Deviation: {deviation:+d}")
 
     return best, explanation
