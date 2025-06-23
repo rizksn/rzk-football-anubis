@@ -12,6 +12,7 @@ import anubis.db.schemas.market.draftsharks_adp_rookie as rookie_tables
 import anubis.db.schemas.market.draftsharks_adp_bestball as bestball_tables
 
 from anubis.ingest.utils.utils import parse_metadata, get_json_files
+from anubis.utils.logging.unmatched_logger import log_unmatched_player
 
 async_session = sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
 
@@ -57,6 +58,20 @@ async def load_all_draftsharks_adp():
                                 print(f"❌ Skipping malformed entry (not a dict): {player}")
                                 continue
 
+                            if not player.get("player_id"):
+                                position = player.get("position", "unknown").lower()
+                                log_path = f"logs/unmatched/adp/draftsharks_ingestion_{position}.json"
+                                log_unmatched_player(
+                                    log_path=log_path,
+                                    player_data={
+                                        "name": player.get("full_name") or player.get("name"),
+                                        "team": player.get("team"),
+                                        "position": player.get("position"),
+                                        "table": file.name
+                                    }
+                                )
+                                continue
+
                             record = {
                                 "player_id": player["player_id"],
                                 "full_name": player["full_name"],
@@ -83,13 +98,11 @@ async def load_all_draftsharks_adp():
                         print(f"⚠️ No valid records to insert from {file}")
                         continue
 
-                    # Debug: Check for duplicates
                     dupes = Counter(r["player_id"] for r in valid_records)
                     for pid, count in dupes.items():
                         if count > 1:
                             print(f"❗ Duplicate player_id in file: {file} → {pid} appears {count} times")
 
-                    # Deduplicate by player_id (keep lowest rank)
                     unique_records = {}
                     for r in valid_records:
                         pid = r["player_id"]

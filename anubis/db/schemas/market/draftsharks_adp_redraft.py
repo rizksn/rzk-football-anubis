@@ -189,6 +189,23 @@ redraft_1qb_non_ppr_sleeper = Table(
     Column("type", String),
 )
 
+redraft_1qb_te_premium_ffpc = Table(
+    "redraft_1qb_te_premium_ffpc",
+    market_metadata,
+    Column("player_id", String, ForeignKey("core.players.player_id"), nullable=True, primary_key=True),
+    Column("full_name", String),
+    Column("search_full_name", String),
+    Column("first_name", String),
+    Column("last_name", String),
+    Column("team", String),
+    Column("position", String),
+    Column("rank", Integer),
+    Column("adp", String),
+    Column("scoring", String),
+    Column("platform", String),
+    Column("type", String),
+)
+
 redraft_superflex_1_ppr_sleeper = Table(
     "redraft_superflex_1_ppr_sleeper",
     market_metadata,

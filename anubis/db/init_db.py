@@ -81,6 +81,7 @@ async def init():
                     redraft_tables.redraft_1qb_non_ppr_cbs,
                     redraft_tables.redraft_1qb_non_ppr_consensus,
                     redraft_tables.redraft_1qb_non_ppr_sleeper,
+                    redraft_tables.redraft_1qb_te_premium_ffpc, 
                     redraft_tables.redraft_superflex_1_ppr_sleeper,
 
                     # Dynasty
