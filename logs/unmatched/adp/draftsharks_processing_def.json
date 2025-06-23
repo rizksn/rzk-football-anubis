@@ -3,120 +3,133 @@
     "name": "Minnesota Vikings",
     "normalized": "minnesotavikings",
     "team": "MIN",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Denver Broncos",
     "normalized": "denverbroncos",
     "team": "DEN",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Baltimore Ravens",
     "normalized": "baltimoreravens",
     "team": "BAL",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Pittsburgh Steelers",
     "normalized": "pittsburghsteelers",
     "team": "PIT",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Kansas City Chiefs",
     "normalized": "kansascitychiefs",
     "team": "KC",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "New York Jets",
     "normalized": "newyorkjets",
     "team": "NYJ",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Detroit Lions",
     "normalized": "detroitlions",
     "team": "DET",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Houston Texans",
     "normalized": "houstontexans",
     "team": "HOU",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Los Angeles Chargers",
     "normalized": "losangeleschargers",
     "team": "LAC",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Philadelphia Eagles",
     "normalized": "philadelphiaeagles",
     "team": "PHI",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "New Orleans Saints",
     "normalized": "neworleanssaints",
     "team": "NO",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Dallas Cowboys",
     "normalized": "dallascowboys",
     "team": "DAL",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "San Francisco 49ers",
     "normalized": "sanfrancisco49ers",
     "team": "SF",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Cleveland Browns",
     "normalized": "clevelandbrowns",
     "team": "CLE",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Tennessee Titans",
     "normalized": "tennesseetitans",
     "team": "TEN",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Buffalo Bills",
     "normalized": "buffalobills",
     "team": "BUF",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_espn"
+  },
+  {
+    "name": "New England Patriots",
+    "normalized": "newenglandpatriots",
+    "team": "NE",
+    "position": "DEF",
+    "table": "redraft_1qb_0.5-ppr_yahoo"
   },
   {
     "name": "New York Giants",
     "normalized": "newyorkgiants",
     "team": "NYG",
-    "position": "DEF"
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_consensus"
   },
   {
-    "name": "Miami Dolphins",
-    "normalized": "miamidolphins",
-    "team": "MIA",
-    "position": "DEF"
-  },
-  {
-    "name": "Seattle Seahawks",
-    "normalized": "seattleseahawks",
-    "team": "SEA",
-    "position": "DEF"
-  },
-  {
-    "name": "Green Bay Packers",
-    "normalized": "greenbaypackers",
-    "team": "GB",
-    "position": "DEF"
+    "name": "Chicago Bears",
+    "normalized": "chicagobears",
+    "team": "CHI",
+    "position": "DEF",
+    "table": "redraft_1qb_1-ppr_consensus"
   }
 ]

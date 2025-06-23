@@ -3,12 +3,14 @@
     "name": "Chigoziem Okonkwo",
     "normalized": "chigoziemokonkwo",
     "team": "TEN",
-    "position": "TE"
+    "position": "TE",
+    "table": "redraft_1qb_0.5-ppr_consensus"
   },
   {
     "name": "Benjamin Yurosek",
     "normalized": "benjaminyurosek",
     "team": "MIN",
-    "position": "TE"
+    "position": "TE",
+    "table": "rookie_superflex_1-ppr_sleeper"
   }
 ]

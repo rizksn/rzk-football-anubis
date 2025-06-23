@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+from collections import Counter
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.dialects.postgresql import insert as pg_insert
@@ -22,13 +23,13 @@ FORMAT_TO_TABLE = {
 }
 
 BASE_DIR = Path(__file__).resolve().parent / "../../data/processed/draftsharks"
-BASE_DIR = BASE_DIR.resolve()  # normalize the path
+BASE_DIR = BASE_DIR.resolve()
 
 def normalize_table_key(meta: dict, format_name: str) -> str:
     key = f"{format_name}_{meta['type']}_{meta['scoring']}_{meta['platform']}".lower()
     key = key.replace(" ", "_").replace("-", "_")
-    key = key.replace("0.5", "0_5") 
-    key = key.replace("1.0", "1")    
+    key = key.replace("0.5", "0_5")
+    key = key.replace("1.0", "1")
     return key
 
 async def load_all_draftsharks_adp():
@@ -64,6 +65,7 @@ async def load_all_draftsharks_adp():
                                 "last_name": player["last_name"],
                                 "team": player["team"],
                                 "position": player["position"],
+                                "rank": player["rank"],
                                 "adp": str(player["adp"]).strip(),
                                 "scoring": player["scoring"],
                                 "platform": player["platform"],
@@ -79,17 +81,32 @@ async def load_all_draftsharks_adp():
                     valid_records = [r for r in records if r.get("player_id")]
                     if not valid_records:
                         print(f"⚠️ No valid records to insert from {file}")
-                    else:
-                        stmt = pg_insert(table).values(valid_records)
-                        stmt = stmt.on_conflict_do_update(
-                            index_elements=["player_id"],
-                            set_={col: getattr(stmt.excluded, col) for col in [
-                                "full_name", "search_full_name", "first_name", "last_name",
-                                "team", "position", "adp", "scoring", "platform", "type"
-                            ]}
-                        )
-                        await session.execute(stmt)
-                        print(f"✅ Inserted {len(valid_records)} from {file}")
+                        continue
+
+                    # Debug: Check for duplicates
+                    dupes = Counter(r["player_id"] for r in valid_records)
+                    for pid, count in dupes.items():
+                        if count > 1:
+                            print(f"❗ Duplicate player_id in file: {file} → {pid} appears {count} times")
+
+                    # Deduplicate by player_id (keep lowest rank)
+                    unique_records = {}
+                    for r in valid_records:
+                        pid = r["player_id"]
+                        if pid not in unique_records or r["rank"] < unique_records[pid]["rank"]:
+                            unique_records[pid] = r
+                    deduplicated = list(unique_records.values())
+
+                    stmt = pg_insert(table).values(deduplicated)
+                    stmt = stmt.on_conflict_do_update(
+                        index_elements=["player_id"],
+                        set_={col: getattr(stmt.excluded, col) for col in [
+                            "full_name", "search_full_name", "first_name", "last_name",
+                            "team", "position", "rank", "adp", "scoring", "platform", "type"
+                        ]}
+                    )
+                    await session.execute(stmt)
+                    print(f"✅ Inserted {len(deduplicated)} from {file}")
 
         await session.commit()
 

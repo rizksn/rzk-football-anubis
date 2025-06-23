@@ -3,12 +3,14 @@
     "name": "Cameron Skattebo",
     "normalized": "cameronskattebo",
     "team": "NYG",
-    "position": "RB"
+    "position": "RB",
+    "table": "redraft_1qb_0.5-ppr_consensus"
   },
   {
     "name": "Jo'Quavious Marks",
     "normalized": "joquaviousmarks",
     "team": "HOU",
-    "position": "RB"
+    "position": "RB",
+    "table": "rookie_superflex_1-ppr_sleeper"
   }
 ]

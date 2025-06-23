@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, String, ForeignKey
+from sqlalchemy import Table, Column, String, Integer, ForeignKey
 from anubis.db.schemas.core.players import players
 from anubis.db.schemas.market import market_metadata
 
@@ -12,6 +12,7 @@ rookie_1qb_1_ppr_sleeper = Table(
     Column("last_name", String),
     Column("team", String),
     Column("position", String),
+    Column("rank", Integer),
     Column("adp", String),
     Column("scoring", String),
     Column("platform", String),
@@ -28,6 +29,7 @@ rookie_superflex_1_ppr_sleeper = Table(
     Column("last_name", String),
     Column("team", String),
     Column("position", String),
+    Column("rank", Integer),
     Column("adp", String),
     Column("scoring", String),
     Column("platform", String),

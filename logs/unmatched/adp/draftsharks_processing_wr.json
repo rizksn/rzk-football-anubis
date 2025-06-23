@@ -3,12 +3,14 @@
     "name": "Nathaniel Dell",
     "normalized": "nathanieldell",
     "team": "HOU",
-    "position": "WR"
+    "position": "WR",
+    "table": "redraft_1qb_1-ppr_espn"
   },
   {
     "name": "Gabriel Davis",
     "normalized": "gabrieldavis",
     "team": "FA",
-    "position": "WR"
+    "position": "WR",
+    "table": "redraft_1qb_1-ppr_espn"
   }
 ]

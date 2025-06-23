@@ -29,7 +29,9 @@ def process_adp_files(format_filter=None):
                 raw_json = json.load(f)
 
             clean_data = []
-            for p in sorted(raw_json.get("data", []), key=lambda x: x.get("adp", float('inf'))):
+            ordered_players = raw_json.get("data", [])
+            table_name = file.name.replace(".raw.json", "")
+            for i, p in enumerate(ordered_players):
                 raw_name = p.get("name")
                 if not raw_name or not all(k in p for k in ["team", "position", "adp"]):
                     continue
@@ -40,7 +42,7 @@ def process_adp_files(format_filter=None):
 
                 if not sleeper_player:
                     position = p["position"].lower()
-                    log_path = f"logs/unmatched/adp/unmatched_draftsharks_adp_{position}.json"
+                    log_path = f"logs/unmatched/adp/draftsharks_processing_{position}.json"
 
                     log_unmatched_player(
                         log_path=log_path,
@@ -48,7 +50,8 @@ def process_adp_files(format_filter=None):
                             "name": raw_name,
                             "normalized": normalized_name,
                             "team": normalize_team(p["team"]),
-                            "position": p["position"]
+                            "position": p["position"],
+                            "table": table_name
                         }
                     )
                     continue
@@ -61,6 +64,7 @@ def process_adp_files(format_filter=None):
                     "last_name": sleeper_player["last_name"],
                     "team": normalize_team(sleeper_player["team"]),
                     "position": sleeper_player["position"],
+                    "rank": p["rank"],
                     "adp": str(p["adp"]).strip(),
                     "scoring": extract_field(file.name, 2),
                     "platform": extract_field(file.name, 3).replace(".raw.json", ""),

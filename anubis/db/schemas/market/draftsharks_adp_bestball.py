@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, String, ForeignKey
+from sqlalchemy import Table, Column, String, Integer, ForeignKey
 from anubis.db.schemas.core.players import players
 from anubis.db.schemas.market import market_metadata
 
@@ -12,6 +12,7 @@ best_ball_1qb_0_5_ppr_underdog = Table(
     Column("last_name", String),
     Column("team", String),
     Column("position", String),
+    Column("rank", Integer),
     Column("adp", String),
     Column("scoring", String),
     Column("platform", String),
@@ -28,6 +29,7 @@ best_ball_1qb_te_premium_ffpc = Table(
     Column("last_name", String),
     Column("team", String),
     Column("position", String),
+    Column("rank", Integer),
     Column("adp", String),
     Column("scoring", String),
     Column("platform", String),
