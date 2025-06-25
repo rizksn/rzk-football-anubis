@@ -2,14 +2,30 @@ import os
 import json
 import time
 
-def format_folder_name(name: str) -> str:
-    return name.lower().replace(" ", "_").strip()
+def normalize_segment(name: str) -> str:
+    """
+    Normalize a segment by converting to lowercase, replacing spaces/dashes with underscores,
+    and stripping leading/trailing whitespace.
+    """
+    return name.lower().replace(" ", "_").replace("-", "_").strip()
 
 def save_adp_data(players, format_, type_, scoring, platform):
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-    base_dir = os.path.join(project_root, "anubis", "data", "raw", "draftsharks", format_folder_name(format_))
+    base_dir = os.path.join(
+        project_root,
+        "anubis",
+        "data",
+        "raw",
+        "draftsharks",
+        normalize_segment(format_)
+    )
 
-    fname = f"{format_}_{type_}_{scoring}_{platform}.raw.json".lower().replace(" ", "-")
+    fname = (
+        f"{normalize_segment(format_)}_"
+        f"{normalize_segment(type_)}_"
+        f"{normalize_segment(scoring)}_"
+        f"{normalize_segment(platform)}.raw.json"
+    )
     path = os.path.join(base_dir, fname)
     os.makedirs(os.path.dirname(path), exist_ok=True)
 

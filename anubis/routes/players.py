@@ -2,15 +2,11 @@ from fastapi import APIRouter, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
 from anubis.db.base import async_session
+from anubis.utils.adp_utils import get_valid_adp_keys
 
 router = APIRouter(prefix="/api")
 
-VALID_FORMATS = {
-    "dynasty_1qb_1_ppr_sleeper",
-    "redraft_1qb_0_5_ppr_consensus",
-    "rookie_1qb_1_ppr_sleeper",
-    # Add all valid format table names here
-}
+VALID_FORMATS = get_valid_adp_keys()
 
 @router.get("/players")
 async def get_players(format: str = Query("dynasty_1qb_1_ppr_sleeper")):

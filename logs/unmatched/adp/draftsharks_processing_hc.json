@@ -187,5 +187,12 @@
     "team": "LAR",
     "position": "HC",
     "table": "redraft_1qb_1-ppr_espn"
+  },
+  {
+    "name": "Las Vegas Raiders",
+    "normalized": "lasvegasraiders",
+    "team": "LV",
+    "position": "HC",
+    "table": "redraft_1qb_1_ppr_espn"
   }
 ]

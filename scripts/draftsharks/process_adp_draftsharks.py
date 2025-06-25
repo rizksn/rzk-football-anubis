@@ -5,10 +5,19 @@ from anubis.utils.normalize.name import normalize_name_for_display, normalize_na
 from anubis.utils.normalize.team import normalize_team
 from anubis.ingest.utils.match_players import match_player_by_name
 from anubis.utils.logging.unmatched_logger import log_unmatched_player
+from anubis.scrapers.draftsharks.utils import normalize_segment
 
 RAW_DIR = Path("anubis/data/raw/draftsharks")
 OUT_DIR = Path("anubis/data/processed/draftsharks")
 SLEEPER_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
+
+def extract_field(filename: str, index: int) -> str:
+    # Handles any stray `-` or space in file names just in case
+    base = filename.replace(".raw.json", "")
+    parts = normalize_segment(base).split("_")
+    if index >= len(parts):
+        raise ValueError(f"Invalid filename format: {filename}")
+    return parts[index]
 
 def process_adp_files(format_filter=None):
     with SLEEPER_PATH.open("r") as f:
@@ -21,7 +30,7 @@ def process_adp_files(format_filter=None):
         if format_filter and format_folder.name.lower() != format_filter.lower():
             continue
 
-        processed_dir = OUT_DIR / format_folder.name
+        processed_dir = OUT_DIR / normalize_segment(format_folder.name)
         processed_dir.mkdir(parents=True, exist_ok=True)
 
         for file in format_folder.glob("*.raw.json"):
@@ -31,6 +40,7 @@ def process_adp_files(format_filter=None):
             clean_data = []
             ordered_players = raw_json.get("data", [])
             table_name = file.name.replace(".raw.json", "")
+
             for i, p in enumerate(ordered_players):
                 raw_name = p.get("name")
                 if not raw_name or not all(k in p for k in ["team", "position", "adp"]):
@@ -67,8 +77,8 @@ def process_adp_files(format_filter=None):
                     "rank": p["rank"],
                     "adp": str(p["adp"]).strip(),
                     "scoring": extract_field(file.name, 2),
-                    "platform": extract_field(file.name, 3).replace(".raw.json", ""),
-                    "type": extract_field(file.name, 1)  # "1qb" or "superflex"
+                    "platform": extract_field(file.name, 3),
+                    "type": extract_field(file.name, 1)
                 }
 
                 clean_data.append(enriched_player)
@@ -78,10 +88,6 @@ def process_adp_files(format_filter=None):
                 json.dump({"data": clean_data}, f, indent=2)
 
             print(f"✅ Processed {len(clean_data)} players → {out_file}")
-
-def extract_field(filename: str, index: int) -> str:
-    # redraft_1qb_1_ppr_sleeper.raw.json → ["redraft", "1qb", "1_ppr", "sleeper"]
-    return filename.replace(".raw.json", "").split("_")[index]
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process DraftSharks ADP data")

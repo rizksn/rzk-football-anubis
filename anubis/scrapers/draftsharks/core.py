@@ -1,7 +1,7 @@
 from .scraper_logic import scrape_combination, scrape_format
 from .scrape_runner import run_scraper
 from .html_parser import parse_adp_html
-from .utils import format_folder_name, save_adp_data, scroll_to_load_all
+from .utils import normalize_segment, save_adp_data, scroll_to_load_all
 
 __all__ = [
     "run_scraper",
