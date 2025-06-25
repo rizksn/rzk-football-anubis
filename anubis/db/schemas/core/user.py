@@ -12,5 +12,6 @@ users = Table(
     Column("firebase_uid", String, nullable=False, unique=True),
     Column("email", String, nullable=False),
     Column("display_name", String),
+    Column("subscription_status", String, default="free"),
     Column("created_at", DateTime(timezone=True), server_default=func.now()),
 )

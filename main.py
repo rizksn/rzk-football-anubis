@@ -42,7 +42,8 @@ from anubis.routes import auth as auth_routes
 from anubis.routes.players import router as players_router
 from anubis.routes.simulate import router as simulate_router
 from anubis.routes.player_data import router as player_data_router
-from anubis.routes.stripe import router as stripe_router
+from anubis.routes.checkout import router as stripe_router
+from anubis.routes import stripe_webhook 
 
 ROUTERS = [
     players_router,
@@ -50,6 +51,7 @@ ROUTERS = [
     player_data_router,
     stripe_router,
     auth_routes.router,
+    stripe_webhook.router, 
 ]
 
 for router in ROUTERS:
