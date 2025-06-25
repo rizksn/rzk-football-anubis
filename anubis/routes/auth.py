@@ -17,12 +17,17 @@ async def persist_user(decoded_token=Depends(verify_token)):
     email = decoded_token.get("email")
     display_name = decoded_token.get("name")
 
+    stripe_customer = None
+    has_paid = False
+
     async with async_session() as session:
+        # Check for existing user
         result = await session.execute(
             select(users).where(users.c.firebase_uid == firebase_uid)
         )
         existing_user = result.fetchone()
 
+        # Create if doesn't exist
         if not existing_user:
             await session.execute(users.insert().values(
                 firebase_uid=firebase_uid,
@@ -31,22 +36,26 @@ async def persist_user(decoded_token=Depends(verify_token)):
             ))
             await session.commit()
 
-    # 🔍 Check Stripe for active subscription
-    stripe_customer = None
-    has_paid = False
-
-    try:
-        customers = stripe.Customer.list(email=email).data
-        if customers:
-            stripe_customer = customers[0]
-            subscriptions = stripe.Subscription.list(
-                customer=stripe_customer.id,
-                status="active"
-            ).data
-            if subscriptions:
-                has_paid = True
-    except Exception as e:
-        print("⚠️ Stripe lookup failed:", e)
+        # Check Stripe subscription
+        try:
+            customers = stripe.Customer.list(email=email).data
+            if customers:
+                stripe_customer = customers[0]
+                subscriptions = stripe.Subscription.list(
+                    customer=stripe_customer.id,
+                    status="active"
+                ).data
+                if subscriptions:
+                    has_paid = True
+                    await session.execute(
+                        users.update()
+                        .where(users.c.firebase_uid == firebase_uid)
+                        .values(subscription_status="premium")
+                    )
+                    await session.commit()
+                    print(f"✅ Stripe active subscription found for {email}")
+        except Exception as e:
+            print("⚠️ Stripe lookup failed:", e)
 
     return {
         "status": "ok",
