@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright
 
 def run_scraper(scrape_fn):
-    headless = False
+    headless = True
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless, slow_mo=200)
         page = browser.new_page()

@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2025-06-25 19:28:23",
+  "scraped_at": "2025-07-11 08:54:21",
   "data": [
     {
       "rank": 1,
@@ -488,7 +488,7 @@
       "rank": 70,
       "name": "Jonnu Smith",
       "position": "TE",
-      "team": "MIA",
+      "team": "PIT",
       "adp": "6.10"
     },
     {
@@ -829,16 +829,16 @@
     },
     {
       "rank": 119,
-      "name": "Rachaad White",
-      "position": "RB",
-      "team": "TB",
+      "name": "Dallas Goedert",
+      "position": "TE",
+      "team": "PHI",
       "adp": "10.11"
     },
     {
       "rank": 120,
-      "name": "Dallas Goedert",
-      "position": "TE",
-      "team": "PHI",
+      "name": "Rachaad White",
+      "position": "RB",
+      "team": "TB",
       "adp": "10.12"
     },
     {

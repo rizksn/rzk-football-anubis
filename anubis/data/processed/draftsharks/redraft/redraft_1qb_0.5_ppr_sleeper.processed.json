@@ -1653,20 +1653,6 @@
       "type": "1qb"
     },
     {
-      "player_id": "8136",
-      "full_name": "Rachaad White",
-      "search_full_name": "rachaadwhite",
-      "first_name": "Rachaad",
-      "last_name": "White",
-      "team": "TB",
-      "position": "RB",
-      "rank": 119,
-      "adp": "10.11",
-      "scoring": "0.5",
-      "platform": "ppr",
-      "type": "1qb"
-    },
-    {
       "player_id": "5022",
       "full_name": "Dallas Goedert",
       "search_full_name": "dallasgoedert",
@@ -1674,6 +1660,20 @@
       "last_name": "Goedert",
       "team": "PHI",
       "position": "TE",
+      "rank": 119,
+      "adp": "10.11",
+      "scoring": "0.5",
+      "platform": "ppr",
+      "type": "1qb"
+    },
+    {
+      "player_id": "8136",
+      "full_name": "Rachaad White",
+      "search_full_name": "rachaadwhite",
+      "first_name": "Rachaad",
+      "last_name": "White",
+      "team": "TB",
+      "position": "RB",
       "rank": 120,
       "adp": "10.12",
       "scoring": "0.5",

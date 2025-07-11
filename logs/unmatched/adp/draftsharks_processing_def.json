@@ -152,5 +152,19 @@
     "team": "GB",
     "position": "DEF",
     "table": "redraft_1qb_1_ppr_espn"
+  },
+  {
+    "name": "Los Angeles Rams",
+    "normalized": "losangelesrams",
+    "team": "LAR",
+    "position": "DEF",
+    "table": "redraft_1qb_0.5_ppr_yahoo"
+  },
+  {
+    "name": "Atlanta Falcons",
+    "normalized": "atlantafalcons",
+    "team": "ATL",
+    "position": "DEF",
+    "table": "redraft_1qb_1_ppr_consensus"
   }
 ]
