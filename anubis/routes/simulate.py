@@ -51,50 +51,39 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
 
     use_ai = body.get("use_ai", False)
     league_format = body.get("leagueFormat", "1QB")
-    draft_board = body.get("draftBoard", [])
+    draft_plan = body.get("draftPlan")
     team_index = body.get("teamIndex")
+
     if team_index is None or not isinstance(team_index, int):
         raise HTTPException(status_code=400, detail="Missing or invalid teamIndex")
-
-    if not isinstance(draft_board, list) or not all(isinstance(r, list) for r in draft_board):
-        raise HTTPException(status_code=400, detail="Invalid draftBoard format")
+    if not isinstance(draft_plan, list):
+        raise HTTPException(status_code=400, detail="Invalid draftPlan format")
 
     try:
-        # 🧠 Dynamically infer rounds and teams
-        num_rounds = len(draft_board)
-        num_teams = len(draft_board[0]) if num_rounds > 0 else 0
-        total_picks = num_rounds * num_teams
-
         scored_players = load_and_score_adp(adp_format_key)
 
-        picks_made = sum(1 for row in draft_board for p in row if p)
-        round_number = get_round_number(picks_made)
-        current_pick_number = picks_made + 1
-
-        if picks_made >= total_picks:
-            raise HTTPException(status_code=400, detail="Draft is already complete")
-
-        print(f"\n🚨 NEW PICK | Team #{team_index} | Pick #{current_pick_number} | Round {round_number}")
-        print(f"📥 use_ai={use_ai} | league_format={league_format} | adp_format_key={adp_format_key}")
-        print(f"📋 Draft board contains {picks_made}/{total_picks} picks")
-
-        # 🧼 Extract already-drafted player_ids
         drafted_ids = {
-            p['player_id']
-            for row in draft_board
-            for p in row
-            if p and isinstance(p, dict) and 'player_id' in p
+            p['draftedPlayer']['player_id']
+            for p in draft_plan
+            if p.get('draftedPlayer') and 'player_id' in p['draftedPlayer']
         }
 
         available_players = [
             p for p in scored_players if p['player_id'] not in drafted_ids
         ]
 
+        picks_made = len(drafted_ids)
+        round_number = get_round_number(picks_made)
+        current_pick_number = picks_made + 1
+
+        print(f"\n🚨 NEW PICK | Team #{team_index} | Pick #{current_pick_number} | Round {round_number}")
+        print(f"📅 use_ai={use_ai} | league_format={league_format} | adp_format_key={adp_format_key}")
+        print(f"📋 Draft plan contains {picks_made}/{len(draft_plan)} picks")
         print(f"📊 Available player pool: {len(available_players)} / {len(scored_players)}")
 
         candidates = generate_scored_candidates(
             scored_players=available_players,
-            draft_board=draft_board,
+            draft_board=draft_plan,
             team_index=team_index,
             top_n=8,
             league_format=league_format
@@ -104,14 +93,14 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
         for i, p in enumerate(candidates):
             print(f"  {i+1}. {p.get('full_name', 'Unknown')} | Score: {p['final_score']:.2f}")
 
-        team_roster = extract_team_roster(draft_board, team_index)
+        team_roster = extract_team_roster(draft_plan, team_index)
         print(f"🧪 Team #{team_index} roster size: {len(team_roster)}")
 
         if use_ai:
             print("🤖 AI mode not implemented yet.")
             return {"error": "AI mode not active"}
 
-        pick, explanation = decide_pick_math(candidates, team_roster, round_number, draft_board)
+        pick, explanation = decide_pick_math(candidates, team_roster, round_number, draft_plan)
 
         if not pick:
             print("⚠️ No valid pick returned by math engine.")
@@ -127,6 +116,6 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
 
     except Exception as e:
         print("❌ Draft simulation crashed!")
-        print(f"🪵 Error: {type(e).__name__} | Message: {repr(e)}")
+        print(f"🪍 Error: {type(e).__name__} | Message: {repr(e)}")
         logger.exception("Unhandled exception in /simulate")
         raise HTTPException(status_code=500, detail=f"Draft simulation failed: {str(e)}")
