@@ -1,17 +1,21 @@
-import asyncio
 import os
-from sqlalchemy.ext.asyncio import create_async_engine
-from sqlalchemy import text
+import asyncio
 from dotenv import load_dotenv
+from sqlalchemy import text
+from sqlalchemy.ext.asyncio import create_async_engine
 
-# Core + NFL tables (for FK resolution)
+# Core schemas
 from anubis.db.schemas.core import core_metadata, players, users
-from anubis.db.schemas.nfl.nfl_player_passing_2024 import nfl_player_passing_2024
-from anubis.db.schemas.nfl.nfl_player_rushing_2024 import nfl_player_rushing_2024
-from anubis.db.schemas.nfl.nfl_player_receiving_2024 import nfl_player_receiving_2024
-from anubis.db.schemas.nfl.nfl_player_kicking_2024 import nfl_player_kicking_2024
 
-# Import market schema modules as namespaces
+# NFL stat schemas
+from anubis.db.schemas.nfl import (
+    nfl_player_qb_2024,
+    nfl_player_rb_2024,
+    nfl_player_wr_2024,
+    nfl_player_te_2024,
+)
+
+# Market ADP schemas (modular imports)
 import anubis.db.schemas.market.draftsharks_adp_redraft as redraft_tables
 import anubis.db.schemas.market.draftsharks_adp_dynasty as dynasty_tables
 import anubis.db.schemas.market.draftsharks_adp_rookie as rookie_tables
@@ -24,12 +28,6 @@ from anubis.db.schemas import (
     receiving_metadata,
     kicking_metadata,
 )
-from anubis.db.schemas.market import market_metadata
-
-from anubis.db.schemas.nfl.nfl_player_qb_2024 import nfl_player_qb_2024
-from anubis.db.schemas.nfl.nfl_player_rb_2024 import nfl_player_rb_2024
-from anubis.db.schemas.nfl.nfl_player_wr_2024 import nfl_player_wr_2024
-from anubis.db.schemas.nfl.nfl_player_te_2024 import nfl_player_te_2024
 
 # Load env vars
 load_dotenv()

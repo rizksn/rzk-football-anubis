@@ -1,6 +1,7 @@
 import json
 import os
 import time
+import logging
 from fastapi import APIRouter, HTTPException, Request
 from typing import List, Dict, Any
 
@@ -12,14 +13,18 @@ from anubis.draft_engine.models.math_engine import generate_scored_candidates, d
 from anubis.draft_engine.models.ai_engine import decide_pick_ai
 from anubis.draft_engine.logic.score_players import score_players
 
-import logging
 logger = logging.getLogger("uvicorn.error")
 
 router = APIRouter(prefix="/api")
 
+# In-memory cache to avoid reloading ADP JSON on every request
 SCORED_ADP_CACHE = {}
 
 def load_and_score_adp(adp_format_key: str):
+    """
+    Load and score ADP data for a given format key.
+    Results are cached for performance.
+    """
     if adp_format_key in SCORED_ADP_CACHE:
         return SCORED_ADP_CACHE[adp_format_key]
 
@@ -42,9 +47,14 @@ def load_and_score_adp(adp_format_key: str):
 
 @router.post("/simulate")
 async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
+    """
+    Simulates the next pick in a fantasy draft based on ADP, scoring model, and draft context.
+    Core entry point for draft engine.
+    """
     start_time = time.time()
     body = await request.json()
 
+    # Input validation
     adp_format_key = body.get("adpFormatKey")
     if not adp_format_key:
         raise HTTPException(status_code=400, detail="Missing adpFormatKey")
@@ -60,27 +70,32 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
         raise HTTPException(status_code=400, detail="Invalid draftPlan format")
 
     try:
+        # Load & score player pool
         scored_players = load_and_score_adp(adp_format_key)
 
+        # Extract all drafted player IDs
         drafted_ids = {
             p['draftedPlayer']['player_id']
             for p in draft_plan
             if p.get('draftedPlayer') and 'player_id' in p['draftedPlayer']
         }
 
+        # Filter out already drafted players
         available_players = [
             p for p in scored_players if p['player_id'] not in drafted_ids
         ]
 
+        # Determine pick number and round
         picks_made = len(drafted_ids)
         round_number = get_round_number(picks_made)
         current_pick_number = picks_made + 1
 
-        print(f"\n🚨 NEW PICK | Team #{team_index} | Pick #{current_pick_number} | Round {round_number}")
-        print(f"📅 use_ai={use_ai} | league_format={league_format} | adp_format_key={adp_format_key}")
-        print(f"📋 Draft plan contains {picks_made}/{len(draft_plan)} picks")
-        print(f"📊 Available player pool: {len(available_players)} / {len(scored_players)}")
+        logger.info(f"\n🚨 NEW PICK | Team #{team_index} | Pick #{current_pick_number} | Round {round_number}")
+        logger.info(f"📅 use_ai={use_ai} | league_format={league_format} | adp_format_key={adp_format_key}")
+        logger.info(f"📋 Draft plan contains {picks_made}/{len(draft_plan)} picks")
+        logger.info(f"📊 Available player pool: {len(available_players)} / {len(scored_players)}")
 
+        # Score and filter the top N candidates
         candidates = generate_scored_candidates(
             scored_players=available_players,
             draft_board=draft_plan,
@@ -89,33 +104,34 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
             league_format=league_format
         )
 
-        print(f"🎯 Top {len(candidates)} candidate(s):")
+        logger.info(f"🎯 Top {len(candidates)} candidate(s):")
         for i, p in enumerate(candidates):
-            print(f"  {i+1}. {p.get('full_name', 'Unknown')} | Score: {p['final_score']:.2f}")
+            logger.info(f"  {i+1}. {p.get('full_name', 'Unknown')} | Score: {p['final_score']:.2f}")
 
+        # Extract the current team's roster to inform positional needs
         team_roster = extract_team_roster(draft_plan, team_index)
-        print(f"🧪 Team #{team_index} roster size: {len(team_roster)}")
+        logger.info(f"🧪 Team #{team_index} roster size: {len(team_roster)}")
 
+        # Placeholder for LLM-based draft logic (coming soon)
         if use_ai:
-            print("🤖 AI mode not implemented yet.")
+            logger.info("🤖 AI mode not implemented yet.")
             return {"error": "AI mode not active"}
 
+        # 🔢 Core math-based draft logic
         pick, explanation = decide_pick_math(candidates, team_roster, round_number, draft_plan)
 
         if not pick:
-            print("⚠️ No valid pick returned by math engine.")
+            logger.warning("⚠️ No valid pick returned by math engine.")
             return {
                 "error": "No valid pick found",
                 "candidates": candidates,
             }
 
-        print(f"✅ Picked: {pick.get('full_name', 'Unknown')} | {explanation}")
-        print(f"⏱️ Draft simulation completed in {time.time() - start_time:.2f}s")
+        logger.info(f"✅ Picked: {pick.get('full_name', 'Unknown')} | {explanation}")
+        logger.info(f"⏱️ Draft simulation completed in {time.time() - start_time:.2f}s")
 
         return {"result": pick, "explanation": explanation}
 
     except Exception as e:
-        print("❌ Draft simulation crashed!")
-        print(f"🪍 Error: {type(e).__name__} | Message: {repr(e)}")
-        logger.exception("Unhandled exception in /simulate")
+        logger.error("❌ Draft simulation crashed!", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Draft simulation failed: {str(e)}")
