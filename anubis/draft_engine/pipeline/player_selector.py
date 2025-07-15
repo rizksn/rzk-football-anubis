@@ -1,6 +1,6 @@
 from typing import List, Dict, Any
-from anubis.draft_engine.logic.player_filter import get_drafted_player_ids
-from anubis.draft_engine.logic.score_players import score_players
+from anubis.draft_engine.filters.player_filter import get_drafted_player_ids
+from anubis.draft_engine.scoring.adp_scoring import score_players
 
 def select_top_candidates(
     all_players: List[Dict[str, Any]],

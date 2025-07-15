@@ -5,13 +5,13 @@ import logging
 from fastapi import APIRouter, HTTPException, Request
 from typing import List, Dict, Any
 
-from anubis.draft_engine.logic.prompt_builder import build_prompt
-from anubis.draft_engine.logic.roster_analysis import extract_team_roster
-from anubis.draft_engine.logic.draft_state import get_round_number
-from anubis.draft_engine.logic.player_selector import select_top_candidates
+from anubis.draft_engine.llm.prompt_builder import build_prompt
+from anubis.draft_engine.utils.roster_utils import extract_team_roster
+from anubis.draft_engine.utils.draft_state import get_round_number
+from anubis.draft_engine.pipeline.player_selector import select_top_candidates
 from anubis.draft_engine.models.math_engine import generate_scored_candidates, decide_pick_math
 from anubis.draft_engine.models.ai_engine import decide_pick_ai
-from anubis.draft_engine.logic.score_players import score_players
+from anubis.draft_engine.scoring.adp_scoring import score_players
 
 logger = logging.getLogger("uvicorn.error")
 

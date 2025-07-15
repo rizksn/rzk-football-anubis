@@ -1,8 +1,8 @@
 from typing import List, Dict, Any
 import random
 
-from anubis.draft_engine.logic.score_players import convert_adp_to_absolute
-from anubis.draft_engine.logic.player_filter import get_drafted_player_ids, filter_positional_needs
+from anubis.draft_engine.scoring.adp_scoring import convert_adp_to_absolute
+from anubis.draft_engine.filters.player_filter import get_drafted_player_ids, filter_positional_needs
 
 # =============================
 # 🎯 CANDIDATE GENERATION PIPELINE

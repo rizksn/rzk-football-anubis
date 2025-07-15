@@ -1,5 +1,5 @@
 from anubis.draft_engine.llm.router import anubis_decide
-from anubis.draft_engine.logic.prompt_builder import build_prompt
+from anubis.draft_engine.llm.prompt_builder import build_prompt
 
 
 def decide_pick_ai(
