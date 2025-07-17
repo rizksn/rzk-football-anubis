@@ -1,7 +1,7 @@
-import os
 import json
 import time
 import logging
+from pathlib import Path
 from fastapi import APIRouter, HTTPException, Request
 from typing import Dict, Any
 
@@ -25,7 +25,6 @@ def resolve_league_format(adp_format_key: str) -> str:
     else:
         raise ValueError(f"Unknown ADP format: {adp_format_key}")
 
-
 def load_and_score_adp(adp_format_key: str):
     """
     Load and score ADP data for a given format key.
@@ -35,10 +34,10 @@ def load_and_score_adp(adp_format_key: str):
         return SCORED_ADP_CACHE[adp_format_key]
 
     league_format = resolve_league_format(adp_format_key)
-    path = os.path.join(
-        os.path.dirname(__file__),
-        '..', 'data', 'processed', 'draftsharks', league_format,
-        f"{adp_format_key}.processed.json"
+    path = (
+        Path(__file__).resolve().parent.parent
+        / "data" / "processed" / "draftsharks" / league_format
+        / f"{adp_format_key}.processed.json"
     )
 
     try:
@@ -50,7 +49,6 @@ def load_and_score_adp(adp_format_key: str):
     except Exception as e:
         logger.error(f"❌ Failed to load ADP for {adp_format_key}: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to load ADP for {adp_format_key}")
-
 
 @router.post("/simulate")
 async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
@@ -67,7 +65,7 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
     draft_plan = body.get("draftPlan")
     team_index = body.get("teamIndex")
 
-    # Input validation
+    # 🛡️ Validate request payload
     if not adp_format_key:
         raise HTTPException(status_code=400, detail="Missing adpFormatKey")
     if not isinstance(team_index, int):
@@ -82,8 +80,7 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
         logger.info(f"📋 Picks made: {sum(1 for p in draft_plan if p.get('draftedPlayer'))} / {len(draft_plan)}")
 
         if use_ai:
-            logger.info("🤖 AI mode not implemented yet.")
-            return {"error": "AI mode not active"}
+            raise HTTPException(status_code=501, detail="AI drafting is not yet implemented.")
 
         response = simulate_pick(
             all_players=scored_players,
