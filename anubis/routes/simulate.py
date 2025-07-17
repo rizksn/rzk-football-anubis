@@ -13,6 +13,19 @@ router = APIRouter(prefix="/api")
 
 SCORED_ADP_CACHE = {}
 
+def resolve_league_format(adp_format_key: str) -> str:
+    if adp_format_key.startswith("redraft_"):
+        return "redraft"
+    elif adp_format_key.startswith("dynasty_"):
+        return "dynasty"
+    elif adp_format_key.startswith("rookie_"):
+        return "rookie"
+    elif adp_format_key.startswith("best_ball_"):
+        return "best_ball"
+    else:
+        raise ValueError(f"Unknown ADP format: {adp_format_key}")
+
+
 def load_and_score_adp(adp_format_key: str):
     """
     Load and score ADP data for a given format key.
@@ -21,9 +34,10 @@ def load_and_score_adp(adp_format_key: str):
     if adp_format_key in SCORED_ADP_CACHE:
         return SCORED_ADP_CACHE[adp_format_key]
 
+    league_format = resolve_league_format(adp_format_key)
     path = os.path.join(
         os.path.dirname(__file__),
-        '..', 'data', 'processed', 'draftsharks', 'dynasty',
+        '..', 'data', 'processed', 'draftsharks', league_format,
         f"{adp_format_key}.processed.json"
     )
 
