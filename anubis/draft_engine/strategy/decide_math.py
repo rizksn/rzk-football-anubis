@@ -1,40 +1,35 @@
-# =============================
-# 🧠 FINAL DECISION LAYER (MATH MODEL)
-# =============================
+from typing import List, Dict, Any, Tuple
+import random
 
-"""
-This layer is the final step before a pick is made.
 
-All players have already been:
-- Scored (ADP-based model)
-- Adjusted (format, roster, pick context)
-- Filtered (positional caps, draft constraints)
+def decide_pick_math(
+    candidates: List[Dict[str, Any]],
+    team_roster: List[Dict[str, Any]],
+    round_number: int,
+    draft_board: List[List[Any]],
+) -> Tuple[Dict[str, Any], str]:
+    """
+    Placeholder pick logic: chooses the highest-scoring candidate.
+    Adds basic randomness in later rounds to simulate human variance.
+    """
 
-At this point, we’re selecting *from a narrowed list* of candidates
-with very similar scores — this layer adds realism, flavor, and human nuance.
+    if not candidates:
+        return None, "No candidates available"
 
-🔮 Future-Pluggable Heuristics (Late-Stage Logic)
+    # 🎲 Add minor randomness after round 6 to simulate draft variation
+    if round_number >= 7 and len(candidates) >= 2:
+        roll = random.random()
+        if roll < 0.25:
+            pick = candidates[1]
+            explanation = f"Selected 2nd-best candidate for variety (roll={roll:.2f})"
+            return pick, explanation
+        elif roll < 0.35 and len(candidates) >= 3:
+            pick = candidates[2]
+            explanation = f"Selected 3rd-best candidate for variety (roll={roll:.2f})"
+            return pick, explanation
 
-✅ Weighted randomness
-    - Adds variety in late rounds (already implemented)
+    # 🥇 Default: top candidate
+    pick = candidates[0]
+    explanation = f"Selected top candidate by final score"
 
-🧱 Team stacking bias
-    - Slightly prefer players from the same team (WR/QB or WR/TE pairings)
-
-📆 Bye week diversity
-    - Penalize candidates that match existing roster bye weeks too heavily
-
-🧤 Handcuff logic
-    - Boost backup RBs if you already have the starter (e.g., Ty Chandler if you have Mattison)
-
-🧘 Roster symmetry
-    - Favor balanced team shapes (e.g., avoid 4 WRs before 2 RBs)
-
-🎭 Draft personality
-    - Profiles like "Aggressive", "Safe", "Zero RB" — affects final pick bias
-
-🔄 “Shake it up” toggle
-    - Randomly reach or fade a chalk player to simulate human variance
-
-This file should ONLY influence final pick selection — not scoring, not filtering.
-"""
+    return pick, explanation

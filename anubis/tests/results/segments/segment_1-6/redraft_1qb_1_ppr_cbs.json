@@ -1,0 +1,11 @@
+{
+  "adp_format_key": "redraft_1qb_1_ppr_cbs",
+  "league_format": "redraft",
+  "qb_setting": "1qb",
+  "scoring": "1-ppr",
+  "platform": "cbs",
+  "start_pick": 1,
+  "end_pick": 6,
+  "segment_focus": "1-6",
+  "picks": []
+}

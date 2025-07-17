@@ -1,3 +1,5 @@
+import random
+
 def smoothstep(x: float, edge0: float, edge1: float) -> float:
     """
     Sigmoid-like smoothing function to ease in/out between two edges.

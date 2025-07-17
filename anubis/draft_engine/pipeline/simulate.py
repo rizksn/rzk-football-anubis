@@ -1,75 +1,100 @@
-# =============================
-# 🧠 RZK Draft Simulation Pipeline
-# =============================
+from typing import List, Dict, Any
 
-# This function orchestrates the full pick simulation logic.
-# It wires together the modular stages of scoring, filtering,
-# modifiers, and strategy into a clean, extensible funnel.
+from anubis.draft_engine.scoring.adp_scoring import score_players
+from anubis.draft_engine.filters.player_filter import filter_positional_needs
+from anubis.draft_engine.utils.draft_utils import get_drafted_player_ids
+from anubis.draft_engine.modifiers.early_round_overrides import apply_early_round_model, PROB_TABLE
+from anubis.draft_engine.modifiers.contextual import apply_contextual_modifiers
+from anubis.draft_engine.strategy.decide_math import decide_pick_math
+from anubis.draft_engine.utils.roster_utils import extract_team_roster
+import random
 
-# -----------------------------
-# Step 0: Load & Score Players
-# -----------------------------
-# - Load raw ADP from JSON
-# - Score all players using the base model (ADP + variance)
-# from scoring.adp_scoring import score_players
 
-# raw_players = load_adp_file(adp_format_key)
-# scored_players = score_players(raw_players)
+def simulate_pick(
+    all_players: List[Dict[str, Any]],
+    draft_board: List[List[Any]],
+    team_index: int,
+    league_format: str = "1QB",
+    top_n: int = 8,
+) -> Dict[str, Any]:
+    """
+    Full pick simulation pipeline:
+    Scores available players, applies filters and modifiers,
+    then returns the best pick + explanation.
+    """
 
-# -----------------------------
-# Step 1: Filter Out Drafted Players
-# -----------------------------
-# - Remove players already picked (from draft board)
-# from filters.player_filter import get_drafted_player_ids
+    # 1. Get drafted IDs and current pick number
+    drafted_ids = get_drafted_player_ids(draft_board)
+    picks_made = len(drafted_ids)
+    current_pick_number = picks_made + 1
 
-# drafted_ids = get_drafted_player_ids(draft_plan)
-# available_players = [p for p in scored_players if p["player_id"] not in drafted_ids]
+    # 2. Remove already drafted players
+    available_players = [
+        p for p in all_players if p["player_id"] not in drafted_ids
+    ]
 
-# -----------------------------
-# Step 2: Early Round Behavior Overrides
-# -----------------------------
-# - Custom logic for picks 1–30 (e.g. ADP drift, hardcoded overrides)
-# from modifiers.early_round_overrides import apply_early_round_model
+    # 3. Special handling for early picks (1–6) — short-circuit full pipeline
+    if current_pick_number <= 6 and current_pick_number in PROB_TABLE:
+        candidates = PROB_TABLE[current_pick_number]
+        pick_rank = random.choices(
+            population=[rank for rank, _ in candidates],
+            weights=[weight for _, weight in candidates]
+        )[0]
 
-# available_players = apply_early_round_model(
-#     scored_players=available_players,
-#     current_pick_number=current_pick_number,
-#     league_format=league_format
-# )
+        print(f"[🧠 ProbOverride] Pick {current_pick_number} → Rank {pick_rank}")
 
-# -----------------------------
-# Step 3: Positional Cap Filtering
-# -----------------------------
-# - Filter out positions based on draft format rules
-# - Prevent early TE/QB floods in 1QB, etc.
-# from filters.player_filter import filter_positional_needs
+        if pick_rank != "fallback":
+            for player in available_players:
+                if player.get("rank") == pick_rank:
+                    return {
+                        "result": player,
+                        "explanation": f"Overridden by early-round probability model (Rank {pick_rank})",
+                        "prob_override_rank": pick_rank,
+                        "prob_override_weight": next((w for r, w in candidates if r == pick_rank), None)
+                    }
 
-# available_players = filter_positional_needs(
-#     candidates=available_players,
-#     team_roster=team_roster,
-#     league_format=league_format,
-#     current_pick_number=current_pick_number
-# )
+    # 4. Score remaining players
+    scored = score_players(available_players)
 
-# -----------------------------
-# Step 4: Contextual Modifiers
-# -----------------------------
-# - Apply score penalties for already-drafted positions (e.g. QB, TE)
-# from modifiers.contextual import apply_contextual_penalty
+    # 5. Apply early-round behavior modeling (picks 1–30)
+    early_adjusted = apply_early_round_model(
+        scored_players=scored,
+        current_pick_number=current_pick_number,
+        league_format=league_format
+    )
 
-# available_players = apply_contextual_penalty(
-#     candidates=available_players,
-#     team_roster=team_roster,
-#     league_format=league_format,
-#     current_pick_number=current_pick_number
-# )
+    # 6. Extract current team roster
+    team_roster = extract_team_roster(draft_board, team_index)
 
-# -----------------------------
-# Step 5: User Weight Modifiers
-# -----------------------------
-# - Apply custom user sliders (e.g. favor RB, risk tolerance, youth)
-# from modifiers.user_weights import apply_user_weights
+    # 7. Filter by positional needs (e.g., QB/TE caps)
+    filtered = filter_positional_needs(
+        early_adjusted,
+        team_roster,
+        league_format,
+        current_pick_number
+    )
 
-# available_players = apply_user_weights(
-#     candidates=available_players,
-#     user_config=user_config  # (to be pa
+    # 8. Apply contextual penalties (e.g., QB already filled)
+    adjusted = apply_contextual_modifiers(
+        filtered,
+        team_roster,
+        league_format,
+        current_pick_number
+    )
+
+    # 9. Slice top-N candidates
+    top_candidates = adjusted[:top_n]
+
+    # 10. Final pick selection
+    round_number = (current_pick_number // 12) + 1  # TODO: support custom team count
+    pick, explanation = decide_pick_math(
+        candidates=top_candidates,
+        team_roster=team_roster,
+        round_number=round_number,
+        draft_board=draft_board,
+    )
+
+    return {
+        "result": pick,
+        "explanation": explanation,
+    }

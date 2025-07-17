@@ -1,0 +1,149 @@
+[
+  {
+    "adp_format_key": "best_ball_1qb_0.5_ppr_underdog",
+    "league_format": "best_ball",
+    "qb_setting": "1qb",
+    "scoring": "0.5-ppr",
+    "platform": "underdog"
+  },
+  {
+    "adp_format_key": "best_ball_1qb_te_premium_ffpc",
+    "league_format": "best_ball",
+    "qb_setting": "1qb",
+    "scoring": "te-premium",
+    "platform": "ffpc"
+  },
+  {
+    "adp_format_key": "dynasty_1qb_0.5_ppr_sleeper",
+    "league_format": "dynasty",
+    "qb_setting": "1qb",
+    "scoring": "0.5-ppr",
+    "platform": "sleeper"
+  },
+  {
+    "adp_format_key": "dynasty_1qb_1_ppr_sleeper",
+    "league_format": "dynasty",
+    "qb_setting": "1qb",
+    "scoring": "1-ppr",
+    "platform": "sleeper"
+  },
+  {
+    "adp_format_key": "dynasty_1qb_non_ppr_sleeper",
+    "league_format": "dynasty",
+    "qb_setting": "1qb",
+    "scoring": "non-ppr",
+    "platform": "sleeper"
+  },
+  {
+    "adp_format_key": "dynasty_superflex_1_ppr_sleeper",
+    "league_format": "dynasty",
+    "qb_setting": "superflex",
+    "scoring": "1-ppr",
+    "platform": "sleeper"
+  },
+  {
+    "adp_format_key": "redraft_1qb_0.5_ppr_consensus",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "0.5-ppr",
+    "platform": "consensus"
+  },
+  {
+    "adp_format_key": "redraft_1qb_0.5_ppr_sleeper",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "0.5-ppr",
+    "platform": "sleeper"
+  },
+  {
+    "adp_format_key": "redraft_1qb_0.5_ppr_yahoo",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "0.5-ppr",
+    "platform": "yahoo"
+  },
+  {
+    "adp_format_key": "redraft_1qb_1_ppr_cbs",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "1-ppr",
+    "platform": "cbs"
+  },
+  {
+    "adp_format_key": "redraft_1qb_1_ppr_consensus",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "1-ppr",
+    "platform": "consensus"
+  },
+  {
+    "adp_format_key": "redraft_1qb_1_ppr_espn",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "1-ppr",
+    "platform": "espn"
+  },
+  {
+    "adp_format_key": "redraft_1qb_1_ppr_ffpc",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "1-ppr",
+    "platform": "ffpc"
+  },
+  {
+    "adp_format_key": "redraft_1qb_1_ppr_sleeper",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "1-ppr",
+    "platform": "sleeper"
+  },
+  {
+    "adp_format_key": "redraft_1qb_non_ppr_cbs",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "non-ppr",
+    "platform": "cbs"
+  },
+  {
+    "adp_format_key": "redraft_1qb_non_ppr_consensus",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "non-ppr",
+    "platform": "consensus"
+  },
+  {
+    "adp_format_key": "redraft_1qb_non_ppr_sleeper",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "non-ppr",
+    "platform": "sleeper"
+  },
+  {
+    "adp_format_key": "redraft_1qb_te_premium_ffpc",
+    "league_format": "redraft",
+    "qb_setting": "1qb",
+    "scoring": "te-premium",
+    "platform": "ffpc"
+  },
+  {
+    "adp_format_key": "redraft_superflex_1_ppr_sleeper",
+    "league_format": "redraft",
+    "qb_setting": "superflex",
+    "scoring": "1-ppr",
+    "platform": "sleeper"
+  },
+  {
+    "adp_format_key": "rookie_1qb_1_ppr_sleeper",
+    "league_format": "rookie",
+    "qb_setting": "1qb",
+    "scoring": "1-ppr",
+    "platform": "sleeper"
+  },
+  {
+    "adp_format_key": "rookie_superflex_1_ppr_sleeper",
+    "league_format": "rookie",
+    "qb_setting": "superflex",
+    "scoring": "1-ppr",
+    "platform": "sleeper"
+  }
+]
