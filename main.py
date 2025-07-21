@@ -39,7 +39,7 @@ def block_local_requests_in_prod(request: Request):
 
 # ─── 📁 Routers ──────────────────────────────────────
 from anubis.routes import auth as auth_routes
-from anubis.routes.players import router as players_router
+from anubis.routes.adp_data import router as players_router
 from anubis.routes.simulate import router as simulate_router
 from anubis.routes.player_data import router as player_data_router
 from anubis.routes.checkout import router as stripe_router

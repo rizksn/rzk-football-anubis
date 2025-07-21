@@ -21,14 +21,13 @@ PROB_TABLE: Dict[int, List[Tuple[Union[int, str], float]]] = {
 def apply_early_round_model(
     scored_players: List[Dict[str, Any]],
     current_pick_number: int,
-    league_format: str
+    league_format: str,
+    drafted_ids: set
 ) -> Dict[str, Any]:
     """
-    Reorders players based on probabilistic overrides for picks 1–12.
+    Selects a ranked override player based on pick number and weights.
 
-    If a ranked override is selected (based on the PROB_TABLE), that player
-    is returned immediately as an override_result. If 'fallback' is chosen
-    or the player cannot be found, the original scored list is returned.
+    If fallback is chosen or a valid pick cannot be made, the original scored list is returned.
     """
     if current_pick_number > 12 or current_pick_number not in PROB_TABLE:
         return {"scored_players": scored_players}
@@ -44,7 +43,11 @@ def apply_early_round_model(
     if pick_rank == "fallback":
         return {"scored_players": scored_players}
 
-    sorted_scored = sorted(scored_players, key=lambda p: p["final_score"], reverse=True)
+    # Filter out drafted players before override logic
+    sorted_scored = [
+        p for p in sorted(scored_players, key=lambda p: p["final_score"], reverse=True)
+        if p["player_id"] not in drafted_ids
+    ]
 
     try:
         selected_player = sorted_scored[pick_rank - 1]
@@ -57,5 +60,5 @@ def apply_early_round_model(
             }
         }
     except IndexError:
-        print(f"⚠️ ProbOverride failed: Rank {pick_rank} not found in list")
+        print(f"⚠️ ProbOverride failed: Rank {pick_rank} not found after filtering")
         return {"scored_players": scored_players}

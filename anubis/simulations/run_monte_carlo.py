@@ -1,5 +1,3 @@
-# anubis/simulations/run_monte_carlo.py
-
 import json
 from pathlib import Path
 from anubis.draft_engine.pipeline.simulate import simulate_pick
