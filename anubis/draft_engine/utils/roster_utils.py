@@ -1,6 +1,6 @@
 from typing import List, Any
 
-def extract_team_roster(draft_board: List[List[Any]], team_index: int) -> List[str]:
+def extract_team_roster(draft_plan: List[List[Any]], team_index: int) -> List[str]:
     """
     Returns a list of the drafted players for a given team_index,
     formatted as strings like 'RB: Bijan Robinson (ATL)'.
@@ -8,7 +8,7 @@ def extract_team_roster(draft_board: List[List[Any]], team_index: int) -> List[s
     """
     roster = []
 
-    for row in draft_board:
+    for row in draft_plan:
         # 🛡️ Skip if the row is malformed or team_index is out of range
         if not isinstance(row, list) or team_index >= len(row):
             continue

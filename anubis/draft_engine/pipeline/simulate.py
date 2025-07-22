@@ -10,12 +10,12 @@ from anubis.draft_engine.strategy.decide_math import decide_pick_math
 
 def simulate_pick(
     scored_players: List[Dict[str, Any]],
-    draft_board: List[Dict[str, Any]],
+    draft_plan: List[Dict[str, Any]],
     team_index: int,
     league_format: str = "1QB",
     top_n: int = 8,
 ) -> Dict[str, Any]:
-    drafted_ids = get_drafted_player_ids(draft_board)
+    drafted_ids = get_drafted_player_ids(draft_plan)
     picks_made = len(drafted_ids)
     current_pick_number = picks_made + 1
 
@@ -42,7 +42,7 @@ def simulate_pick(
 
     if pick is None:
         adjusted_players = early_result.get("scored_players", available_players)
-        team_roster = extract_team_roster(draft_board, team_index)
+        team_roster = extract_team_roster(draft_plan, team_index)
 
         filtered = filter_positional_needs(
             adjusted_players, team_roster, league_format, current_pick_number
@@ -53,17 +53,18 @@ def simulate_pick(
         )
 
         top_candidates = adjusted[:top_n]
-        round_number = (current_pick_number // 12) + 1  # TODO: Support dynamic team count
+        NUM_TEAMS = 12
+        round_number = (current_pick_number - 1) // NUM_TEAMS + 1
 
         pick, explanation = decide_pick_math(
             candidates=top_candidates,
             team_roster=team_roster,
             round_number=round_number,
-            draft_board=draft_board,
+            draft_plan=draft_plan,
         )
 
     # Update draft board
-    for pick_slot in draft_board:
+    for pick_slot in draft_plan:
         if not pick_slot.get("draftedPlayer"):
             pick_slot["draftedPlayer"] = pick
             break
@@ -71,5 +72,5 @@ def simulate_pick(
     return {
         "result": pick,
         "explanation": explanation,
-        "draftPlan": draft_board,
+        "draftPlan": draft_plan,
     }

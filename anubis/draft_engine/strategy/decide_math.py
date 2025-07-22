@@ -6,7 +6,7 @@ def decide_pick_math(
     candidates: List[Dict[str, Any]],
     team_roster: List[Dict[str, Any]],
     round_number: int,
-    draft_board: List[List[Any]],
+    draft_plan: List[List[Any]],
 ) -> Tuple[Dict[str, Any], str]:
     """
     Placeholder pick logic: chooses the highest-scoring candidate.
