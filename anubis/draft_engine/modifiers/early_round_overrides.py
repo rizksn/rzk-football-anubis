@@ -1,64 +1,98 @@
 import random
-from typing import List, Dict, Any, Tuple, Union
+from typing import List, Dict, Any
 
-# 🎯 Probabilistic Pick Table
-PROB_TABLE: Dict[int, List[Tuple[Union[int, str], float]]] = {
-    1:  [(1, 0.8),  (2, 0.2)],
-    2:  [(2, 0.7),  (1, 0.1),  (3, 0.2)],
-    3:  [(3, 0.6),  (2, 0.2),  (4, 0.15),  ("fallback", 0.05)],
-    4:  [(4, 0.6),  (3, 0.15), (5, 0.15),  (6, 0.1)],
-    5:  [(5, 0.55), (4, 0.15), (6, 0.15),  (7, 0.1),  ("fallback", 0.05)],
-    6:  [(6, 0.5),  (5, 0.15), (7, 0.15),  (8, 0.15), ("fallback", 0.05)],
-    7:  [(7, 0.5),  (6, 0.15), (8, 0.15),  (9, 0.15), ("fallback", 0.05)],
-    8:  [(8, 0.45), (7, 0.15), (9, 0.15),  (10, 0.15), ("fallback", 0.1)],
-    9:  [(9, 0.45), (8, 0.15), (10, 0.15), (11, 0.15), ("fallback", 0.1)],
-    10: [(10, 0.4), (9, 0.15), (11, 0.15), (12, 0.15), (13, 0.1), ("fallback", 0.05)],
-    11: [(11, 0.4), (10, 0.15), (12, 0.15), (13, 0.15), (14, 0.1), ("fallback", 0.05)],
-    12: [(12, 0.4), (11, 0.15), (13, 0.15), (14, 0.15), (15, 0.1), ("fallback", 0.05)],
+HIERARCHICAL_PROB_TABLE = {
+    1: [
+        {"if_rank_available": 1, "override": [(1, 0.7), (2, 0.3)]},
+    ],
+    2: [
+        {"if_rank_available": 1, "override": [(1, 0.7), (2, 0.2), (3, 0.1)]},
+        {"if_rank_available": 2, "override": [(2, 0.7), (3, 0.2), (1, 0.1)]},
+    ],
+    3: [
+        {"if_rank_available": 1, "override": [(1, 0.85), (2, 0.1), (3, 0.05)]},
+        {"if_rank_available": 2, "override": [(2, 0.7), (3, 0.2), (4, 0.1)]},
+        {"if_rank_available": 3, "override": [(3, 0.6), (4, 0.3), (5, 0.1)]},
+    ],
+    4: [
+        {"if_rank_available": 1, "override": [(1, 1.0)]},  # 🔒 Hard stop for Rank 1
+        {"if_rank_available": 2, "override": [(2, 0.8), (3, 0.15), (4, 0.05)]},
+        {"if_rank_available": 3, "override": [(3, 0.6), (4, 0.25), (5, 0.15)]},
+        {"if_rank_available": 4, "override": [(4, 0.5), (5, 0.3), (6, 0.2)]},
+    ],
+    5: [
+        {"if_rank_available": 2, "override": [(2, 1.0)]},  # 🔒 Hard stop for Rank 2
+        {"if_rank_available": 3, "override": [(3, 0.7), (4, 0.2), (5, 0.1)]},
+        {"if_rank_available": 4, "override": [(4, 0.5), (5, 0.3), (6, 0.2)]},
+        {"if_rank_available": 5, "override": [(5, 0.5), (6, 0.3), (7, 0.2)]},
+    ],
+    6: [
+        {"if_rank_available": 3, "override": [(3, 1.0)]},  # 🔒 Hard stop for Rank 3
+        {"if_rank_available": 4, "override": [(4, 0.6), (5, 0.25), (6, 0.15)]},
+        {"if_rank_available": 5, "override": [(5, 0.5), (6, 0.3), (7, 0.2)]},
+        {"if_rank_available": 6, "override": [(6, 0.4), (7, 0.35), (8, 0.25)]},
+    ],
 }
 
 
 def apply_early_round_model(
-    scored_players: List[Dict[str, Any]],
+    players: List[Dict[str, Any]],  # Unscored players with rank field
     current_pick_number: int,
     league_format: str,
     drafted_ids: set
 ) -> Dict[str, Any]:
-    """
-    Selects a ranked override player based on pick number and weights.
+    from anubis.draft_engine.modifiers.early_round_overrides import HIERARCHICAL_PROB_TABLE  # optional: import here if needed
 
-    If fallback is chosen or a valid pick cannot be made, the original scored list is returned.
-    """
-    if current_pick_number > 12 or current_pick_number not in PROB_TABLE:
-        return {"scored_players": scored_players}
+    # ✅ Only run this model for picks 1–6
+    if current_pick_number not in HIERARCHICAL_PROB_TABLE:
+        return {"scored_players": players}
 
-    candidates = PROB_TABLE[current_pick_number]
-    pick_rank = random.choices(
-        population=[rank for rank, _ in candidates],
-        weights=[weight for _, weight in candidates]
-    )[0]
+    override_rules = HIERARCHICAL_PROB_TABLE[current_pick_number]
 
-    print(f"[🧠 ProbOverride] Pick {current_pick_number} → Rank {pick_rank}")
-
-    if pick_rank == "fallback":
-        return {"scored_players": scored_players}
-
-    # Filter out drafted players before override logic
-    sorted_scored = [
-        p for p in sorted(scored_players, key=lambda p: p["final_score"], reverse=True)
+    # ✅ Get all players still on the board
+    available_players = [
+        p for p in players
         if p["player_id"] not in drafted_ids
     ]
 
-    try:
-        selected_player = sorted_scored[pick_rank - 1]
-        return {
-            "override_result": {
-                "result": selected_player,
-                "explanation": f"Overridden by early-round probability model (Rank {pick_rank})",
-                "prob_override_rank": pick_rank,
-                "prob_override_weight": next((w for r, w in candidates if r == pick_rank), None)
-            }
-        }
-    except IndexError:
-        print(f"⚠️ ProbOverride failed: Rank {pick_rank} not found after filtering")
-        return {"scored_players": scored_players}
+    # ✅ Go through conditional rules one by one
+    for rule in override_rules:
+        target_rank = rule["if_rank_available"]
+        override_candidates = rule["override"]
+
+        # Is the target rank still on the board?
+        match = next((p for p in available_players if p.get("rank") == target_rank), None)
+
+        if match:
+            # 🎯 Run override pick from this override rule
+            weighted_ranks = [rank for rank, _ in override_candidates]
+            weights = [weight for _, weight in override_candidates]
+
+            picked_rank = random.choices(weighted_ranks, weights)[0]
+
+            # If fallback, return default players
+            if picked_rank == "fallback":
+                print(f"🔁 ProbOverride: Fallback triggered at pick {current_pick_number}")
+                return {"scored_players": players}
+
+            selected = next(
+                (p for p in available_players if p.get("rank") == picked_rank),
+                None
+            )
+
+            if selected:
+                print(
+                    f"[🧠 ProbOverride] Pick {current_pick_number} → Rank {picked_rank} → "
+                    f"{selected['full_name']} (ID: {selected['player_id']})"
+                )
+                return {
+                    "override_result": {
+                        "result": selected,
+                        "explanation": f"Overridden by early-round probability model (Rank {picked_rank})",
+                    }
+                }
+            else:
+                print(f"⚠️ Rank {picked_rank} selected but no player found — continuing")
+
+    print(f"⚠️ ProbOverride: No conditions matched at pick {current_pick_number}, using default scored players")
+    return {"scored_players": players}

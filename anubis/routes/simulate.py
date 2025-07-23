@@ -3,7 +3,7 @@ from typing import Dict, Any
 import time
 import logging
 
-from anubis.draft_engine.controllers.simulation_controller import simulate_cpu_pick
+from anubis.draft_engine.pipeline.simulate import simulate_pick
 from anubis.draft_engine.utils.draft_utils import apply_user_pick
 
 logger = logging.getLogger("uvicorn.error")
@@ -52,19 +52,26 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
         if use_ai:
             raise HTTPException(status_code=501, detail="AI drafting is not yet implemented.")
 
-        response = simulate_cpu_pick(
-            scored_players=scored_players,
-            draft_plan=draft_plan,
-            team_index=team_index,
-            league_format=league_format,
-        )
+        payload = {
+            "scored_players": scored_players,
+            "draft_plan": draft_plan,
+            "team_index": team_index,
+            "league_format": league_format,
+            "top_n": 8,
+        }
 
-        updated_draft_plan = response.get("draftPlan")
-        pick = response.get("pickedPlayer")
+        result = simulate_pick(payload)
+
+        updated_draft_plan = result["draftPlan"]
+        pick = result["result"]
 
         logger.info(f"✅ CPU PICK → {pick.get('full_name', 'Unknown')} | Team {team_index} | Elapsed: {round(time.time() - start_time, 2)}s")
 
-        return response
+        return {
+            "draftPlan": updated_draft_plan,
+            "pickedPlayer": pick,
+            "explanation": result.get("explanation"),
+        }
 
     except Exception as e:
         logger.error("❌ Draft simulation crashed!", exc_info=True)

@@ -1,0 +1,180 @@
+{
+  "1": {
+    "Omarion Hampton": {
+      "total": 300,
+      "by_override_rank": {
+        "2": 300
+      }
+    },
+    "Ashton Jeanty": {
+      "total": 700,
+      "by_override_rank": {
+        "1": 700
+      }
+    }
+  },
+  "2": {
+    "Ashton Jeanty": {
+      "total": 265,
+      "by_override_rank": {
+        "1": 209,
+        "fallback": 56
+      }
+    },
+    "Travis Hunter": {
+      "total": 190,
+      "by_override_rank": {
+        "3": 190
+      }
+    },
+    "Omarion Hampton": {
+      "total": 545,
+      "by_override_rank": {
+        "2": 479,
+        "fallback": 66
+      }
+    }
+  },
+  "3": {
+    "Travis Hunter": {
+      "total": 497,
+      "by_override_rank": {
+        "3": 497
+      }
+    },
+    "Omarion Hampton": {
+      "total": 133,
+      "by_override_rank": {
+        "2": 104,
+        "fallback": 29
+      }
+    },
+    "Tetairoa McMillan": {
+      "total": 242,
+      "by_override_rank": {
+        "4": 242
+      }
+    },
+    "TreVeyon Henderson": {
+      "total": 93,
+      "by_override_rank": {
+        "5": 93
+      }
+    },
+    "Ashton Jeanty": {
+      "total": 35,
+      "by_override_rank": {
+        "1": 30,
+        "fallback": 5
+      }
+    }
+  },
+  "4": {
+    "TreVeyon Henderson": {
+      "total": 250,
+      "by_override_rank": {
+        "5": 250
+      }
+    },
+    "Quinshon Judkins": {
+      "total": 125,
+      "by_override_rank": {
+        "6": 125
+      }
+    },
+    "Tetairoa McMillan": {
+      "total": 359,
+      "by_override_rank": {
+        "4": 359
+      }
+    },
+    "Travis Hunter": {
+      "total": 244,
+      "by_override_rank": {
+        "fallback": 67,
+        "3": 177
+      }
+    },
+    "Omarion Hampton": {
+      "total": 22,
+      "by_override_rank": {
+        "2": 18,
+        "fallback": 4
+      }
+    }
+  },
+  "5": {
+    "Quinshon Judkins": {
+      "total": 215,
+      "by_override_rank": {
+        "6": 215
+      }
+    },
+    "Tetairoa McMillan": {
+      "total": 284,
+      "by_override_rank": {
+        "4": 205,
+        "fallback": 79
+      }
+    },
+    "TreVeyon Henderson": {
+      "total": 327,
+      "by_override_rank": {
+        "5": 327
+      }
+    },
+    "Travis Hunter": {
+      "total": 68,
+      "by_override_rank": {
+        "3": 51,
+        "fallback": 17
+      }
+    },
+    "Cameron Ward": {
+      "total": 106,
+      "by_override_rank": {
+        "7": 106
+      }
+    }
+  },
+  "6": {
+    "Tetairoa McMillan": {
+      "total": 112,
+      "by_override_rank": {
+        "fallback": 42,
+        "4": 70
+      }
+    },
+    "Cameron Ward": {
+      "total": 221,
+      "by_override_rank": {
+        "7": 221
+      }
+    },
+    "TreVeyon Henderson": {
+      "total": 244,
+      "by_override_rank": {
+        "5": 170,
+        "fallback": 74
+      }
+    },
+    "Tyler Warren": {
+      "total": 155,
+      "by_override_rank": {
+        "8": 155
+      }
+    },
+    "Quinshon Judkins": {
+      "total": 267,
+      "by_override_rank": {
+        "6": 267
+      }
+    },
+    "Travis Hunter": {
+      "total": 1,
+      "by_override_rank": {
+        "3": 1
+      }
+    }
+  }
+}

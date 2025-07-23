@@ -1,0 +1,180 @@
+{
+  "1": {
+    "Ja'Marr Chase": {
+      "total": 686,
+      "by_override_rank": {
+        "1": 686
+      }
+    },
+    "Justin Jefferson": {
+      "total": 314,
+      "by_override_rank": {
+        "2": 314
+      }
+    }
+  },
+  "2": {
+    "Bijan Robinson": {
+      "total": 182,
+      "by_override_rank": {
+        "3": 182
+      }
+    },
+    "Justin Jefferson": {
+      "total": 531,
+      "by_override_rank": {
+        "2": 458,
+        "fallback": 73
+      }
+    },
+    "Ja'Marr Chase": {
+      "total": 287,
+      "by_override_rank": {
+        "1": 225,
+        "fallback": 62
+      }
+    }
+  },
+  "3": {
+    "Justin Jefferson": {
+      "total": 139,
+      "by_override_rank": {
+        "fallback": 22,
+        "2": 117
+      }
+    },
+    "Saquon Barkley": {
+      "total": 248,
+      "by_override_rank": {
+        "4": 248
+      }
+    },
+    "CeeDee Lamb": {
+      "total": 70,
+      "by_override_rank": {
+        "5": 70
+      }
+    },
+    "Bijan Robinson": {
+      "total": 516,
+      "by_override_rank": {
+        "3": 516
+      }
+    },
+    "Ja'Marr Chase": {
+      "total": 27,
+      "by_override_rank": {
+        "1": 22,
+        "fallback": 5
+      }
+    }
+  },
+  "4": {
+    "Saquon Barkley": {
+      "total": 347,
+      "by_override_rank": {
+        "4": 347
+      }
+    },
+    "Bijan Robinson": {
+      "total": 239,
+      "by_override_rank": {
+        "fallback": 60,
+        "3": 179
+      }
+    },
+    "CeeDee Lamb": {
+      "total": 265,
+      "by_override_rank": {
+        "5": 265
+      }
+    },
+    "Jahmyr Gibbs": {
+      "total": 133,
+      "by_override_rank": {
+        "6": 133
+      }
+    },
+    "Justin Jefferson": {
+      "total": 16,
+      "by_override_rank": {
+        "2": 12,
+        "fallback": 4
+      }
+    }
+  },
+  "5": {
+    "CeeDee Lamb": {
+      "total": 328,
+      "by_override_rank": {
+        "5": 328
+      }
+    },
+    "Jahmyr Gibbs": {
+      "total": 211,
+      "by_override_rank": {
+        "6": 211
+      }
+    },
+    "Bijan Robinson": {
+      "total": 62,
+      "by_override_rank": {
+        "fallback": 13,
+        "3": 49
+      }
+    },
+    "Saquon Barkley": {
+      "total": 293,
+      "by_override_rank": {
+        "4": 211,
+        "fallback": 82
+      }
+    },
+    "Puka Nacua": {
+      "total": 106,
+      "by_override_rank": {
+        "7": 106
+      }
+    }
+  },
+  "6": {
+    "Jahmyr Gibbs": {
+      "total": 261,
+      "by_override_rank": {
+        "6": 261
+      }
+    },
+    "CeeDee Lamb": {
+      "total": 236,
+      "by_override_rank": {
+        "5": 153,
+        "fallback": 83
+      }
+    },
+    "Puka Nacua": {
+      "total": 257,
+      "by_override_rank": {
+        "7": 257
+      }
+    },
+    "Saquon Barkley": {
+      "total": 107,
+      "by_override_rank": {
+        "fallback": 31,
+        "4": 76
+      }
+    },
+    "Christian McCaffrey": {
+      "total": 138,
+      "by_override_rank": {
+        "8": 138
+      }
+    },
+    "Bijan Robinson": {
+      "total": 1,
+      "by_override_rank": {
+        "3": 1
+      }
+    }
+  }
+}

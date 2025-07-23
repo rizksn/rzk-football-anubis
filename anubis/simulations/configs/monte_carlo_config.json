@@ -1,0 +1,28 @@
+{
+  "num_simulations": 1000,
+  "segment_start": 0,
+  "segment_end": 6,
+  "formats_to_include": [
+    "best_ball_1qb_0.5_ppr_underdog",
+    "best_ball_1qb_te_premium_ffpc",
+    "dynasty_1qb_0.5_ppr_sleeper",
+    "dynasty_1qb_1_ppr_sleeper",
+    "dynasty_1qb_non_ppr_sleeper",
+    "dynasty_superflex_1_ppr_sleeper",
+    "redraft_1qb_0.5_ppr_consensus",
+    "redraft_1qb_0.5_ppr_sleeper",
+    "redraft_1qb_0.5_ppr_yahoo",
+    "redraft_1qb_1_ppr_cbs",
+    "redraft_1qb_1_ppr_consensus",
+    "redraft_1qb_1_ppr_espn",
+    "redraft_1qb_1_ppr_ffpc",
+    "redraft_1qb_1_ppr_sleeper",
+    "redraft_1qb_non_ppr_cbs",
+    "redraft_1qb_non_ppr_consensus",
+    "redraft_1qb_non_ppr_sleeper",
+    "redraft_1qb_te_premium_ffpc",
+    "redraft_superflex_1_ppr_sleeper",
+    "rookie_1qb_1_ppr_sleeper",
+    "rookie_superflex_1_ppr_sleeper"
+  ]
+}

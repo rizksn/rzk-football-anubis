@@ -1,0 +1,179 @@
+{
+  "1": {
+    "Josh Allen": {
+      "total": 701,
+      "by_override_rank": {
+        "1": 701
+      }
+    },
+    "Jayden Daniels": {
+      "total": 299,
+      "by_override_rank": {
+        "2": 299
+      }
+    }
+  },
+  "2": {
+    "Jayden Daniels": {
+      "total": 551,
+      "by_override_rank": {
+        "2": 483,
+        "fallback": 68
+      }
+    },
+    "Josh Allen": {
+      "total": 276,
+      "by_override_rank": {
+        "fallback": 56,
+        "1": 220
+      }
+    },
+    "Lamar Jackson": {
+      "total": 173,
+      "by_override_rank": {
+        "3": 173
+      }
+    }
+  },
+  "3": {
+    "Ja'Marr Chase": {
+      "total": 272,
+      "by_override_rank": {
+        "4": 272
+      }
+    },
+    "Jayden Daniels": {
+      "total": 135,
+      "by_override_rank": {
+        "2": 113,
+        "fallback": 22
+      }
+    },
+    "Joe Burrow": {
+      "total": 87,
+      "by_override_rank": {
+        "5": 87
+      }
+    },
+    "Lamar Jackson": {
+      "total": 483,
+      "by_override_rank": {
+        "3": 483
+      }
+    },
+    "Josh Allen": {
+      "total": 23,
+      "by_override_rank": {
+        "1": 21,
+        "fallback": 2
+      }
+    }
+  },
+  "4": {
+    "Joe Burrow": {
+      "total": 221,
+      "by_override_rank": {
+        "5": 221
+      }
+    },
+    "Lamar Jackson": {
+      "total": 272,
+      "by_override_rank": {
+        "3": 195,
+        "fallback": 77
+      }
+    },
+    "Ja'Marr Chase": {
+      "total": 372,
+      "by_override_rank": {
+        "4": 372
+      }
+    },
+    "Justin Jefferson": {
+      "total": 120,
+      "by_override_rank": {
+        "6": 120
+      }
+    },
+    "Jayden Daniels": {
+      "total": 15,
+      "by_override_rank": {
+        "2": 15
+      }
+    }
+  },
+  "5": {
+    "Lamar Jackson": {
+      "total": 71,
+      "by_override_rank": {
+        "fallback": 29,
+        "3": 42
+      }
+    },
+    "Joe Burrow": {
+      "total": 322,
+      "by_override_rank": {
+        "5": 322
+      }
+    },
+    "Justin Jefferson": {
+      "total": 233,
+      "by_override_rank": {
+        "6": 233
+      }
+    },
+    "Ja'Marr Chase": {
+      "total": 249,
+      "by_override_rank": {
+        "4": 167,
+        "fallback": 82
+      }
+    },
+    "Jalen Hurts": {
+      "total": 125,
+      "by_override_rank": {
+        "7": 125
+      }
+    }
+  },
+  "6": {
+    "Justin Jefferson": {
+      "total": 262,
+      "by_override_rank": {
+        "6": 262
+      }
+    },
+    "Jalen Hurts": {
+      "total": 232,
+      "by_override_rank": {
+        "7": 232
+      }
+    },
+    "Joe Burrow": {
+      "total": 262,
+      "by_override_rank": {
+        "fallback": 86,
+        "5": 176
+      }
+    },
+    "Bijan Robinson": {
+      "total": 137,
+      "by_override_rank": {
+        "8": 137
+      }
+    },
+    "Ja'Marr Chase": {
+      "total": 106,
+      "by_override_rank": {
+        "4": 71,
+        "fallback": 35
+      }
+    },
+    "Lamar Jackson": {
+      "total": 1,
+      "by_override_rank": {
+        "3": 1
+      }
+    }
+  }
+}

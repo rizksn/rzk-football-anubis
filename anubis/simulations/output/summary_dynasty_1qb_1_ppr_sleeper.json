@@ -1,0 +1,180 @@
+{
+  "1": {
+    "Ja'Marr Chase": {
+      "total": 689,
+      "by_override_rank": {
+        "1": 689
+      }
+    },
+    "Justin Jefferson": {
+      "total": 311,
+      "by_override_rank": {
+        "2": 311
+      }
+    }
+  },
+  "2": {
+    "Bijan Robinson": {
+      "total": 200,
+      "by_override_rank": {
+        "3": 200
+      }
+    },
+    "Ja'Marr Chase": {
+      "total": 272,
+      "by_override_rank": {
+        "fallback": 69,
+        "1": 203
+      }
+    },
+    "Justin Jefferson": {
+      "total": 528,
+      "by_override_rank": {
+        "2": 457,
+        "fallback": 71
+      }
+    }
+  },
+  "3": {
+    "Justin Jefferson": {
+      "total": 150,
+      "by_override_rank": {
+        "2": 115,
+        "fallback": 35
+      }
+    },
+    "Bijan Robinson": {
+      "total": 468,
+      "by_override_rank": {
+        "3": 468
+      }
+    },
+    "Jahmyr Gibbs": {
+      "total": 267,
+      "by_override_rank": {
+        "4": 267
+      }
+    },
+    "Malik Nabers": {
+      "total": 76,
+      "by_override_rank": {
+        "5": 76
+      }
+    },
+    "Ja'Marr Chase": {
+      "total": 39,
+      "by_override_rank": {
+        "1": 34,
+        "fallback": 5
+      }
+    }
+  },
+  "4": {
+    "Jahmyr Gibbs": {
+      "total": 344,
+      "by_override_rank": {
+        "4": 344
+      }
+    },
+    "Malik Nabers": {
+      "total": 236,
+      "by_override_rank": {
+        "5": 236
+      }
+    },
+    "Bijan Robinson": {
+      "total": 277,
+      "by_override_rank": {
+        "fallback": 78,
+        "3": 199
+      }
+    },
+    "CeeDee Lamb": {
+      "total": 132,
+      "by_override_rank": {
+        "6": 132
+      }
+    },
+    "Justin Jefferson": {
+      "total": 11,
+      "by_override_rank": {
+        "2": 10,
+        "fallback": 1
+      }
+    }
+  },
+  "5": {
+    "Malik Nabers": {
+      "total": 336,
+      "by_override_rank": {
+        "5": 336
+      }
+    },
+    "Jahmyr Gibbs": {
+      "total": 273,
+      "by_override_rank": {
+        "fallback": 84,
+        "4": 189
+      }
+    },
+    "CeeDee Lamb": {
+      "total": 228,
+      "by_override_rank": {
+        "6": 228
+      }
+    },
+    "Bijan Robinson": {
+      "total": 54,
+      "by_override_rank": {
+        "3": 38,
+        "fallback": 16
+      }
+    },
+    "Brock Bowers": {
+      "total": 109,
+      "by_override_rank": {
+        "7": 109
+      }
+    }
+  },
+  "6": {
+    "Ashton Jeanty": {
+      "total": 127,
+      "by_override_rank": {
+        "8": 127
+      }
+    },
+    "CeeDee Lamb": {
+      "total": 274,
+      "by_override_rank": {
+        "6": 274
+      }
+    },
+    "Malik Nabers": {
+      "total": 251,
+      "by_override_rank": {
+        "fallback": 84,
+        "5": 167
+      }
+    },
+    "Brock Bowers": {
+      "total": 231,
+      "by_override_rank": {
+        "7": 231
+      }
+    },
+    "Jahmyr Gibbs": {
+      "total": 116,
+      "by_override_rank": {
+        "4": 81,
+        "fallback": 35
+      }
+    },
+    "Bijan Robinson": {
+      "total": 1,
+      "by_override_rank": {
+        "3": 1
+      }
+    }
+  }
+}

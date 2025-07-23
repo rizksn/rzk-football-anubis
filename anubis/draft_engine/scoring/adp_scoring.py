@@ -4,7 +4,8 @@ from anubis.draft_engine.utils.math_utils import smoothstep, variance_by_adp, ra
 def score_players(
     players: List[Dict[str, Any]],
     team_size: int = 12,
-    total_rounds: int = 15
+    total_rounds: int = 15,
+    verbose: bool = True
 ) -> List[Dict[str, Any]]:
     """
     Scores players using a normalized draft capital model + dynamic variance.
@@ -43,8 +44,8 @@ def score_players(
             }
         })
 
-    # 📊 One-time debug: log full score table on first run
-    if not getattr(score_players, "_logged_once", False):
+    # 📊 Optional one-time log — only if verbose is True
+    if verbose and not getattr(score_players, "_logged_once", False):
         setattr(score_players, "_logged_once", True)
         print("\n📊 Full Player Score Log (Sorted by Final Score):")
 
