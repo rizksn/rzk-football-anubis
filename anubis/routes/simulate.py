@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, Request
 from typing import Dict, Any
 import time
 import logging
+import json
 
 from anubis.draft_engine.pipeline.simulate import simulate_pick
 from anubis.draft_engine.utils.draft_utils import apply_user_pick
@@ -17,9 +18,11 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
     scored_players = body.get("scoredPlayers")
     draft_plan = body.get("draftPlan")
     team_index = body.get("teamIndex")
-    use_ai = body.get("use_ai", False)
+    adp_format_key = body.get("adpFormatKey", "")
     league_format = body.get("leagueFormat", "1QB")
+    roster_config = body.get("roster_config", {})
     selected_player_id = body.get("selectedPlayerId")
+    use_ai = body.get("use_ai", False)\
 
     if not isinstance(scored_players, list):
         raise HTTPException(status_code=400, detail="Missing or invalid scoredPlayers")
@@ -56,10 +59,12 @@ async def simulate_draft_plan(request: Request) -> Dict[str, Any]:
             "scored_players": scored_players,
             "draft_plan": draft_plan,
             "team_index": team_index,
+            "adp_format_key": adp_format_key,
             "league_format": league_format,
+            "roster_config": roster_config, 
             "top_n": 8,
         }
-
+        logger.info("📦 Received Roster Config:\n%s", json.dumps(roster_config, indent=2))
         result = simulate_pick(payload)
 
         updated_draft_plan = result["draftPlan"]

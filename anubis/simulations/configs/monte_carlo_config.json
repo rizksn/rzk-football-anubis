@@ -1,7 +1,7 @@
 {
   "num_simulations": 1000,
   "segment_start": 0,
-  "segment_end": 6,
+  "segment_end": 12,
   "formats_to_include": [
     "best_ball_1qb_0.5_ppr_underdog",
     "best_ball_1qb_te_premium_ffpc",

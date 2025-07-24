@@ -1,49 +1,14 @@
 import random
 from typing import List, Dict, Any
 
-HIERARCHICAL_PROB_TABLE = {
-    1: [
-        {"if_rank_available": 1, "override": [(1, 0.7), (2, 0.3)]},
-    ],
-    2: [
-        {"if_rank_available": 1, "override": [(1, 0.7), (2, 0.2), (3, 0.1)]},
-        {"if_rank_available": 2, "override": [(2, 0.7), (3, 0.2), (1, 0.1)]},
-    ],
-    3: [
-        {"if_rank_available": 1, "override": [(1, 0.85), (2, 0.1), (3, 0.05)]},
-        {"if_rank_available": 2, "override": [(2, 0.7), (3, 0.2), (4, 0.1)]},
-        {"if_rank_available": 3, "override": [(3, 0.6), (4, 0.3), (5, 0.1)]},
-    ],
-    4: [
-        {"if_rank_available": 1, "override": [(1, 1.0)]},  # 🔒 Hard stop for Rank 1
-        {"if_rank_available": 2, "override": [(2, 0.8), (3, 0.15), (4, 0.05)]},
-        {"if_rank_available": 3, "override": [(3, 0.6), (4, 0.25), (5, 0.15)]},
-        {"if_rank_available": 4, "override": [(4, 0.5), (5, 0.3), (6, 0.2)]},
-    ],
-    5: [
-        {"if_rank_available": 2, "override": [(2, 1.0)]},  # 🔒 Hard stop for Rank 2
-        {"if_rank_available": 3, "override": [(3, 0.7), (4, 0.2), (5, 0.1)]},
-        {"if_rank_available": 4, "override": [(4, 0.5), (5, 0.3), (6, 0.2)]},
-        {"if_rank_available": 5, "override": [(5, 0.5), (6, 0.3), (7, 0.2)]},
-    ],
-    6: [
-        {"if_rank_available": 3, "override": [(3, 1.0)]},  # 🔒 Hard stop for Rank 3
-        {"if_rank_available": 4, "override": [(4, 0.6), (5, 0.25), (6, 0.15)]},
-        {"if_rank_available": 5, "override": [(5, 0.5), (6, 0.3), (7, 0.2)]},
-        {"if_rank_available": 6, "override": [(6, 0.4), (7, 0.35), (8, 0.25)]},
-    ],
-}
-
+from anubis.draft_engine.modifiers.hierarchical_prob_table import HIERARCHICAL_PROB_TABLE
 
 def apply_early_round_model(
     players: List[Dict[str, Any]],  # Unscored players with rank field
     current_pick_number: int,
-    league_format: str,
+    qb_setting: str,
     drafted_ids: set
 ) -> Dict[str, Any]:
-    from anubis.draft_engine.modifiers.early_round_overrides import HIERARCHICAL_PROB_TABLE  # optional: import here if needed
-
-    # ✅ Only run this model for picks 1–6
     if current_pick_number not in HIERARCHICAL_PROB_TABLE:
         return {"scored_players": players}
 
