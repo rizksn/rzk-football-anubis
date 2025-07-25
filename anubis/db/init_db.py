@@ -8,12 +8,10 @@ from sqlalchemy.ext.asyncio import create_async_engine
 from anubis.db.schemas.core import core_metadata, players, users
 
 # NFL stat schemas
-from anubis.db.schemas.nfl import (
-    nfl_player_qb_2024,
-    nfl_player_rb_2024,
-    nfl_player_wr_2024,
-    nfl_player_te_2024,
-)
+from anubis.db.schemas.nfl.nfl_player_qb_2024 import nfl_player_qb_2024
+from anubis.db.schemas.nfl.nfl_player_rb_2024 import nfl_player_rb_2024
+from anubis.db.schemas.nfl.nfl_player_wr_2024 import nfl_player_wr_2024
+from anubis.db.schemas.nfl.nfl_player_te_2024 import nfl_player_te_2024
 
 # Market ADP schemas (modular imports)
 import anubis.db.schemas.market.draftsharks_adp_redraft as redraft_tables
@@ -98,7 +96,8 @@ async def init():
                 ]
             )
             for table in all_tables:
-                print(f"✅ Creating table: {table.metadata.schema}.{table.name}")
+                schema = table.schema or "<unspecified>"
+                print(f"✅ Creating table: {schema}.{table.name}")
 
             from sqlalchemy import MetaData
             tmp = MetaData()

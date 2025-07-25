@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, String, DateTime
+from sqlalchemy import Table, Column, String, DateTime, CheckConstraint
 from sqlalchemy.sql import func
 from sqlalchemy.dialects.postgresql import UUID
 import uuid
@@ -12,6 +12,12 @@ users = Table(
     Column("firebase_uid", String, nullable=False, unique=True),
     Column("email", String, nullable=False),
     Column("display_name", String),
-    Column("subscription_status", String, default="free"),
+    Column(
+        "subscription_status",
+        String,
+        nullable=False,
+        server_default="free"
+    ),
     Column("created_at", DateTime(timezone=True), server_default=func.now()),
+    CheckConstraint("subscription_status IN ('free', 'premium')", name="valid_subscription_status"),
 )

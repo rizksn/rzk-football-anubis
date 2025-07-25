@@ -44,12 +44,14 @@ from anubis.routes.simulate import router as simulate_router
 from anubis.routes.player_data import router as player_data_router
 from anubis.routes.checkout import router as stripe_router
 from anubis.routes import stripe_webhook 
+from anubis.routes.cancel_subscription import router as cancel_router
 
 ROUTERS = [
     players_router,
     simulate_router,
     player_data_router,
     stripe_router,
+    cancel_router, 
     auth_routes.router,
     stripe_webhook.router, 
 ]
