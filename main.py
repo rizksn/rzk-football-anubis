@@ -45,7 +45,9 @@ from anubis.routes.player_data import router as player_data_router
 from anubis.routes.checkout import router as stripe_router
 from anubis.routes import stripe_webhook 
 from anubis.routes.cancel_subscription import router as cancel_router
+from anubis.routes.keepers import router as keepers_router
 
+# Routers with no prefix embedded
 ROUTERS = [
     players_router,
     simulate_router,
@@ -53,15 +55,17 @@ ROUTERS = [
     stripe_router,
     cancel_router, 
     auth_routes.router,
-    stripe_webhook.router, 
+    stripe_webhook.router,
 ]
 
 for router in ROUTERS:
     app.include_router(router)
 
+# ✅ Explicitly add keeper routes with a prefix
+app.include_router(keepers_router, prefix="/api/keepers")
+
 # ─── 🩺 Health Check ─────────────────────────────────
 @app.get("/")
 async def read_root(request: Request):
-    # Optional production safeguard
     block_local_requests_in_prod(request)
     return {"message": "Backend is up and running!"}

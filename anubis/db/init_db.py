@@ -6,6 +6,7 @@ from sqlalchemy.ext.asyncio import create_async_engine
 
 # Core schemas
 from anubis.db.schemas.core import core_metadata, players, users
+from anubis.db.schemas.core.keeper_sets import keeper_sets
 
 # NFL stat schemas
 from anubis.db.schemas.nfl.nfl_player_qb_2024 import nfl_player_qb_2024

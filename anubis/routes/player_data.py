@@ -30,7 +30,7 @@ async def get_player_data(stat_type: str = "qb", year: int = 2024, player_id: st
     if table is None:
         raise HTTPException(status_code=400, detail=f"Unsupported stat_type: {stat_type}")
 
-    async with get_async_session()() as session:
+    async with get_async_session() as session:
         query = select(table)
         if player_id:
             query = query.where(table.c.player_id == player_id)
