@@ -20,6 +20,13 @@ async def save_rankings(
 
     user_id = decoded_user["uid"]
 
+     # ✅ Validation: ensure valid player_ids list
+    if not payload.player_ids:
+        raise HTTPException(status_code=400, detail="No player_ids provided")
+
+    if len(payload.player_ids) != len(set(payload.player_ids)):
+        raise HTTPException(status_code=400, detail="Duplicate player_ids in rankings")
+
     # Delete any existing rankings for this user/format
     await db.execute(
         delete(adp_format_rankings).where(

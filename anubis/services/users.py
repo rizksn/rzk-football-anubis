@@ -4,8 +4,8 @@ from anubis.db.base import async_session
 from firebase_admin import auth
 
 async def mark_user_as_premium(user_id: str):
-    # ✅ 1. Update your local DB
     async with async_session() as session:
+        # Update local DB subscription status
         await session.execute(
             update(users)
             .where(users.c.firebase_uid == user_id)
@@ -13,17 +13,20 @@ async def mark_user_as_premium(user_id: str):
         )
         await session.commit()
 
-    # ✅ 2. Assign Firebase premium claim
     try:
-        auth.set_custom_user_claims(user_id, {"premium": True})
+        # Fetch current Firebase claims and add premium
+        user = auth.get_user(user_id)
+        existing_claims = user.custom_claims or {}
+        existing_claims["premium"] = True
+        auth.set_custom_user_claims(user_id, existing_claims)
         print(f"✅ Firebase claim set: {user_id} is now premium")
     except Exception as e:
         print(f"❌ Failed to set Firebase claim for {user_id}: {e}")
 
 
 async def mark_user_as_free(user_id: str, email: str):
-    # ✅ 1. Update DB
     async with async_session() as session:
+        # Update local DB subscription status to free
         await session.execute(
             update(users)
             .where(users.c.email == email)
@@ -31,9 +34,12 @@ async def mark_user_as_free(user_id: str, email: str):
         )
         await session.commit()
 
-    # ✅ 2. Remove Firebase 'premium' claim
     try:
-        auth.set_custom_user_claims(user_id, {})  # wipe all custom claims
-        print(f"✅ Firebase claims cleared: {user_id} is now free")
+        # Fetch current Firebase claims and remove premium key only
+        user = auth.get_user(user_id)
+        existing_claims = user.custom_claims or {}
+        existing_claims.pop("premium", None)
+        auth.set_custom_user_claims(user_id, existing_claims)
+        print(f"✅ Firebase claims updated: {user_id} is now free")
     except Exception as e:
-        print(f"❌ Failed to clear Firebase claims for {user_id}: {e}")
+        print(f"❌ Failed to update Firebase claims for {user_id}: {e}")
