@@ -20,14 +20,13 @@ async def save_rankings(
 
     user_id = decoded_user["uid"]
 
-     # ✅ Validation: ensure valid player_ids list
     if not payload.player_ids:
         raise HTTPException(status_code=400, detail="No player_ids provided")
 
     if len(payload.player_ids) != len(set(payload.player_ids)):
         raise HTTPException(status_code=400, detail="Duplicate player_ids in rankings")
 
-    # Delete any existing rankings for this user/format
+    # Delete existing row for this user/format
     await db.execute(
         delete(adp_format_rankings).where(
             adp_format_rankings.c.user_id == user_id,
@@ -35,18 +34,15 @@ async def save_rankings(
         )
     )
 
-    # Insert updated rankings
-    values = [
-        {
-            "user_id": user_id,
-            "adp_format_key": payload.adp_format_key,
-            "player_id": player_id,
-            "rank": rank
-        }
-        for rank, player_id in enumerate(payload.player_ids, start=1)
-    ]
+    # Insert new row with JSONB rankings list
+    await db.execute(
+        insert(adp_format_rankings).values(
+            user_id=user_id,
+            adp_format_key=payload.adp_format_key,
+            rankings=payload.player_ids  # 👈 just save the full list
+        )
+    )
 
-    await db.execute(insert(adp_format_rankings), values)
     await db.commit()
     return {"success": True, "message": "Rankings saved"}
 
@@ -65,13 +61,13 @@ async def load_rankings(
     stmt = select(adp_format_rankings).where(
         adp_format_rankings.c.user_id == user_id,
         adp_format_rankings.c.adp_format_key == format_key
-    ).order_by(adp_format_rankings.c.rank)
+    )
 
     result = await db.execute(stmt)
     rows = result.mappings().all()
 
     return {
-        "rankings": [row["player_id"] for row in rows]
+        "rankings": rows[0]["rankings"] if rows else []
     }
 
 
