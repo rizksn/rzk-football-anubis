@@ -54,28 +54,30 @@ async def save_keepers(
 
 @router.get("/load")
 async def load_keepers(
-    user_id: str,
     name: str = None,
+    format_key: str = None,
     decoded_user: dict = Depends(verify_token),
     db: AsyncSession = Depends(get_async_session),
 ):
     if not decoded_user.get("premium", False):
         raise HTTPException(status_code=403, detail="Premium access required")
 
-    # ✅ Ensure the requested user_id matches the token UID
-    if decoded_user["uid"] != user_id:
-        raise HTTPException(status_code=403, detail="Cannot access another user's data")
+    user_id = decoded_user["uid"]
 
     stmt = select(keeper_sets).where(keeper_sets.c.user_id == user_id)
+
     if name:
         stmt = stmt.where(keeper_sets.c.name == name)
+
+    if format_key:
+        stmt = stmt.where(keeper_sets.c.format_key == format_key)
 
     result = await db.execute(stmt)
     rows = result.mappings().all()
 
     serialized = [
         {
-            "id": row["id"], 
+            "id": row["id"],
             "user_id": row["user_id"],
             "name": row["name"],
             "format_key": row["format_key"],
@@ -114,3 +116,24 @@ async def get_keeper_set_by_id(
         "num_teams": row["num_teams"],
         "draft_plan": row["draft_plan"],
     }
+
+
+@router.delete("/{keeper_id}")
+async def delete_keeper_set(
+    keeper_id: int,
+    decoded_user: dict = Depends(verify_token),
+    db: AsyncSession = Depends(get_async_session),
+):
+    stmt = select(keeper_sets).where(keeper_sets.c.id == keeper_id)
+    result = await db.execute(stmt)
+    row = result.mappings().first()
+
+    if not row:
+        raise HTTPException(status_code=404, detail="Keeper set not found")
+
+    if row["user_id"] != decoded_user["uid"]:
+        raise HTTPException(status_code=403, detail="Not authorized to delete this keeper set")
+
+    await db.execute(keeper_sets.delete().where(keeper_sets.c.id == keeper_id))
+    await db.commit()
+    return {"success": True, "message": "Keeper set deleted"}

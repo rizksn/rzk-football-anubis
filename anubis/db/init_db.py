@@ -7,6 +7,8 @@ from sqlalchemy.ext.asyncio import create_async_engine
 # Core schemas
 from anubis.db.schemas.core import core_metadata, players, users
 from anubis.db.schemas.core.keeper_sets import keeper_sets
+from anubis.db.schemas.core.adp_format_rankings import adp_format_rankings
+from anubis.db.schemas.core.keeper_rankings import keeper_rankings
 
 # NFL stat schemas
 from anubis.db.schemas.nfl.nfl_player_qb_2024 import nfl_player_qb_2024
@@ -55,6 +57,10 @@ async def init():
         def sync_create_all(sync_conn):
             all_tables = (
                 list(core_metadata.tables.values())
+                + [
+                    adp_format_rankings,
+                    keeper_rankings,
+                ]
                 + list(passing_metadata.tables.values())
                 + list(rushing_metadata.tables.values())
                 + list(receiving_metadata.tables.values())

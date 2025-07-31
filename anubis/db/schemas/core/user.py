@@ -8,7 +8,7 @@ from anubis.db.schemas.core import core_metadata
 users = Table(
     "users",
     core_metadata,
-    Column("user_id", UUID(as_uuid=True), primary_key=True, default=uuid.uuid4),
+    Column("user_id", String, primary_key=True),
     Column("firebase_uid", String, nullable=False, unique=True),
     Column("email", String, nullable=False),
     Column("display_name", String),

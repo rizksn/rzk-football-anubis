@@ -38,14 +38,15 @@ def block_local_requests_in_prod(request: Request):
         raise HTTPException(status_code=403, detail="Local access not allowed in production")
 
 # ─── 📁 Routers ──────────────────────────────────────
-from anubis.routes import auth as auth_routes
-from anubis.routes.adp_data import router as players_router
+from anubis.routes.auth import auth as auth_routes
+from anubis.routes.adp.adp_data import router as players_router
 from anubis.routes.simulate import router as simulate_router
-from anubis.routes.player_data import router as player_data_router
-from anubis.routes.checkout import router as stripe_router
-from anubis.routes import stripe_webhook 
-from anubis.routes.cancel_subscription import router as cancel_router
+from anubis.routes.draft.player_data import router as player_data_router
+from anubis.routes.checkout.checkout import router as stripe_router
+from anubis.routes.auth import stripe_webhook 
+from anubis.routes.auth.cancel_subscription import router as cancel_router
 from anubis.routes.keepers import router as keepers_router
+from anubis.routes.rankings import router as rankings_router
 
 # Routers with no prefix embedded
 ROUTERS = [
@@ -63,6 +64,7 @@ for router in ROUTERS:
 
 # ✅ Explicitly add keeper routes with a prefix
 app.include_router(keepers_router, prefix="/api/keepers")
+app.include_router(rankings_router, prefix="/api/rankings")
 
 # ─── 🩺 Health Check ─────────────────────────────────
 @app.get("/")

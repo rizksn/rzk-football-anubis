@@ -33,6 +33,7 @@ async def persist_user(request: Request, decoded_token=Depends(verify_token)):
     async with async_session() as session:
         # 🧱 Upsert user by Firebase UID
         stmt = insert(users).values(
+            user_id=firebase_uid,
             firebase_uid=firebase_uid,
             email=email,
             display_name=display_name,
