@@ -92,7 +92,7 @@ async def load_keepers(
 
 @router.get("/{keeper_id}")
 async def get_keeper_set_by_id(
-    keeper_id: int,
+    keeper_id: str,
     decoded_user: dict = Depends(verify_token),
     db: AsyncSession = Depends(get_async_session),
 ):
