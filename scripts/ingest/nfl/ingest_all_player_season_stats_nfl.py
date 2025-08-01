@@ -17,30 +17,32 @@ from anubis.ingest.nfl.season_kicking import load_kicker_data
 
 
 async def main():
-    print("🚀 Starting full NFL player stats ingestion...\n")
+    year = int(sys.argv[1]) if len(sys.argv) > 1 else 2024  # 👈 Get year from CLI arg
+    print(f"🚀 Starting NFL stats ingestion for {year}...\n")
 
     try:
-        await load_passing_data()
+        await load_passing_data(year)
     except Exception as e:
         print(f"❌ Failed to load QB data: {e}")
 
     try:
-        await load_receiving_data()
+        await load_receiving_data(year)
     except Exception as e:
         print(f"❌ Failed to load WR data: {e}")
 
     try:
-        await load_rushing_data()
+        await load_rushing_data(year)
     except Exception as e:
         print(f"❌ Failed to load RB data: {e}")
 
     try:
-        await load_kicker_data()
+        await load_kicker_data(year)
     except Exception as e:
         print(f"❌ Failed to load Kicker data: {e}")
 
-    print("\n✅ All NFL season stat tables successfully ingested.")
+    print(f"\n✅ All NFL stats for {year} successfully ingested.")
 
-
+# ✅ ADD THIS:
 if __name__ == "__main__":
+    import asyncio
     asyncio.run(main())

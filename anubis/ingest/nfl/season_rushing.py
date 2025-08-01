@@ -1,13 +1,13 @@
 import json
 import os
 import logging
+import importlib
 from sqlalchemy import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 
 from anubis.db.base import engine
-from anubis.db.schemas.nfl.nfl_player_rushing_2024 import nfl_player_rushing_2024
 from anubis.ingest.utils.match_players import match_player_by_name
 
 # Logger setup
@@ -33,19 +33,27 @@ def parse_rushing_record(record, player_id):
         "rush_yds": to_int(record["rush_yds"]),
         "att": to_int(record["att"]),
         "td": to_int(record["td"]),
-        "twenty_plus": to_int(record["20+"]),                   
-        "forty_plus": to_int(record["40+"]),                    
+        "twenty_plus": to_int(record["20+"]),
+        "forty_plus": to_int(record["40+"]),
         "long": to_int(record["lng"]),
         "rush_1st": to_int(record["rush_1st"]),
-        "rush_1st_percent": to_float(record["rush_1st%"]),     
+        "rush_1st_percent": to_float(record["rush_1st%"]),
         "rush_fum": to_int(record["rush_fum"]),
     }
 
 # Main async ingest function
-async def load_rushing_data():
+async def load_rushing_data(year: int = 2024):
     base_dir = os.path.dirname(__file__)
-    stat_path = os.path.abspath(os.path.join(base_dir, "../../data/processed/nfl/nfl_player_rushing_2024.processed.json"))
-    sleeper_path = os.path.abspath(os.path.join(base_dir, "../../data/processed/sleeper/sleeper_players_processed.json"))
+    stat_path = os.path.abspath(os.path.join(
+        base_dir, f"../../data/processed/nfl/nfl_player_rushing_{year}.processed.json"
+    ))
+    sleeper_path = os.path.abspath(os.path.join(
+        base_dir, "../../data/processed/sleeper/sleeper_players_processed.json"
+    ))
+
+    # Dynamically import the correct table
+    table_module = importlib.import_module(f"anubis.db.schemas.nfl.nfl_player_rushing_{year}")
+    rushing_table = getattr(table_module, f"nfl_player_rushing_{year}")
 
     with open(stat_path, "r") as f:
         raw_data = json.load(f)
@@ -61,7 +69,7 @@ async def load_rushing_data():
 
         player_obj = match_player_by_name(search_name, player_pool)
         if player_obj:
-            player_id = player_obj["player_id"]  
+            player_id = player_obj["player_id"]
             parsed_data.append(parse_rushing_record(record, player_id))
         else:
             unmatched_players.append(raw_name)
@@ -69,13 +77,13 @@ async def load_rushing_data():
             logger.debug(f"Record dump: {json.dumps(record, indent=2)}")
 
     if unmatched_players:
-        log_path = os.path.join(base_dir, "../../logs/unmatched_nfl_rbs.json")
+        log_path = os.path.join(base_dir, f"../../logs/unmatched/unmatched_nfl_rbs_{year}.json")
         os.makedirs(os.path.dirname(log_path), exist_ok=True)
         with open(log_path, "w") as f:
             json.dump(unmatched_players, f, indent=2)
 
     async with async_session() as session:
-        stmt = pg_insert(nfl_player_rushing_2024).values(parsed_data)
+        stmt = pg_insert(rushing_table).values(parsed_data)
         stmt = stmt.on_conflict_do_update(
             index_elements=["player_id"],
             set_={c.name: c for c in stmt.excluded if c.name != "player_id"}
@@ -83,7 +91,7 @@ async def load_rushing_data():
         await session.execute(stmt)
         await session.commit()
 
-    logger.info(f"✅ Inserted {len(parsed_data)} RB records into nfl_player_rushing_2024")
+    logger.info(f"✅ Inserted {len(parsed_data)} RB records into nfl_player_rushing_{year}")
 
 # Entrypoint
 if __name__ == "__main__":

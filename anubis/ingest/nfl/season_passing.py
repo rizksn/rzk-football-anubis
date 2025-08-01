@@ -1,13 +1,12 @@
-import json
 import os
+import json
 import logging
-from sqlalchemy import insert
+import importlib
+from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.dialects.postgresql import insert as pg_insert
 
 from anubis.db.base import engine
-from anubis.db.schemas.nfl.nfl_player_passing_2024 import nfl_player_passing_2024
 from anubis.ingest.utils.match_players import match_player_by_name
 
 # Logger setup
@@ -34,24 +33,32 @@ def parse_passing_record(record, player_id):
         "yds_att": to_float(record["yds/att"]),
         "att": to_int(record["att"]),
         "cmp": to_int(record["cmp"]),
-        "cmp_percent": to_float(record["cmp_%"]),       
+        "cmp_percent": to_float(record["cmp_%"]),
         "td": to_int(record["td"]),
         "int": to_int(record["int"]),
         "rate": to_float(record["rate"]),
-        "first": to_int(record["1st"]),                 
-        "first_percent": to_float(record["1st%"]),       
-        "twenty_plus": to_int(record["20+"]),            
-        "forty_plus": to_int(record["40+"]),             
+        "first": to_int(record["1st"]),
+        "first_percent": to_float(record["1st%"]),
+        "twenty_plus": to_int(record["20+"]),
+        "forty_plus": to_int(record["40+"]),
         "long": to_int(record["lng"]),
         "sck": to_int(record["sck"]),
         "scky": to_int(record["scky"]),
     }
 
 # Main async ingest function
-async def load_passing_data():
+async def load_passing_data(year: int = 2024):
     base_dir = os.path.dirname(__file__)
-    stat_path = os.path.abspath(os.path.join(base_dir, "../../data/processed/nfl/nfl_player_passing_2024.processed.json"))
-    sleeper_path = os.path.abspath(os.path.join(base_dir, "../../data/processed/sleeper/sleeper_players_processed.json"))
+    stat_path = os.path.abspath(os.path.join(
+        base_dir, f"../../data/processed/nfl/nfl_player_passing_{year}.processed.json"
+    ))
+    sleeper_path = os.path.abspath(os.path.join(
+        base_dir, "../../data/processed/sleeper/sleeper_players_processed.json"
+    ))
+
+    # Dynamic import of correct table
+    table_module = importlib.import_module(f"anubis.db.schemas.nfl.nfl_player_passing_{year}")
+    passing_table = getattr(table_module, f"nfl_player_passing_{year}")
 
     with open(stat_path, "r") as f:
         raw_data = json.load(f)
@@ -65,33 +72,24 @@ async def load_passing_data():
         raw_name = record.get("player") or record.get("full_name") or "<unknown>"
         search_name = record.get("search_full_name")
 
-        player_obj = match_player_by_name(search_name, player_pool)  
+        player_obj = match_player_by_name(search_name, player_pool)
         if player_obj:
-            player_id = player_obj["player_id"]                     
+            player_id = player_obj["player_id"]
             parsed_data.append(parse_passing_record(record, player_id))
         else:
             unmatched_players.append(raw_name)
             logger.warning(f"❌ Unmatched QB: {raw_name} (normalized: {search_name})")
-            logger.debug(f"Record dump: {json.dumps(record, indent=2)}")
 
     if unmatched_players:
-        log_path = os.path.join(base_dir, "../../logs/unmatched_nfl_qbs.json")
+        log_path = os.path.join(base_dir, f"../../logs/unmatched/unmatched_nfl_qbs_{year}.json")
         os.makedirs(os.path.dirname(log_path), exist_ok=True)
         with open(log_path, "w") as f:
             json.dump(unmatched_players, f, indent=2)
 
     async with async_session() as session:
-        stmt = pg_insert(nfl_player_passing_2024).values(parsed_data)
+        stmt = pg_insert(passing_table).values(parsed_data)
         stmt = stmt.on_conflict_do_update(
             index_elements=["player_id"],
             set_={c.name: c for c in stmt.excluded if c.name != "player_id"}
         )
         await session.execute(stmt)
-        await session.commit()
-
-    logger.info(f"✅ Inserted {len(parsed_data)} QB records into nfl_player_passing_2024")
-
-# Entrypoint
-if __name__ == "__main__":
-    import asyncio
-    asyncio.run(load_passing_data())

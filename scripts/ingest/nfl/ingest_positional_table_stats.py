@@ -7,20 +7,34 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 
 from anubis.db.base import engine
-from anubis.db.schemas.nfl.nfl_player_qb_2024 import nfl_player_qb_2024
-from anubis.db.schemas.nfl.nfl_player_rb_2024 import nfl_player_rb_2024
-from anubis.db.schemas.nfl.nfl_player_wr_2024 import nfl_player_wr_2024
-from anubis.db.schemas.nfl.nfl_player_te_2024 import nfl_player_te_2024
-from anubis.db.schemas.nfl.nfl_player_kicking_2024 import nfl_player_kicking_2024
 from anubis.utils.parse.stat_value import convert_stat_value
 
-# Map position to SQLAlchemy table
-POSITION_TABLES = {
-    "qb": nfl_player_qb_2024,
-    "rb": nfl_player_rb_2024,
-    "wr": nfl_player_wr_2024,
-    "te": nfl_player_te_2024,
-}
+# Dynamically import tables by year
+def resolve_position_tables(year: int):
+    from anubis.db.schemas.nfl import (
+        nfl_player_qb_2024,
+        nfl_player_rb_2024,
+        nfl_player_wr_2024,
+        nfl_player_te_2024,
+        nfl_player_qb_2023,
+        nfl_player_rb_2023,
+        nfl_player_wr_2023,
+        nfl_player_te_2023,
+    )
+    return {
+        2023: {
+            "qb": nfl_player_qb_2023.nfl_player_qb_2023,
+            "rb": nfl_player_rb_2023.nfl_player_rb_2023,
+            "wr": nfl_player_wr_2023.nfl_player_wr_2023,
+            "te": nfl_player_te_2023.nfl_player_te_2023,
+        },
+        2024: {
+            "qb": nfl_player_qb_2024.nfl_player_qb_2024,
+            "rb": nfl_player_rb_2024.nfl_player_rb_2024,
+            "wr": nfl_player_wr_2024.nfl_player_wr_2024,
+            "te": nfl_player_te_2024.nfl_player_te_2024,
+        }
+    }[year]
 
 DATA_DIR = Path("anubis/data/processed/nfl")
 async_session = sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
@@ -29,8 +43,10 @@ def get_file_for_position(pos: str, year: int) -> Path:
     return DATA_DIR / f"nfl_player_{pos}_{year}.processed.json"
 
 async def ingest_positional_stats(year: int):
+    position_tables = resolve_position_tables(year)
+
     async with async_session() as session:
-        for pos, table in POSITION_TABLES.items():
+        for pos, table in position_tables.items():
             path = get_file_for_position(pos, year)
             if not path.exists():
                 print(f"⚠️ Skipping {pos.upper()}: {path.name} not found")
@@ -80,7 +96,7 @@ async def ingest_positional_stats(year: int):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Ingest positional NFL player tables into the DB")
-    parser.add_argument("--year", type=int, required=True, help="Season year (e.g. 2024)")
+    parser.add_argument("--year", type=int, required=True, help="Season year (e.g. 2023 or 2024)")
     args = parser.parse_args()
 
     import asyncio

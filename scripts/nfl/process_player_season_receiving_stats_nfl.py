@@ -8,17 +8,17 @@ from anubis.utils.normalize.name import (
 from anubis.utils.normalize.player import normalize_player_fields
 from anubis.ingest.utils.match_players import match_player_by_name
 
-RAW_PATH = Path("anubis/data/raw/nfl/nfl_player_receiving_2024.raw.json")
-OUT_PATH = Path("anubis/data/processed/nfl/nfl_player_receiving_2024.processed.json")
-SLEEPER_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
-
 FLOAT_FIELDS = {"1st%"}
 INT_FIELDS = {
     "rec", "yds", "td", "20+", "40+", "lng",
     "rec_1st", "rec_fum", "rec_yac/r", "tgts"
 }
 
-def process_receiving_stats():
+def process_receiving_stats(year: int = 2024):
+    RAW_PATH = Path(f"anubis/data/raw/nfl/nfl_player_receiving_{year}.raw.json")
+    OUT_PATH = Path(f"anubis/data/processed/nfl/nfl_player_receiving_{year}.processed.json")
+    SLEEPER_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
+
     with RAW_PATH.open("r") as f:
         raw_data = json.load(f)
 
@@ -63,4 +63,8 @@ def process_receiving_stats():
     print(f"✅ Processed {len(cleaned)} receiving stat lines → {OUT_PATH}")
 
 if __name__ == "__main__":
-    process_receiving_stats()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--year", type=int, default=2024)
+    args = parser.parse_args()
+    process_receiving_stats(year=args.year)

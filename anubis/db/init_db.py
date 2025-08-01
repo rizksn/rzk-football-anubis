@@ -15,6 +15,10 @@ from anubis.db.schemas.nfl.nfl_player_qb_2024 import nfl_player_qb_2024
 from anubis.db.schemas.nfl.nfl_player_rb_2024 import nfl_player_rb_2024
 from anubis.db.schemas.nfl.nfl_player_wr_2024 import nfl_player_wr_2024
 from anubis.db.schemas.nfl.nfl_player_te_2024 import nfl_player_te_2024
+from anubis.db.schemas.nfl.nfl_player_qb_2023 import nfl_player_qb_2023
+from anubis.db.schemas.nfl.nfl_player_rb_2023 import nfl_player_rb_2023
+from anubis.db.schemas.nfl.nfl_player_wr_2023 import nfl_player_wr_2023
+from anubis.db.schemas.nfl.nfl_player_te_2023 import nfl_player_te_2023
 
 # Market ADP schemas (modular imports)
 import anubis.db.schemas.market.draftsharks_adp_redraft as redraft_tables
@@ -70,6 +74,10 @@ async def init():
                     nfl_player_rb_2024,
                     nfl_player_wr_2024,
                     nfl_player_te_2024,
+                    nfl_player_qb_2023,
+                    nfl_player_rb_2023,
+                    nfl_player_wr_2023,
+                    nfl_player_te_2023,
                 ]
                 + [
                     # Redraft

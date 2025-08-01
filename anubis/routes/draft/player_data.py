@@ -9,24 +9,39 @@ from anubis.db.schemas.nfl.nfl_player_rb_2024 import nfl_player_rb_2024
 from anubis.db.schemas.nfl.nfl_player_wr_2024 import nfl_player_wr_2024
 from anubis.db.schemas.nfl.nfl_player_te_2024 import nfl_player_te_2024
 from anubis.db.schemas.nfl.nfl_player_kicking_2024 import nfl_player_kicking_2024
+from anubis.db.schemas.nfl.nfl_player_qb_2023 import nfl_player_qb_2023
+from anubis.db.schemas.nfl.nfl_player_rb_2023 import nfl_player_rb_2023
+from anubis.db.schemas.nfl.nfl_player_wr_2023 import nfl_player_wr_2023
+from anubis.db.schemas.nfl.nfl_player_te_2023 import nfl_player_te_2023
+from anubis.db.schemas.nfl.nfl_player_kicking_2023 import nfl_player_kicking_2023
 
 router = APIRouter(prefix="/api")
 
 # Map stat_type to correct table
 STAT_TABLE_MAP = {
-    "qb": nfl_player_qb_2024,
-    "rb": nfl_player_rb_2024,
-    "wr": nfl_player_wr_2024,
-    "te": nfl_player_te_2024,
-    "k": nfl_player_kicking_2024,
+    2024: {
+        "qb": nfl_player_qb_2024,
+        "rb": nfl_player_rb_2024,
+        "wr": nfl_player_wr_2024,
+        "te": nfl_player_te_2024,
+        "k": nfl_player_kicking_2024,
+    },
+    2023: {
+        "qb": nfl_player_qb_2023,
+        "rb": nfl_player_rb_2023,
+        "wr": nfl_player_wr_2023,
+        "te": nfl_player_te_2023,
+        "k": nfl_player_kicking_2023,
+    },
 }
 
 @router.get("/player-data/{stat_type}/{year}")
 async def get_player_data(stat_type: str = "qb", year: int = 2024, player_id: str = None) -> List[Dict]:
-    if year != 2024:
-        raise HTTPException(status_code=400, detail="Only 2024 data supported for now.")
+    table_map = STAT_TABLE_MAP.get(year)
+    if not table_map:
+        raise HTTPException(status_code=400, detail=f"No data available for year: {year}")
 
-    table = STAT_TABLE_MAP.get(stat_type.lower())
+    table = table_map.get(stat_type.lower())
     if table is None:
         raise HTTPException(status_code=400, detail=f"Unsupported stat_type: {stat_type}")
 

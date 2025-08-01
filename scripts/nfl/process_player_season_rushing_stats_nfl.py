@@ -8,17 +8,17 @@ from anubis.utils.normalize.name import (
 from anubis.utils.normalize.player import normalize_player_fields
 from anubis.ingest.utils.match_players import match_player_by_name
 
-RAW_PATH = Path("anubis/data/raw/nfl/nfl_player_rushing_2024.raw.json")
-OUT_PATH = Path("anubis/data/processed/nfl/nfl_player_rushing_2024.processed.json")
-SLEEPER_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
-
 FLOAT_FIELDS = {"rush_1st%"}
 INT_FIELDS = {
     "rush_yds", "att", "td", "20+", "40+", "lng",
     "rush_1st", "rush_fum"
 }
 
-def process_rushing_stats():
+def process_rushing_stats(year: int = 2024):
+    RAW_PATH = Path(f"anubis/data/raw/nfl/nfl_player_rushing_{year}.raw.json")
+    OUT_PATH = Path(f"anubis/data/processed/nfl/nfl_player_rushing_{year}.processed.json")
+    SLEEPER_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
+
     with RAW_PATH.open("r") as f:
         raw_data = json.load(f)
 
@@ -63,4 +63,8 @@ def process_rushing_stats():
     print(f"✅ Processed {len(cleaned)} rushing stat lines → {OUT_PATH}")
 
 if __name__ == "__main__":
-    process_rushing_stats()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--year", type=int, default=2024)
+    args = parser.parse_args()
+    process_rushing_stats(year=args.year)

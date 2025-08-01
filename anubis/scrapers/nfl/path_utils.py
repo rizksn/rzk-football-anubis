@@ -4,7 +4,7 @@ def get_stat_output_path(stat_type: str, year: int, root: str = None) -> str:
     if not root:
         root = os.path.join(
             os.path.dirname(__file__),
-            "..", "..", "data", "raw", "player_stats"
+            "..", "..", "data", "raw", "nfl"
         )
 
     # Normalize filename for consistency

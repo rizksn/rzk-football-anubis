@@ -1,0 +1,29 @@
+from sqlalchemy import Table, Column, Integer, String, Float, ForeignKey
+from anubis.db.schemas.core.players import players
+from anubis.db.schemas.nfl import passing_metadata
+
+nfl_player_passing_2023 = Table(
+    "nfl_player_passing_2023",
+    passing_metadata,
+    Column("player_id", String, ForeignKey("core.players.player_id"), primary_key=True),
+    Column("search_full_name", String),
+    Column("first_name", String),
+    Column("last_name", String),
+    Column("team", String),
+    Column("position", String),
+    Column("pass_yds", Integer),
+    Column("yds_att", Float),
+    Column("att", Integer),
+    Column("cmp", Integer),
+    Column("cmp%", Float, key="cmp_percent"),
+    Column("td", Integer),
+    Column("int", Integer),
+    Column("rate", Float),
+    Column("1st", Integer, key="first"),
+    Column("1st%", Float, key="first_percent"),
+    Column("20+", Integer, key="twenty_plus"),
+    Column("40+", Integer, key="forty_plus"),
+    Column("long", Integer),
+    Column("sck", Integer),
+    Column("scky", Integer),
+)

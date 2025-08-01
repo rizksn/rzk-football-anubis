@@ -8,10 +8,6 @@ from anubis.utils.normalize.name import (
 )
 from anubis.ingest.utils.match_players import match_player_by_name
 
-RAW_PATH = Path("anubis/data/raw/nfl/nfl_player_kicking_2024.raw.json")
-OUT_PATH = Path("anubis/data/processed/nfl/nfl_player_kicking_2024.processed.json")
-SLEEPER_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
-
 INT_FIELDS = {"fgm", "att", "lng", "fg_blocked"}
 FLOAT_FIELDS = {"fg_percent"}
 STRING_FIELDS = {
@@ -19,7 +15,11 @@ STRING_FIELDS = {
     "fg_40_49_>_", "fg_50_59_>_", "fg_60_plus_>_"
 }
 
-def process_kicking_stats():
+def process_kicking_stats(year: int = 2024):
+    RAW_PATH = Path(f"anubis/data/raw/nfl/nfl_player_kicking_{year}.raw.json")
+    OUT_PATH = Path(f"anubis/data/processed/nfl/nfl_player_kicking_{year}.processed.json")
+    SLEEPER_PATH = Path("anubis/data/processed/sleeper/sleeper_players_processed.json")
+
     with RAW_PATH.open("r") as f:
         raw_data = json.load(f)
 
@@ -64,4 +64,8 @@ def process_kicking_stats():
     print(f"✅ Processed {len(cleaned)} kicker stat lines → {OUT_PATH}")
 
 if __name__ == "__main__":
-    process_kicking_stats()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--year", type=int, default=2024)
+    args = parser.parse_args()
+    process_kicking_stats(year=args.year)
